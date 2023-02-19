@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "npm run build-lib && npm run build-app",
-    "build-lib": "ng build angular-ecmascript-intl",
+    "build-lib": "cpy README.md projects/angular-ecmascript-intl && ng build angular-ecmascript-intl",
     "build-app": "ng build angular-intl-demo",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --code-coverage=true"
@@ -31,6 +31,7 @@
     "@angular/cli": "~15.1.6",
     "@angular/compiler-cli": "^15.1.0",
     "@types/jasmine": "~4.3.0",
+    "cpy-cli": "^4.2.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
