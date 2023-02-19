@@ -1,0 +1,29 @@
+<div class="fields-container">
+  <mat-form-field>
+    <mat-label>Date style</mat-label>
+    <mat-select [(ngModel)]="dateStyle">
+      <mat-option [value]="undefined">-</mat-option>
+      <mat-option [value]="'short'">short</mat-option>
+      <mat-option [value]="'medium'">medium</mat-option>
+      <mat-option [value]="'long'">long</mat-option>
+      <mat-option [value]="'full'">full</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Time style</mat-label>
+    <mat-select [(ngModel)]="timeStyle">
+      <mat-option [value]="undefined">-</mat-option>
+      <mat-option [value]="'short'">short</mat-option>
+      <mat-option [value]="'medium'">medium</mat-option>
+      <mat-option [value]="'long'">long</mat-option>
+      <mat-option [value]="'full'">full</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-slide-toggle [(ngModel)]="hour12">
+    12 Hours
+  </mat-slide-toggle>
+</div>
+
+<p>{{selectedDate | intlDate: { dateStyle, timeStyle, hour12 } }}</p>
