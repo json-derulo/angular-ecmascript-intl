@@ -13,8 +13,8 @@ npm install angular-ecmascript-intl --save
 Import the `IntlModule`:
 
 ```typescript
-import { NgModule } from '@angular/core';
-import { IntlModule } from 'angular-ecmascript-intl';
+import {NgModule} from '@angular/core';
+import {IntlModule} from 'angular-ecmascript-intl';
 
 @NgModule({
   imports: [
@@ -29,8 +29,8 @@ By default, the pipe will use the browser default locale. If you want to overrid
 injection token:
 
 ```typescript
-import { NgModule } from '@angular/core';
-import { INTL_LOCALES } from 'angular-ecmascript-intl';
+import {NgModule} from '@angular/core';
+import {INTL_LOCALES} from 'angular-ecmascript-intl';
 
 @NgModule({
   providers: [
@@ -69,6 +69,25 @@ their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/G
 
 With the `INTL_DATE_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
 
+### Language pipe
+
+Use the language pipe like the following:
+
+```
+{{'en-US' | intlLanguage: options}}
+```
+
+The input date can be one of the following:
+
+* string (must be a BCP 47 IETF language tag)
+* null
+* undefined
+
+The options are the same as the options for `new Intl.DisplayNames()`. For a list of the options, see
+their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames/DisplayNames).
+
+With the `INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
+
 ## Background
 
 Working with Angular's built-in pipes which support internationalization works fine when only supporting one locale.
@@ -79,9 +98,16 @@ to the application. This increases bundle size and load times.
 Modern browsers are fully capable of handling internationalization with the `Intl.*` browser APIs. There is no need for
 loading any locale date. This package re-implements some Angular built-in pipes such as `date` using these APIs.
 
-## Roadmap
+## Feature Roadmap
 
-* Language pipe
 * Country pipe
 * Number pipe(s)
 * Relative time
+
+## Chore Roadmap
+
+* Linting
+* Pull request verification
+* Automatic dependency updates
+* Automatic npm publishing
+* Automatic changelog generation

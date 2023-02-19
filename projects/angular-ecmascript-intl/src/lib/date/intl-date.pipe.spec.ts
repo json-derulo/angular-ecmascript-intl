@@ -1,7 +1,7 @@
-import { IntlDatePipe } from './intl-date.pipe';
-import { TestBed } from "@angular/core/testing";
-import { INTL_LOCALES } from "../locale";
-import { INTL_DATE_PIPE_DEFAULT_OPTIONS } from "./intl-date-pipe-default-options";
+import {IntlDatePipe} from './intl-date.pipe';
+import {TestBed} from "@angular/core/testing";
+import {INTL_LOCALES} from "../locale";
+import {INTL_DATE_PIPE_DEFAULT_OPTIONS} from "./intl-date-pipe-default-options";
 
 describe('DatePipe', () => {
   let testUnit: IntlDatePipe;
@@ -54,11 +54,11 @@ describe('DatePipe', () => {
     it('should handle missing Intl.DateTimeFormat browser API', () => {
       // @ts-expect-error
       spyOn(Intl, 'DateTimeFormat').and.returnValue(undefined);
-      const consoleWarn = spyOn(console, 'warn');
+      const consoleError = spyOn(console, 'error');
       const date = new Date('2023-02-19');
 
       expect(testUnit.transform('2023-02-19')).toEqual(date.toString());
-      expect(consoleWarn).toHaveBeenCalledTimes(1);
+      expect(consoleError).toHaveBeenCalledTimes(1);
     });
   });
 

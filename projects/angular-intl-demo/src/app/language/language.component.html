@@ -1,0 +1,19 @@
+<div class="fields-container">
+  <mat-form-field>
+    <mat-label>Language</mat-label>
+    <mat-select [(ngModel)]="selectedLanguage">
+      <mat-option *ngFor="let language of languages" [value]="language">{{language}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Language display</mat-label>
+    <mat-select [(ngModel)]="languageDisplay">
+      <mat-option [value]="undefined">-</mat-option>
+      <mat-option [value]="'dialect'">dialect</mat-option>
+      <mat-option [value]="'standard'">standard</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<p>{{selectedLanguage | intlLanguage: {languageDisplay} }}</p>
