@@ -11,6 +11,8 @@ import { MatSelectModule } from "@angular/material/select";
 import { FormsModule } from "@angular/forms";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from "@angular/material/form-field";
+import { MarkdownModule } from "ngx-markdown";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from "@angular/material/form-field";
     MatSelectModule,
     FormsModule,
     MatSlideToggleModule,
+    MarkdownModule.forRoot(),
+    HttpClientModule,
   ],
   providers: [
     {
