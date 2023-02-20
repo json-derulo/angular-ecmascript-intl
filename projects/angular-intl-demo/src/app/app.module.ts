@@ -33,7 +33,7 @@ import {GettingStartedComponent} from './getting-started/getting-started.compone
       },
     },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
 }

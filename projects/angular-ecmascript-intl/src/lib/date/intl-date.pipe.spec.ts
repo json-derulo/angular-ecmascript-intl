@@ -52,7 +52,7 @@ describe('DatePipe', () => {
     });
 
     it('should handle missing Intl.DateTimeFormat browser API', () => {
-      // @ts-expect-error
+      // @ts-expect-error Intl APIs are not expected to be undefined
       spyOn(Intl, 'DateTimeFormat').and.returnValue(undefined);
       const consoleError = spyOn(console, 'error');
 

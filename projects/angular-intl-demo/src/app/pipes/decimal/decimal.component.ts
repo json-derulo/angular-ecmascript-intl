@@ -4,7 +4,7 @@ import {languages} from '../../languages';
 @Component({
   selector: 'app-decimal',
   templateUrl: './decimal.component.html',
-  styleUrls: ['./decimal.component.scss']
+  styleUrls: ['./decimal.component.scss'],
 })
 export class DecimalComponent {
   enteredNumber = '1024.4539';

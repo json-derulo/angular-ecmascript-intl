@@ -40,7 +40,7 @@ describe('IntlDecimalPipe', () => {
     });
 
     it('should handle missing Intl.NumberFormat browser API', () => {
-      // @ts-expect-error
+      // @ts-expect-error Intl APIs are not expected to be undefined
       spyOn(Intl, 'NumberFormat').and.returnValue(undefined);
       const consoleError = spyOn(console, 'error');
       expect(testUnit.transform('1')).toBeNull();

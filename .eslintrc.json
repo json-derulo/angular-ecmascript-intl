@@ -1,0 +1,38 @@
+{
+  "root": true,
+  "overrides": [
+    {
+      "files": "*.ts",
+      "parserOptions": {
+        "project": [
+          "./projects/angular-ecmascript-intl/tsconfig.lib.json",
+          "./projects/angular-ecmascript-intl/tsconfig.spec.json",
+          "./projects/angular-intl-demo/tsconfig.app.json"
+        ]
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/strict",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        "@typescript-eslint/no-extraneous-class": "off",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "comma-dangle": [
+          "error",
+          "always-multiline"
+        ]
+      }
+    },
+    {
+      "files": "*.html",
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ],
+      "rules": {
+      }
+    }
+  ]
+}

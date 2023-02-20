@@ -5,7 +5,7 @@ import {currencies} from "./currencies";
 @Component({
   selector: 'app-currency',
   templateUrl: './currency.component.html',
-  styleUrls: ['./currency.component.scss']
+  styleUrls: ['./currency.component.scss'],
 })
 export class CurrencyComponent {
   enteredNumber = '0.24';

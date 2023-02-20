@@ -5,7 +5,7 @@ import {IntlLanguagePipeOptions} from "../../../../../angular-ecmascript-intl/sr
 @Component({
   selector: 'app-language',
   templateUrl: './language.component.html',
-  styleUrls: ['./language.component.scss']
+  styleUrls: ['./language.component.scss'],
 })
 export class LanguageComponent {
   languages = languages;
