@@ -1,5 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "group:angularMonorepo",
+    "group:angular-eslintMonorepo",
+    "group:typescript-eslintMonorepo"
+  ],
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": [
