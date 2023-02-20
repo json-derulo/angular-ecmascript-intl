@@ -4,7 +4,7 @@ import {languages} from '../../languages';
 @Component({
   selector: 'app-percent',
   templateUrl: './percent.component.html',
-  styleUrls: ['./percent.component.scss']
+  styleUrls: ['./percent.component.scss'],
 })
 export class PercentComponent {
   enteredNumber = '0.24';

@@ -32,7 +32,7 @@ import {PipesRoutingModule} from "./pipes-routing.module";
     FormsModule,
     MatSlideToggleModule,
     MatInputModule,
-  ]
+  ],
 })
 export class PipesModule {
 }
