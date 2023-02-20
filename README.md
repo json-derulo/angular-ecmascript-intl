@@ -69,6 +69,69 @@ their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/G
 
 With the `INTL_DATE_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
 
+### Decimal pipe
+
+Use the decimal pipe like the following:
+
+```
+{{1.24 | intlDecimal: options}}
+```
+
+The input can be one of the following:
+
+* number
+* string (must be parseable as number)
+* null
+* undefined
+
+The options are the same as the options for `new Intl.NumberFormat()`. For a list of the options, see
+their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat).
+
+With the `INTL_DECIMAL_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
+
+### Percent pipe
+
+Use the percent pipe like the following:
+
+```
+{{0.24 | intlPercent: options}}
+```
+
+The input can be one of the following:
+
+* number
+* string (must be parseable as number)
+* null
+* undefined
+
+The options are the same as the options for `new Intl.NumberFormat()`. For a list of the options, see
+their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat).
+
+With the `INTL_PERCENT_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
+
+### Currency pipe
+
+Use the currency pipe like the following:
+
+```
+{{1.24 | intlCurrency: 'USD': options}}
+```
+
+The input can be one of the following:
+
+* number
+* string (must be parseable as number)
+* null
+* undefined
+
+The currency code parameter is required and must be a valid ISO 4217 currency code. If you want to transform a decimal
+number instead, use the `intlDecimal` pipe.
+
+The options are the same as the options for `new Intl.NumberFormat()`. For a list of the options, see
+their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat).
+
+With the `INTL_CURRENCY_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
+
 ### Language pipe
 
 Use the language pipe like the following:
@@ -77,7 +140,7 @@ Use the language pipe like the following:
 {{'en-US' | intlLanguage: options}}
 ```
 
-The input date can be one of the following:
+The input can be one of the following:
 
 * string (must be a BCP 47 IETF language tag)
 * null
@@ -90,17 +153,10 @@ With the `INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS` injection token you can specify de
 
 ## Background
 
-Working with Angular's built-in pipes which support internationalization works fine when only supporting one locale.
-But nowadays, you want to support many locales, to give every user a good user experience. To get this working with
-Angular's built-in pipes can be time-consuming, because data for every locale must be included
-to the application. This increases bundle size and load times.
-
-Modern browsers are fully capable of handling internationalization with the `Intl.*` browser APIs. There is no need for
-loading any locale date. This package re-implements some Angular built-in pipes such as `date` using these APIs.
+For more context, see the following [GitHub issue](https://github.com/angular/angular/issues/49143)
 
 ## Feature Roadmap
 
-* Number pipe(s): decimal, currency, percentage
 * Performance: Prepare Intl.* object with default options, only construct new object when necessary
 * Country pipe
 * Relative time
