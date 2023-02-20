@@ -100,9 +100,11 @@ loading any locale date. This package re-implements some Angular built-in pipes 
 
 ## Feature Roadmap
 
+* Number pipe(s): decimal, currency, percentage
+* Performance: Prepare Intl.* object with default options, only construct new object when necessary
 * Country pipe
-* Number pipe(s)
 * Relative time
+* Migration Schematics for usages of Angular pipes
 
 ## Chore Roadmap
 
