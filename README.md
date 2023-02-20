@@ -164,6 +164,5 @@ For more context, see the following [GitHub issue](https://github.com/angular/an
 
 ## Chore Roadmap
 
-* Automatic dependency updates
 * Automatic npm publishing
 * Automatic changelog generation
