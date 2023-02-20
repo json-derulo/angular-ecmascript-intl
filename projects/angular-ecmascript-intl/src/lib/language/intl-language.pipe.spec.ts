@@ -36,7 +36,7 @@ describe('IntlLanguagePipe', () => {
       spyOn(Intl, 'DisplayNames').and.returnValue(undefined);
       const consoleError = spyOn(console, 'error');
 
-      expect(testUnit.transform('en-US')).toEqual('en-US');
+      expect(testUnit.transform('en-US')).toBeNull();
       expect(consoleError).toHaveBeenCalledTimes(1);
     });
   });

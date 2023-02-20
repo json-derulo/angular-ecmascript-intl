@@ -55,9 +55,8 @@ describe('DatePipe', () => {
       // @ts-expect-error
       spyOn(Intl, 'DateTimeFormat').and.returnValue(undefined);
       const consoleError = spyOn(console, 'error');
-      const date = new Date('2023-02-19');
 
-      expect(testUnit.transform('2023-02-19')).toEqual(date.toString());
+      expect(testUnit.transform('2023-02-19')).toBeNull();
       expect(consoleError).toHaveBeenCalledTimes(1);
     });
   });
