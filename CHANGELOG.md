@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+* Add option to override locale
+
 ## 0.1.0 - 2023-02-19
 
 ### Added

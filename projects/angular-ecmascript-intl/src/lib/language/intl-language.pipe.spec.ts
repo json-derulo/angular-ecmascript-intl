@@ -132,4 +132,19 @@ describe('IntlLanguagePipe', () => {
       expect(testUnit.transform('de', {type: 'region'})).toEqual('Deutsch');
     });
   });
+
+  it('should respect locale option', () => {
+    TestBed.configureTestingModule({
+      providers: [
+        IntlLanguagePipe,
+        {
+          provide: INTL_LOCALES,
+          useValue: 'en-US',
+        },
+      ],
+    });
+    testUnit = TestBed.inject(IntlLanguagePipe);
+
+    expect(testUnit.transform('en-US', {locale: 'de-DE'})).toEqual('Englisch (Vereinigte Staaten)');
+  });
 });

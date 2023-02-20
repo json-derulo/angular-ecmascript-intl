@@ -1,8 +1,9 @@
 import {Inject, Optional, Pipe, PipeTransform} from '@angular/core';
 import {INTL_LOCALES} from "../locale";
 import {INTL_DATE_PIPE_DEFAULT_OPTIONS} from "./intl-date-pipe-default-options";
+import {IntlPipeOptions} from "../intl-pipe-options";
 
-export type IntlDatePipeOptions = Partial<Intl.DateTimeFormatOptions>;
+export type IntlDatePipeOptions = Partial<Intl.DateTimeFormatOptions> & IntlPipeOptions;
 
 @Pipe({
   name: 'intlDate',
@@ -24,8 +25,10 @@ export class IntlDatePipe implements PipeTransform {
       return null;
     }
 
+    const {locale, ...intlOptions} = options ?? {};
+
     try {
-      return new Intl.DateTimeFormat(this.locale ?? undefined, {...this.defaultOptions, ...options}).format(date);
+      return new Intl.DateTimeFormat(locale ?? this.locale ?? undefined, {...this.defaultOptions, ...intlOptions}).format(date);
     } catch (e) {
       console.error('Error while transforming the date', e);
       return date.toString();

@@ -129,7 +129,22 @@ describe('DatePipe', () => {
       });
       testUnit = TestBed.inject(IntlDatePipe);
 
-      expect(testUnit.transform('2023-02-19', { dateStyle: 'medium' })).toEqual('Feb 19, 2023');
+      expect(testUnit.transform('2023-02-19', {dateStyle: 'medium'})).toEqual('Feb 19, 2023');
     });
+  });
+
+  it('should respect locale option', () => {
+    TestBed.configureTestingModule({
+      providers: [
+        IntlDatePipe,
+        {
+          provide: INTL_LOCALES,
+          useValue: 'en-US',
+        },
+      ],
+    });
+    testUnit = TestBed.inject(IntlDatePipe);
+
+    expect(testUnit.transform('2023-02-19', {locale: 'de-DE'})).toEqual('19.2.2023');
   });
 });

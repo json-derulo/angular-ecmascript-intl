@@ -1,8 +1,9 @@
 import {Inject, Optional, Pipe, PipeTransform} from '@angular/core';
 import {INTL_LOCALES} from "../locale";
 import {INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS} from "./intl-language-pipe-default-options";
+import {IntlPipeOptions} from "../intl-pipe-options";
 
-export type IntlLanguagePipeOptions = Partial<Intl.DisplayNamesOptions>;
+export type IntlLanguagePipeOptions = Partial<Intl.DisplayNamesOptions> & IntlPipeOptions;
 
 @Pipe({
   name: 'intlLanguage',
@@ -19,10 +20,12 @@ export class IntlLanguagePipe implements PipeTransform {
       return null;
     }
 
+    const {locale, ...intlOptions} = options ?? {};
+
     try {
-      return new Intl.DisplayNames(this.locale ?? undefined, {
-        ...this.defaultOptions, ...options,
-        type: 'language'
+      return new Intl.DisplayNames(locale ?? this.locale ?? undefined, {
+        ...this.defaultOptions, ...intlOptions,
+        type: 'language',
       }).of(value) ?? null;
     } catch (e) {
       console.error('Error while transforming the language', e);

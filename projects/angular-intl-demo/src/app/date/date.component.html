@@ -1,8 +1,16 @@
 <div class="fields-container">
   <mat-form-field>
+    <mat-label>Locale</mat-label>
+    <mat-select [(ngModel)]="locale">
+      <mat-option [value]="undefined">Browser default</mat-option>
+      <mat-option *ngFor="let language of languages" [value]="language">{{language}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
     <mat-label>Date style</mat-label>
     <mat-select [(ngModel)]="dateStyle">
-      <mat-option [value]="undefined">-</mat-option>
+      <mat-option [value]="undefined">Browser default</mat-option>
       <mat-option [value]="'short'">short</mat-option>
       <mat-option [value]="'medium'">medium</mat-option>
       <mat-option [value]="'long'">long</mat-option>
@@ -13,7 +21,7 @@
   <mat-form-field>
     <mat-label>Time style</mat-label>
     <mat-select [(ngModel)]="timeStyle">
-      <mat-option [value]="undefined">-</mat-option>
+      <mat-option [value]="undefined">Browser default</mat-option>
       <mat-option [value]="'short'">short</mat-option>
       <mat-option [value]="'medium'">medium</mat-option>
       <mat-option [value]="'long'">long</mat-option>
@@ -26,4 +34,4 @@
   </mat-slide-toggle>
 </div>
 
-<p>{{selectedDate | intlDate: { dateStyle, timeStyle, hour12 } }}</p>
+<p>{{selectedDate | intlDate: {dateStyle, timeStyle, hour12, locale} }}</p>
