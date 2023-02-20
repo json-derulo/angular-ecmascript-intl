@@ -4,34 +4,26 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatTabsModule} from "@angular/material/tabs";
-import {IntlModule} from "projects/angular-ecmascript-intl/src/public-api";
-import {DateComponent} from './date/date.component';
-import {MatSelectModule} from "@angular/material/select";
-import {FormsModule} from "@angular/forms";
-import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from "@angular/material/form-field";
 import {MarkdownModule} from "ngx-markdown";
 import {HttpClientModule} from "@angular/common/http";
-import {LanguageComponent} from './language/language.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from "@angular/material/button";
+import {GettingStartedComponent} from './getting-started/getting-started.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DateComponent,
-    LanguageComponent,
+    GettingStartedComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatTabsModule,
-    IntlModule,
-    MatSelectModule,
-    FormsModule,
-    MatSlideToggleModule,
     MarkdownModule.forRoot(),
     HttpClientModule,
+    MatToolbarModule,
+    MatButtonModule,
   ],
   providers: [
     {

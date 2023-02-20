@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {languages} from '../languages';
+import {languages} from '../../languages';
 
 @Component({
   selector: 'app-date',

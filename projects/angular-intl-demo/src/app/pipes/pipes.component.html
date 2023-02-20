@@ -1,0 +1,17 @@
+<nav [tabPanel]="tabPanel" mat-tab-nav-bar>
+  <a #dateActive="routerLinkActive" [active]="dateActive.isActive" mat-tab-link routerLink="date"
+     routerLinkActive>Date</a>
+  <a #decimalActive="routerLinkActive" [active]="decimalActive.isActive" mat-tab-link routerLink="decimal"
+     routerLinkActive>Decimal</a>
+  <a #percentActive="routerLinkActive" [active]="percentActive.isActive" mat-tab-link routerLink="percent"
+     routerLinkActive>Percent</a>
+  <a #currencyActive="routerLinkActive" [active]="currencyActive.isActive" mat-tab-link routerLink="currency"
+     routerLinkActive>Currency</a>
+  <a #languageActive="routerLinkActive" [active]="languageActive.isActive" mat-tab-link routerLink="language"
+     routerLinkActive>Language</a>
+</nav>
+<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+
+<div class="panel-container">
+  <router-outlet/>
+</div>

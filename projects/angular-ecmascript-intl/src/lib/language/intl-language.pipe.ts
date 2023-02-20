@@ -12,7 +12,7 @@ export type IntlLanguagePipeOptions = Partial<Intl.DisplayNamesOptions> & IntlPi
 export class IntlLanguagePipe implements PipeTransform {
 
   constructor(@Optional() @Inject(INTL_LOCALES) readonly locale?: string | string[] | null,
-              @Optional() @Inject(INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS) readonly defaultOptions?: IntlLanguagePipeOptions | null) {
+              @Optional() @Inject(INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS) readonly defaultOptions?: Partial<Intl.DisplayNamesOptions> | null) {
   }
 
   transform(value: string | null | undefined, options?: IntlLanguagePipeOptions): string | null {
@@ -29,7 +29,7 @@ export class IntlLanguagePipe implements PipeTransform {
       }).of(value) ?? null;
     } catch (e) {
       console.error('Error while transforming the language', e);
-      return value;
+      return null;
     }
   }
 
