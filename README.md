@@ -151,6 +151,25 @@ their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/G
 
 With the `INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
 
+### Country pipe
+
+Use the country pipe like the following:
+
+```
+{{'US' | intlCountry: options}}
+```
+
+The input can be one of the following:
+
+* string (must be two-letter ISO 639-1 language code or a three-letter ISO 639-2 language code)
+* null
+* undefined
+
+The options are the same as the options for `new Intl.DisplayNames()`. For a list of the options, see
+their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames/DisplayNames).
+
+With the `INTL_COUNTRY_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
+
 ## Background
 
 For more context, see the following [GitHub issue](https://github.com/angular/angular/issues/49143)
@@ -158,7 +177,6 @@ For more context, see the following [GitHub issue](https://github.com/angular/an
 ## Feature Roadmap
 
 * Performance: Prepare Intl.* object with default options, only construct new object when necessary
-* Country pipe
 * Relative time
 * Migration Schematics for usages of Angular pipes
 
