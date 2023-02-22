@@ -2,6 +2,8 @@
  * Public API Surface of angular-ecmascript-intl
  */
 
+export * from './lib/country/intl-country.pipe';
+export * from './lib/country/intl-country-pipe-default-options';
 export * from './lib/currency/intl-currency.pipe';
 export * from './lib/currency/intl-currency-pipe-default-options';
 export * from './lib/date/intl-date.pipe';
