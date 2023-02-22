@@ -29,9 +29,14 @@
     </mat-select>
   </mat-form-field>
 
-  <mat-slide-toggle [(ngModel)]="hour12">
-    12 Hours
-  </mat-slide-toggle>
+  <mat-form-field>
+    <mat-label>12 Hours</mat-label>
+    <mat-select [(ngModel)]="hour12">
+      <mat-option [value]="undefined">Browser default</mat-option>
+      <mat-option [value]="true">true</mat-option>
+      <mat-option [value]="false">false</mat-option>
+    </mat-select>
+  </mat-form-field>
 </div>
 
 <p>{{selectedDate | intlDate: {dateStyle, timeStyle, hour12, locale} }}</p>

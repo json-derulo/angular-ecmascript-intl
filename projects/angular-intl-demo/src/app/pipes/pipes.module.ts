@@ -10,7 +10,6 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {IntlModule} from "projects/angular-ecmascript-intl/src/lib/intl.module";
 import {MatSelectModule} from "@angular/material/select";
 import {FormsModule} from "@angular/forms";
-import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatInputModule} from "@angular/material/input";
 import {PipesRoutingModule} from "./pipes-routing.module";
 
@@ -30,7 +29,6 @@ import {PipesRoutingModule} from "./pipes-routing.module";
     IntlModule,
     MatSelectModule,
     FormsModule,
-    MatSlideToggleModule,
     MatInputModule,
   ],
 })
