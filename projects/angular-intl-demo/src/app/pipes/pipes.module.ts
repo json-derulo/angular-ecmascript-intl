@@ -12,6 +12,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {PipesRoutingModule} from "./pipes-routing.module";
+import {CountryComponent} from "./country/country.component";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {PipesRoutingModule} from "./pipes-routing.module";
     PercentComponent,
     CurrencyComponent,
     PipesComponent,
+    CountryComponent,
   ],
   imports: [
     CommonModule,
