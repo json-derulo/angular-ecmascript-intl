@@ -13,6 +13,8 @@ import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {PipesRoutingModule} from "./pipes-routing.module";
 import {CountryComponent} from "./country/country.component";
+import {NgxMatDatetimePickerModule, NgxMatNativeDateModule} from "@angular-material-components/datetime-picker";
+import {MatDatepickerModule} from "@angular/material/datepicker";
 
 @NgModule({
   declarations: [
@@ -32,6 +34,9 @@ import {CountryComponent} from "./country/country.component";
     MatSelectModule,
     FormsModule,
     MatInputModule,
+    NgxMatDatetimePickerModule,
+    MatDatepickerModule,
+    NgxMatNativeDateModule,
   ],
 })
 export class PipesModule {

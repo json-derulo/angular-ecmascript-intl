@@ -1,5 +1,12 @@
 <div class="fields-container">
   <mat-form-field>
+    <mat-label>Date</mat-label>
+    <input [(ngModel)]="selectedDate" [ngxMatDatetimePicker]="picker" matInput placeholder="Choose a date">
+    <mat-datepicker-toggle [for]="$any(picker)" matSuffix></mat-datepicker-toggle>
+    <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+  </mat-form-field>
+
+  <mat-form-field>
     <mat-label>Locale</mat-label>
     <mat-select [(ngModel)]="locale">
       <mat-option [value]="undefined">Browser default</mat-option>
