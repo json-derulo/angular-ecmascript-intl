@@ -68,7 +68,6 @@
               "projects/angular-intl-demo/src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "node_modules/prismjs/themes/prism-okaidia.css",
               "projects/angular-intl-demo/src/styles.scss"
             ],
