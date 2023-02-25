@@ -64,7 +64,7 @@ The input date can be one of the following:
 * null
 * undefined
 
-The options are the same as the options for `new Intl.DateTimeFormat()`. For a list of the options, see
+The options are a subset of the options for `new Intl.DateTimeFormat()`. For a list of the options, see
 their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options).
 
 With the `INTL_DATE_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
@@ -84,7 +84,7 @@ The input can be one of the following:
 * null
 * undefined
 
-The options are the same as the options for `new Intl.NumberFormat()`. For a list of the options, see
+The options are a subset of the options for `new Intl.NumberFormat()`. For a list of the options, see
 their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#options).
 
 With the `INTL_DECIMAL_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
@@ -104,7 +104,7 @@ The input can be one of the following:
 * null
 * undefined
 
-The options are the same as the options for `new Intl.NumberFormat()`. For a list of the options, see
+The options are a subset of the options for `new Intl.NumberFormat()`. For a list of the options, see
 their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#options).
 
 With the `INTL_PERCENT_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
@@ -127,7 +127,7 @@ The input can be one of the following:
 The currency code parameter is required and must be a valid ISO 4217 currency code. If you want to transform a decimal
 number instead, use the `intlDecimal` pipe.
 
-The options are the same as the options for `new Intl.NumberFormat()`. For a list of the options, see
+The options are a subset of the options for `new Intl.NumberFormat()`. For a list of the options, see
 their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#options).
 
 With the `INTL_CURRENCY_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
@@ -146,7 +146,7 @@ The input can be one of the following:
 * null
 * undefined
 
-The options are the same as the options for `new Intl.DisplayNames()`. For a list of the options, see
+The options are a subset of the options for `new Intl.DisplayNames()`. For a list of the options, see
 their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames/DisplayNames#options).
 
 With the `INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
@@ -165,7 +165,7 @@ The input can be one of the following:
 * null
 * undefined
 
-The options are the same as the options for `new Intl.DisplayNames()`. For a list of the options, see
+The options are a subset of the options for `new Intl.DisplayNames()`. For a list of the options, see
 their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames/DisplayNames#options).
 
 With the `INTL_COUNTRY_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
@@ -189,10 +189,29 @@ The unit parameter is required, see
 the [specification](https://tc39.es/proposal-unified-intl-numberformat/section6/locales-currencies-tz_proposed_out.html#sec-issanctionedsimpleunitidentifier)
 for a full list of possible values. If you want to transform a decimal number instead, use the `intlDecimal` pipe.
 
-The options are the same as the options for `new Intl.NumberFormat()`. For a list of the options, see
+The options are a subset of the options for `new Intl.NumberFormat()`. For a list of the options, see
 their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#options).
 
 With the `INTL_UNIT_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
+
+### List pipe
+
+Use the list pipe like the following:
+
+```
+{{['my', 'items'] | intlList: options}}
+```
+
+The input can be one of the following:
+
+* Iterable of strings
+* null
+* undefined
+
+The options are a subset of the options for `new Intl.ListFormat()`. For a list of the options, see
+their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/ListFormat#options).
+
+With the `INTL_LIST_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
 
 ## Background
 
@@ -201,6 +220,5 @@ For more context, see the following [GitHub issue](https://github.com/angular/an
 ## Feature Roadmap
 
 * Performance: Prepare Intl.* object with default options, only construct new object when necessary
-* List pipe
 * Relative time pipe
 * Migration Schematics for usages of Angular pipes

@@ -16,6 +16,7 @@ import {CountryComponent} from "./country/country.component";
 import {NgxMatDatetimePickerModule, NgxMatNativeDateModule} from "@angular-material-components/datetime-picker";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {UnitComponent} from "./unit/unit.component";
+import {ListComponent} from "./list/list.component";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {UnitComponent} from "./unit/unit.component";
     PipesComponent,
     CountryComponent,
     UnitComponent,
+    ListComponent,
   ],
   imports: [
     CommonModule,

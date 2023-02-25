@@ -1,0 +1,38 @@
+<div class="fields-container">
+  <mat-form-field>
+    <mat-label>List items</mat-label>
+    <mat-select [(ngModel)]="selectedItems" multiple>
+      <mat-option *ngFor="let item of list" [value]="item">{{item}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Locale</mat-label>
+    <mat-select [(ngModel)]="locale">
+      <mat-option [value]="undefined">Browser default</mat-option>
+      <mat-option *ngFor="let language of languages" [value]="language">{{language}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Type</mat-label>
+    <mat-select [(ngModel)]="type">
+      <mat-option [value]="undefined">Browser default</mat-option>
+      <mat-option [value]="'conjunction'">conjunction</mat-option>
+      <mat-option [value]="'disjunction'">disjunction</mat-option>
+      <mat-option [value]="'unit'">unit</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Style</mat-label>
+    <mat-select [(ngModel)]="style">
+      <mat-option [value]="undefined">Browser default</mat-option>
+      <mat-option [value]="'long'">long</mat-option>
+      <mat-option [value]="'short'">short</mat-option>
+      <mat-option [value]="'narrow'">narrow</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<p>{{selectedItems | intlList: {locale, type, style} }}</p>

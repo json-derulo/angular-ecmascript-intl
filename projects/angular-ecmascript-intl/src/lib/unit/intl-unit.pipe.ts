@@ -32,7 +32,7 @@ export class IntlUnitPipe implements PipeTransform {
         {...this.defaultOptions, ...intlOptions, unit, style: 'unit'},
       ).format(numericValue);
     } catch (e) {
-      console.error('Error while transforming the percent value', e);
+      console.error('Error while transforming the unit value', e);
       return null;
     }
   }
