@@ -12,7 +12,7 @@ export type IntlLanguagePipeOptions = Partial<Intl.DisplayNamesOptions> & IntlPi
 export class IntlLanguagePipe implements PipeTransform {
 
   constructor(@Optional() @Inject(INTL_LOCALES) readonly locale?: string | string[] | null,
-              @Optional() @Inject(INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS) readonly defaultOptions?: Partial<Intl.DisplayNamesOptions> | null) {
+              @Optional() @Inject(INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS) readonly defaultOptions?: Omit<IntlLanguagePipeOptions, 'locale'> | null) {
   }
 
   transform(value: string | null | undefined, options?: IntlLanguagePipeOptions): string | null {

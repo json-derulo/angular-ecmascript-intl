@@ -4,7 +4,8 @@ import {INTL_LOCALES} from "../locale";
 import {INTL_DECIMAL_PIPE_DEFAULT_OPTIONS} from "./intl-decimal-pipe-default-options";
 import {getNumericValue} from "../utils/number-utils";
 
-export type IntlDecimalPipeOptions = Partial<Intl.NumberFormatOptions> & IntlPipeOptions;
+type OmitOptions = 'unit' | 'unitDisplay' | 'currency' | 'currencyDisplay' | 'currencySign';
+export type IntlDecimalPipeOptions = Omit<Partial<Intl.NumberFormatOptions>, OmitOptions> & IntlPipeOptions;
 
 @Pipe({
   name: 'intlDecimal',
@@ -13,7 +14,7 @@ export type IntlDecimalPipeOptions = Partial<Intl.NumberFormatOptions> & IntlPip
 export class IntlDecimalPipe implements PipeTransform {
 
   constructor(@Optional() @Inject(INTL_LOCALES) readonly locale?: string | string[] | null,
-              @Optional() @Inject(INTL_DECIMAL_PIPE_DEFAULT_OPTIONS) readonly defaultOptions?: Partial<Intl.NumberFormatOptions> | null) {
+              @Optional() @Inject(INTL_DECIMAL_PIPE_DEFAULT_OPTIONS) readonly defaultOptions?: Omit<IntlDecimalPipeOptions, 'locale'> | null) {
   }
 
   transform(value: number | string | null | undefined, options?: IntlDecimalPipeOptions): string | null {

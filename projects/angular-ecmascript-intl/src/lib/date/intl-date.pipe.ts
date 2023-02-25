@@ -12,7 +12,7 @@ export type IntlDatePipeOptions = Partial<Intl.DateTimeFormatOptions> & IntlPipe
 export class IntlDatePipe implements PipeTransform {
 
   constructor(@Optional() @Inject(INTL_LOCALES) readonly locale?: string | string[] | null,
-              @Optional() @Inject(INTL_DATE_PIPE_DEFAULT_OPTIONS) readonly defaultOptions?: Partial<Intl.DateTimeFormatOptions> | null) {
+              @Optional() @Inject(INTL_DATE_PIPE_DEFAULT_OPTIONS) readonly defaultOptions?: Omit<IntlDatePipeOptions, 'locale'> | null) {
   }
 
   transform(value: string | number | Date | null | undefined, options?: IntlDatePipeOptions): string | null {
