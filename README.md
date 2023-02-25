@@ -170,6 +170,30 @@ their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/G
 
 With the `INTL_COUNTRY_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
 
+### Unit pipe
+
+Use the unit pipe like the following:
+
+```
+{{1.2 | intlUnit: 'hour': options}}
+```
+
+The input can be one of the following:
+
+* number
+* string (must be parseable as number)
+* null
+* undefined
+
+The unit parameter is required, see
+the [specification](https://tc39.es/proposal-unified-intl-numberformat/section6/locales-currencies-tz_proposed_out.html#sec-issanctionedsimpleunitidentifier)
+for a full list of possible values. If you want to transform a decimal number instead, use the `intlDecimal` pipe.
+
+The options are the same as the options for `new Intl.NumberFormat()`. For a list of the options, see
+their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat).
+
+With the `INTL_UNIT_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
+
 ## Background
 
 For more context, see the following [GitHub issue](https://github.com/angular/angular/issues/49143)
@@ -177,10 +201,7 @@ For more context, see the following [GitHub issue](https://github.com/angular/an
 ## Feature Roadmap
 
 * Performance: Prepare Intl.* object with default options, only construct new object when necessary
-* Relative time
+* Limit options to only what is allowed by Intl API
+* List pipe
+* Relative time pipe
 * Migration Schematics for usages of Angular pipes
-
-## Chore Roadmap
-
-* Automatic npm publishing
-* Automatic changelog generation

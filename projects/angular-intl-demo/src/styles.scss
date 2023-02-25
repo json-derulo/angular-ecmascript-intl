@@ -18,6 +18,7 @@ $dark-theme: mat.define-dark-theme((
   ),
 ));
 
+@include mat.core-theme($light-theme);
 @include mat.legacy-button-color($light-theme);
 @include mat.button-theme($light-theme);
 @include mat.toolbar-theme($light-theme);

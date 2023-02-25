@@ -7,6 +7,7 @@ import {PercentComponent} from "./percent/percent.component";
 import {CurrencyComponent} from "./currency/currency.component";
 import {LanguageComponent} from "./language/language.component";
 import {CountryComponent} from "./country/country.component";
+import {UnitComponent} from "./unit/unit.component";
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
       {
         path: 'currency',
         component: CurrencyComponent,
+      },
+      {
+        path: 'unit',
+        component: UnitComponent,
       },
       {
         path: 'language',

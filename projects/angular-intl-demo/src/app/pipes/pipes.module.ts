@@ -15,6 +15,7 @@ import {PipesRoutingModule} from "./pipes-routing.module";
 import {CountryComponent} from "./country/country.component";
 import {NgxMatDatetimePickerModule, NgxMatNativeDateModule} from "@angular-material-components/datetime-picker";
 import {MatDatepickerModule} from "@angular/material/datepicker";
+import {UnitComponent} from "./unit/unit.component";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
     CurrencyComponent,
     PipesComponent,
     CountryComponent,
+    UnitComponent,
   ],
   imports: [
     CommonModule,
