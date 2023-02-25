@@ -16,3 +16,5 @@ export * from './lib/language/intl-language-pipe-default-options';
 export * from './lib/locale';
 export * from './lib/percent/intl-percent.pipe';
 export * from './lib/percent/intl-percent-pipe-default-options';
+export * from './lib/unit/intl-unit.pipe';
+export * from './lib/unit/intl-unit-pipe-default-options';
