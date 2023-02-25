@@ -8,6 +8,7 @@ import {CurrencyComponent} from "./currency/currency.component";
 import {LanguageComponent} from "./language/language.component";
 import {CountryComponent} from "./country/country.component";
 import {UnitComponent} from "./unit/unit.component";
+import {ListComponent} from "./list/list.component";
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
       {
         path: 'country',
         component: CountryComponent,
+      },
+      {
+        path: 'list',
+        component: ListComponent,
       },
       {
         path: '',

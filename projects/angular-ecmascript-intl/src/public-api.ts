@@ -13,6 +13,8 @@ export * from './lib/decimal/intl-decimal-pipe-default-options';
 export * from './lib/intl.module';
 export * from './lib/language/intl-language.pipe';
 export * from './lib/language/intl-language-pipe-default-options';
+export * from './lib/list/intl-list.pipe';
+export * from './lib/list/intl-list-pipe-default-options';
 export * from './lib/locale';
 export * from './lib/percent/intl-percent.pipe';
 export * from './lib/percent/intl-percent-pipe-default-options';

@@ -13,6 +13,8 @@
      routerLinkActive>Language</a>
   <a #countryActive="routerLinkActive" [active]="countryActive.isActive" mat-tab-link routerLink="country"
      routerLinkActive>Country</a>
+  <a #listActive="routerLinkActive" [active]="listActive.isActive" mat-tab-link routerLink="list"
+     routerLinkActive>List</a>
 </nav>
 <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
 

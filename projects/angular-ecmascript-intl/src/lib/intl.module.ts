@@ -6,6 +6,7 @@ import {IntlPercentPipe} from "./percent/intl-percent.pipe";
 import {IntlCurrencyPipe} from "./currency/intl-currency.pipe";
 import {IntlCountryPipe} from "./country/intl-country.pipe";
 import {IntlUnitPipe} from "./unit/intl-unit.pipe";
+import {IntlListPipe} from "./list/intl-list.pipe";
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import {IntlUnitPipe} from "./unit/intl-unit.pipe";
     IntlCurrencyPipe,
     IntlCountryPipe,
     IntlUnitPipe,
+    IntlListPipe,
   ],
   exports: [
     IntlDatePipe,
@@ -25,6 +27,7 @@ import {IntlUnitPipe} from "./unit/intl-unit.pipe";
     IntlCurrencyPipe,
     IntlCountryPipe,
     IntlUnitPipe,
+    IntlListPipe,
   ],
 })
 export class IntlModule {
