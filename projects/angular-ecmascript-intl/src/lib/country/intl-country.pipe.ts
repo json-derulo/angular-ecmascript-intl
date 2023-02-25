@@ -3,7 +3,7 @@ import {INTL_LOCALES} from "../locale";
 import {INTL_COUNTRY_PIPE_DEFAULT_OPTIONS} from "./intl-country-pipe-default-options";
 import {IntlPipeOptions} from "../intl-pipe-options";
 
-export type IntlCountryPipeOptions = Partial<Intl.DisplayNamesOptions> & IntlPipeOptions;
+export type IntlCountryPipeOptions = Omit<Partial<Intl.DisplayNamesOptions>, 'languageDisplay'> & IntlPipeOptions;
 
 @Pipe({
   name: 'intlCountry',
@@ -12,7 +12,7 @@ export type IntlCountryPipeOptions = Partial<Intl.DisplayNamesOptions> & IntlPip
 export class IntlCountryPipe implements PipeTransform {
 
   constructor(@Optional() @Inject(INTL_LOCALES) readonly locale?: string | string[] | null,
-              @Optional() @Inject(INTL_COUNTRY_PIPE_DEFAULT_OPTIONS) readonly defaultOptions?: Partial<Intl.DisplayNamesOptions> | null) {
+              @Optional() @Inject(INTL_COUNTRY_PIPE_DEFAULT_OPTIONS) readonly defaultOptions?: Omit<IntlCountryPipeOptions, 'locale'> | null) {
   }
 
   transform(value: string | null | undefined, options?: IntlCountryPipeOptions): string | null {

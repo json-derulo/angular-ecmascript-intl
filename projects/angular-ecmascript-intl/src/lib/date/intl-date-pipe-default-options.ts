@@ -1,3 +1,4 @@
 import {InjectionToken} from "@angular/core";
+import {IntlDatePipeOptions} from "./intl-date.pipe";
 
-export const INTL_DATE_PIPE_DEFAULT_OPTIONS = new InjectionToken<Partial<Intl.DateTimeFormatOptions>>('IntlDatePipeDefaultOptions');
+export const INTL_DATE_PIPE_DEFAULT_OPTIONS = new InjectionToken<Omit<IntlDatePipeOptions, 'locale'>>('IntlDatePipeDefaultOptions');
