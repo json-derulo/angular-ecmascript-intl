@@ -13,7 +13,7 @@ $light-theme: mat.define-light-theme((
 
 $dark-theme: mat.define-dark-theme((
   color: (
-    primary: mat.define-palette(mat.$deep-purple-palette),
+    primary: mat.define-palette(mat.$purple-palette),
     accent: mat.define-palette(mat.$deep-orange-palette),
   ),
 ));

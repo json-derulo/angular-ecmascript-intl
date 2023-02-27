@@ -46,6 +46,7 @@
     "@typescript-eslint/eslint-plugin": "~5.53.0",
     "@typescript-eslint/parser": "~5.53.0",
     "cpy-cli": "^4.2.0",
+    "dayjs": "^1.11.7",
     "eslint": "^8.33.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",

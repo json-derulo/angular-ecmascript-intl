@@ -17,6 +17,7 @@ import {NgxMatDatetimePickerModule, NgxMatNativeDateModule} from "@angular-mater
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {UnitComponent} from "./unit/unit.component";
 import {ListComponent} from "./list/list.component";
+import {RelativeTimeComponent} from './relative-time/relative-time.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {ListComponent} from "./list/list.component";
     CountryComponent,
     UnitComponent,
     ListComponent,
+    RelativeTimeComponent,
   ],
   imports: [
     CommonModule,

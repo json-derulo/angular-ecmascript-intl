@@ -1,0 +1,37 @@
+<div class="fields-container">
+  <mat-form-field>
+    <mat-label>Date</mat-label>
+    <input [(ngModel)]="selectedDate" [ngxMatDatetimePicker]="picker" matInput placeholder="Choose a date">
+    <mat-datepicker-toggle [for]="$any(picker)" matSuffix></mat-datepicker-toggle>
+    <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Locale</mat-label>
+    <mat-select [(ngModel)]="locale">
+      <mat-option [value]="undefined">Browser default</mat-option>
+      <mat-option *ngFor="let language of languages" [value]="language">{{language}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Numeric</mat-label>
+    <mat-select [(ngModel)]="numeric">
+      <mat-option [value]="undefined">Browser default</mat-option>
+      <mat-option [value]="'auto'">auto</mat-option>
+      <mat-option [value]="'always'">always</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Style</mat-label>
+    <mat-select [(ngModel)]="style">
+      <mat-option [value]="undefined">Browser default</mat-option>
+      <mat-option [value]="'long'">long</mat-option>
+      <mat-option [value]="'short'">short</mat-option>
+      <mat-option [value]="'narrow'">narrow</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<p>{{selectedDate | intlRelativeTime: {locale, numeric, style} }}</p>

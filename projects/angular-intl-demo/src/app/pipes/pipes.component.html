@@ -15,6 +15,9 @@
      routerLinkActive>Country</a>
   <a #listActive="routerLinkActive" [active]="listActive.isActive" mat-tab-link routerLink="list"
      routerLinkActive>List</a>
+  <a #relativeTimeActive="routerLinkActive" [active]="relativeTimeActive.isActive" mat-tab-link
+     routerLink="relative-time"
+     routerLinkActive>Relative Time</a>
 </nav>
 <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
 
