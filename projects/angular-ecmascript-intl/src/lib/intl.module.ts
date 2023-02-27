@@ -7,6 +7,7 @@ import {IntlCurrencyPipe} from "./currency/intl-currency.pipe";
 import {IntlCountryPipe} from "./country/intl-country.pipe";
 import {IntlUnitPipe} from "./unit/intl-unit.pipe";
 import {IntlListPipe} from "./list/intl-list.pipe";
+import {IntlRelativeTimePipe} from "./relative-time/relative-time.pipe";
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import {IntlListPipe} from "./list/intl-list.pipe";
     IntlCountryPipe,
     IntlUnitPipe,
     IntlListPipe,
+    IntlRelativeTimePipe,
   ],
   exports: [
     IntlDatePipe,
@@ -28,6 +30,7 @@ import {IntlListPipe} from "./list/intl-list.pipe";
     IntlCountryPipe,
     IntlUnitPipe,
     IntlListPipe,
+    IntlRelativeTimePipe,
   ],
 })
 export class IntlModule {

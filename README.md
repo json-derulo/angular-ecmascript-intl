@@ -213,12 +213,27 @@ their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/G
 
 With the `INTL_LIST_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
 
+## Relative Time (timeago) pipe
+
+Use the relative time pipe like the following:
+
+```
+{{myDate | intlRelativeTime: options}}
+```
+
+The input date can be one of the following:
+
+* `Date` object
+* number (UNIX timestamp)
+* string (will be parsed by `new Date()` constructor)
+* null
+* undefined
+
+The options are a subset of the options for `new Intl.RelativeTimeFormat()`. For a list of the options, see
+their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat#options).
+
+With the `INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
+
 ## Background
 
 For more context, see the following [GitHub issue](https://github.com/angular/angular/issues/49143)
-
-## Feature Roadmap
-
-* Performance: Prepare Intl.* object with default options, only construct new object when necessary
-* Relative time pipe
-* Migration Schematics for usages of Angular pipes

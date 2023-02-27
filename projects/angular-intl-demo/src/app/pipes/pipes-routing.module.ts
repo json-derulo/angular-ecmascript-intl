@@ -9,6 +9,7 @@ import {LanguageComponent} from "./language/language.component";
 import {CountryComponent} from "./country/country.component";
 import {UnitComponent} from "./unit/unit.component";
 import {ListComponent} from "./list/list.component";
+import {RelativeTimeComponent} from "./relative-time/relative-time.component";
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
       {
         path: 'list',
         component: ListComponent,
+      },
+      {
+        path: 'relative-time',
+        component: RelativeTimeComponent,
       },
       {
         path: '',
