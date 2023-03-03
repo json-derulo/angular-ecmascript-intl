@@ -8,7 +8,7 @@ import {languages} from "../../languages";
   styleUrls: ['./relative-time.component.scss'],
 })
 export class RelativeTimeComponent {
-  selectedDate = new Date();
+  selectedDate = new Date(new Date().getTime() - 60000);
   languages = languages;
   numeric?: IntlRelativeTimePipeOptions['numeric'];
   style?: IntlRelativeTimePipeOptions['style'];

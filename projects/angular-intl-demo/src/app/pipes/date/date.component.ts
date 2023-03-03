@@ -12,5 +12,6 @@ export class DateComponent {
   dateStyle: Intl.DateTimeFormatOptions['dateStyle'];
   timeStyle: Intl.DateTimeFormatOptions['timeStyle'];
   hour12: Intl.DateTimeFormatOptions['hour12'];
+  dayPeriod: Intl.DateTimeFormatOptions['dayPeriod'];
   locale?: string;
 }

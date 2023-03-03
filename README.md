@@ -44,6 +44,8 @@ export class MyModule {
 }
 ```
 
+Also, every pipe accepts the `locale` option.
+
 Now you can use the pipes, see below.
 
 ## Pipes
@@ -64,8 +66,11 @@ The input date can be one of the following:
 * null
 * undefined
 
-The options are a subset of the options for `new Intl.DateTimeFormat()`. For a list of the options, see
-their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options).
+The following options are supported:
+
+* [`dateStyle`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#datestyle)
+* [`timeStyle`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#timestyle)
+* [`hour12`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#hour12)
 
 With the `INTL_DATE_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
 
@@ -84,8 +89,15 @@ The input can be one of the following:
 * null
 * undefined
 
-The options are a subset of the options for `new Intl.NumberFormat()`. For a list of the options, see
-their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#options).
+The following options are supported:
+
+* [`notation`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#notation)
+* [`signDisplay`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#signdisplay)
+* [`minimumIntegerDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#minimumintegerdigits)
+* [`minimumFractionDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#minimumfractiondigits)
+* [`maximumFractionDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#maximumfractiondigits)
+* [`minimumSignificantDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#minimumsignificantdigits)
+* [`maximumSignificantDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#maximumsignificantdigits)
 
 With the `INTL_DECIMAL_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
 
@@ -104,8 +116,15 @@ The input can be one of the following:
 * null
 * undefined
 
-The options are a subset of the options for `new Intl.NumberFormat()`. For a list of the options, see
-their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#options).
+The following options are supported:
+
+* [`notation`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#notation)
+* [`signDisplay`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#signdisplay)
+* [`minimumIntegerDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#minimumintegerdigits)
+* [`minimumFractionDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#minimumfractiondigits)
+* [`maximumFractionDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#maximumfractiondigits)
+* [`minimumSignificantDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#minimumsignificantdigits)
+* [`maximumSignificantDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#maximumsignificantdigits)
 
 With the `INTL_PERCENT_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
 
@@ -127,8 +146,17 @@ The input can be one of the following:
 The currency code parameter is required and must be a valid ISO 4217 currency code. If you want to transform a decimal
 number instead, use the `intlDecimal` pipe.
 
-The options are a subset of the options for `new Intl.NumberFormat()`. For a list of the options, see
-their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#options).
+The following additional options are supported:
+
+* [`currencyDisplay`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#currencydisplay)
+* [`currencySign`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#currencysign)
+* [`notation`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#notation)
+* [`signDisplay`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#signdisplay)
+* [`minimumIntegerDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#minimumintegerdigits)
+* [`minimumFractionDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#minimumfractiondigits)
+* [`maximumFractionDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#maximumfractiondigits)
+* [`minimumSignificantDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#minimumsignificantdigits)
+* [`maximumSignificantDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#maximumsignificantdigits)
 
 With the `INTL_CURRENCY_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
 
@@ -146,8 +174,9 @@ The input can be one of the following:
 * null
 * undefined
 
-The options are a subset of the options for `new Intl.DisplayNames()`. For a list of the options, see
-their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames/DisplayNames#options).
+The following option is supported:
+
+* [`languageDisplay`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames/DisplayNames#languagedisplay)
 
 With the `INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
 
@@ -164,11 +193,6 @@ The input can be one of the following:
 * string (must be two-letter ISO 639-1 language code or a three-letter ISO 639-2 language code)
 * null
 * undefined
-
-The options are a subset of the options for `new Intl.DisplayNames()`. For a list of the options, see
-their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames/DisplayNames#options).
-
-With the `INTL_COUNTRY_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
 
 ### Unit pipe
 
@@ -189,8 +213,16 @@ The unit parameter is required, see
 the [specification](https://tc39.es/proposal-unified-intl-numberformat/section6/locales-currencies-tz_proposed_out.html#sec-issanctionedsimpleunitidentifier)
 for a full list of possible values. If you want to transform a decimal number instead, use the `intlDecimal` pipe.
 
-The options are a subset of the options for `new Intl.NumberFormat()`. For a list of the options, see
-their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#options).
+The following additional options are supported:
+
+* [`unitDisplay`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#unitdisplay)
+* [`notation`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#notation)
+* [`signDisplay`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#signdisplay)
+* [`minimumIntegerDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#minimumintegerdigits)
+* [`minimumFractionDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#minimumfractiondigits)
+* [`maximumFractionDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#maximumfractiondigits)
+* [`minimumSignificantDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#minimumsignificantdigits)
+* [`maximumSignificantDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#maximumsignificantdigits)
 
 With the `INTL_UNIT_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
 
@@ -208,12 +240,17 @@ The input can be one of the following:
 * null
 * undefined
 
-The options are a subset of the options for `new Intl.ListFormat()`. For a list of the options, see
-their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/ListFormat#options).
+The following options are supported:
+
+* [`type`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/ListFormat#type)
+* [`style`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/ListFormat#style)
 
 With the `INTL_LIST_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
 
 ## Relative Time (timeago) pipe
+
+The relative time format will format the input date compared to the current date in a "timeago" format. Every minute,
+the value will be updated automatically.
 
 Use the relative time pipe like the following:
 
@@ -229,8 +266,10 @@ The input date can be one of the following:
 * null
 * undefined
 
-The options are a subset of the options for `new Intl.RelativeTimeFormat()`. For a list of the options, see
-their [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat#options).
+The following options are supported:
+
+* [`numeric`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat#numeric)
+* [`style`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat#style)
 
 With the `INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
 
