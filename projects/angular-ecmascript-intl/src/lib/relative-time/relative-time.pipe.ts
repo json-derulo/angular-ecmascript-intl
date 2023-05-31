@@ -54,17 +54,17 @@ export class IntlRelativeTimePipe implements PipeTransform, OnDestroy {
     const currentTime = new Date().getTime();
     const factor = time < currentTime ? -1 : 1;
     const diff = Math.abs(time - currentTime);
-    if (diff > Time.oneYear) {
+    if (diff > (Time.oneYear as number)) {
       return relativeTimeFormat.format(factor * Math.floor(diff / Time.oneYear), 'year');
-    } else if (diff > Time.oneMonth) {
+    } else if (diff > (Time.oneMonth as number)) {
       return relativeTimeFormat.format(factor * Math.floor(diff / Time.oneMonth), 'month');
-    } else if (diff > Time.oneWeek) {
+    } else if (diff > (Time.oneWeek as number)) {
       return relativeTimeFormat.format(factor * Math.floor(diff / Time.oneWeek), 'week');
-    } else if (diff > Time.oneDay) {
+    } else if (diff > (Time.oneDay as number)) {
       return relativeTimeFormat.format(factor * Math.floor(diff / Time.oneDay), 'day');
-    } else if (diff > Time.oneHour) {
+    } else if (diff > (Time.oneHour as number)) {
       return relativeTimeFormat.format(factor * Math.floor(diff / Time.oneHour), 'hour');
-    } else if (diff > Time.oneMinute) {
+    } else if (diff > (Time.oneMinute as number)) {
       return relativeTimeFormat.format(factor * Math.floor(diff / Time.oneMinute), 'minute');
     } else {
       return relativeTimeFormat.format(0, 'minute');
