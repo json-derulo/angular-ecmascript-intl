@@ -1,7 +1,6 @@
 name: Verify build
 
 on:
-  workflow_dispatch:
   pull_request_target:
     types: [ opened, synchronize, reopened ]
 
@@ -25,6 +24,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: install
         run: npm ci
@@ -37,6 +38,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: install
         run: npm ci
