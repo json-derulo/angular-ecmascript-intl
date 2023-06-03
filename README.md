@@ -273,6 +273,13 @@ The following options are supported:
 
 With the `INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
 
+## Angular compatibility table
+
+| Angular | angular-ecmascript-intl |
+|---------|-------------------------|
+| 16      | 2.x                     |
+| 15      | 1.x                     |
+
 ## Background
 
 For more context, see the following [GitHub issue](https://github.com/angular/angular/issues/49143)
