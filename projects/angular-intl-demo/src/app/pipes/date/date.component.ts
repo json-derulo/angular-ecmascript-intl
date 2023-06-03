@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {languages} from '../../languages';
+import {getDateString} from "../date-utils";
 
 @Component({
   selector: 'app-date',
@@ -8,7 +9,7 @@ import {languages} from '../../languages';
 })
 export class DateComponent {
   languages = languages;
-  selectedDate = new Date();
+  selectedDate = getDateString();
   dateStyle: Intl.DateTimeFormatOptions['dateStyle'];
   timeStyle: Intl.DateTimeFormatOptions['timeStyle'];
   hour12: Intl.DateTimeFormatOptions['hour12'];
