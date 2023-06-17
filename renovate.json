@@ -1,7 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "group:angularMonorepo",
     "group:angular-eslintMonorepo",
     "group:typescript-eslintMonorepo"
   ],
@@ -20,6 +19,16 @@
         "lockFileMaintenance"
       ],
       "automerge": true
+    },
+    {
+      "matchPackagePrefixes": [
+        "@angular/",
+        "@angular-devkit/"
+      ],
+      "matchPackageNames": [
+        "ng-packagr"
+      ],
+      "groupName": "angular"
     }
   ]
 }
