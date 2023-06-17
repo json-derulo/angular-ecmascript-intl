@@ -19,24 +19,20 @@ $dark-theme: mat.define-dark-theme((
 ));
 
 @include mat.core-theme($light-theme);
-@include mat.legacy-button-color($light-theme);
 @include mat.button-theme($light-theme);
 @include mat.toolbar-theme($light-theme);
 @include mat.tabs-theme($light-theme);
 @include mat.select-theme($light-theme);
 @include mat.input-theme($light-theme);
-@include mat.datepicker-theme($light-theme);
 @include mat.form-field-theme($light-theme);
 
 @media (prefers-color-scheme: dark) {
   @include mat.core-color($dark-theme);
-  @include mat.legacy-button-color($dark-theme);
   @include mat.button-color($dark-theme);
   @include mat.toolbar-color($dark-theme);
   @include mat.tabs-color($dark-theme);
   @include mat.select-color($dark-theme);
   @include mat.input-color($dark-theme);
-  @include mat.datepicker-color($dark-theme);
   @include mat.form-field-color($dark-theme);
 }
 
