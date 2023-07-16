@@ -1,7 +1,13 @@
 <div class="fields-container">
   <mat-form-field>
     <mat-label>Date</mat-label>
-    <input #picker [(ngModel)]="selectedDate" matInput placeholder="Choose a date" type="datetime-local">
+    <input
+      #picker
+      [(ngModel)]="selectedDate"
+      matInput
+      placeholder="Choose a date"
+      type="datetime-local"
+    />
     <button (click)="picker.showPicker()" mat-icon-button matIconSuffix>
       <mat-icon>today</mat-icon>
     </button>
@@ -11,7 +17,9 @@
     <mat-label>Locale</mat-label>
     <mat-select [(ngModel)]="locale">
       <mat-option [value]="undefined">Browser default</mat-option>
-      <mat-option *ngFor="let language of languages" [value]="language">{{language}}</mat-option>
+      <mat-option *ngFor="let language of languages" [value]="language">{{
+        language
+      }}</mat-option>
     </mat-select>
   </mat-form-field>
 
@@ -35,4 +43,4 @@
   </mat-form-field>
 </div>
 
-<p>{{selectedDate | intlRelativeTime: {locale, numeric, style} }}</p>
+<p>{{ selectedDate | intlRelativeTime: { locale, numeric, style } }}</p>

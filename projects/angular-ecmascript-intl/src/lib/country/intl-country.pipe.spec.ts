@@ -1,7 +1,7 @@
-import {IntlCountryPipe} from './intl-country.pipe';
-import {TestBed} from "@angular/core/testing";
-import {INTL_LOCALES} from "../locale";
-import {INTL_COUNTRY_PIPE_DEFAULT_OPTIONS} from "./intl-country-pipe-default-options";
+import { IntlCountryPipe } from './intl-country.pipe';
+import { TestBed } from '@angular/core/testing';
+import { INTL_LOCALES } from '../locale';
+import { INTL_COUNTRY_PIPE_DEFAULT_OPTIONS } from './intl-country-pipe-default-options';
 
 describe('IntlCountryPipe', () => {
   let testUnit: IntlCountryPipe;
@@ -58,7 +58,7 @@ describe('IntlCountryPipe', () => {
     });
 
     it('should fall back to the browser default locale', () => {
-      TestBed.configureTestingModule({providers: [IntlCountryPipe]});
+      TestBed.configureTestingModule({ providers: [IntlCountryPipe] });
 
       const result1 = TestBed.inject(IntlCountryPipe).transform('US');
       const result2 = new IntlCountryPipe(navigator.language).transform('US');
@@ -86,7 +86,9 @@ describe('IntlCountryPipe', () => {
       });
       testUnit = TestBed.inject(IntlCountryPipe);
 
-      expect(testUnit.transform('DE', {type: 'language'})).toEqual('Deutschland');
+      expect(testUnit.transform('DE', { type: 'language' })).toEqual(
+        'Deutschland',
+      );
     });
   });
 
@@ -102,6 +104,8 @@ describe('IntlCountryPipe', () => {
     });
     testUnit = TestBed.inject(IntlCountryPipe);
 
-    expect(testUnit.transform('US', {locale: 'de-DE'})).toEqual('Vereinigte Staaten');
+    expect(testUnit.transform('US', { locale: 'de-DE' })).toEqual(
+      'Vereinigte Staaten',
+    );
   });
 });

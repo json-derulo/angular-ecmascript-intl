@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {languages} from "../../languages";
-import {IntlLanguagePipeOptions} from "../../../../../angular-ecmascript-intl/src/lib/language/intl-language.pipe";
+import { Component } from '@angular/core';
+import { languages } from '../../languages';
+import { IntlLanguagePipeOptions } from '../../../../../angular-ecmascript-intl/src/lib/language/intl-language.pipe';
 
 @Component({
   selector: 'app-language',

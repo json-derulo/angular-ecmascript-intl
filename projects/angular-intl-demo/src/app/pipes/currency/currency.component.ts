@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {languages} from '../../languages';
-import {currencies} from "./currencies";
+import { Component } from '@angular/core';
+import { languages } from '../../languages';
+import { currencies } from './currencies';
 
 @Component({
   selector: 'app-currency',
@@ -17,9 +17,19 @@ export class CurrencyComponent {
   signDisplay?: Intl.NumberFormatOptions['signDisplay'];
   currencyDisplay?: Intl.NumberFormatOptions['currencyDisplay'];
   currencySign?: Intl.NumberFormatOptions['currencySign'];
-  minimumIntegerDigits?: Intl.NumberFormatOptions['minimumIntegerDigits'] | null;
-  minimumFractionDigits?: Intl.NumberFormatOptions['minimumFractionDigits'] | null;
-  maximumFractionDigits?: Intl.NumberFormatOptions['maximumFractionDigits'] | null;
-  minimumSignificantDigits?: Intl.NumberFormatOptions['minimumSignificantDigits'] | null;
-  maximumSignificantDigits?: Intl.NumberFormatOptions['maximumSignificantDigits'] | null;
+  minimumIntegerDigits?:
+    | Intl.NumberFormatOptions['minimumIntegerDigits']
+    | null;
+  minimumFractionDigits?:
+    | Intl.NumberFormatOptions['minimumFractionDigits']
+    | null;
+  maximumFractionDigits?:
+    | Intl.NumberFormatOptions['maximumFractionDigits']
+    | null;
+  minimumSignificantDigits?:
+    | Intl.NumberFormatOptions['minimumSignificantDigits']
+    | null;
+  maximumSignificantDigits?:
+    | Intl.NumberFormatOptions['maximumSignificantDigits']
+    | null;
 }

@@ -1,6 +1,6 @@
-import {IntlListPipe} from './intl-list.pipe';
-import {TestBed} from "@angular/core/testing";
-import {INTL_LOCALES} from "../locale";
+import { IntlListPipe } from './intl-list.pipe';
+import { TestBed } from '@angular/core/testing';
+import { INTL_LOCALES } from '../locale';
 
 describe('IntlListPipe', () => {
   let testUnit: IntlListPipe;
@@ -53,14 +53,19 @@ describe('IntlListPipe', () => {
       });
       testUnit = TestBed.inject(IntlListPipe);
 
-      expect(testUnit.transform(['Äpfel', 'Birnen'])).toEqual('Äpfel und Birnen');
+      expect(testUnit.transform(['Äpfel', 'Birnen'])).toEqual(
+        'Äpfel und Birnen',
+      );
     });
 
     it('should fall back to the browser default locale', () => {
-      TestBed.configureTestingModule({providers: [IntlListPipe]});
+      TestBed.configureTestingModule({ providers: [IntlListPipe] });
 
       const result1 = TestBed.inject(IntlListPipe).transform(['some', 'val']);
-      const result2 = new IntlListPipe(navigator.language).transform(['some', 'val']);
+      const result2 = new IntlListPipe(navigator.language).transform([
+        'some',
+        'val',
+      ]);
 
       expect(result1).toEqual(result2);
     });
@@ -78,6 +83,8 @@ describe('IntlListPipe', () => {
     });
     testUnit = TestBed.inject(IntlListPipe);
 
-    expect(testUnit.transform(['Äpfel', 'Birnen'], {locale: 'de-DE'})).toEqual('Äpfel und Birnen');
+    expect(
+      testUnit.transform(['Äpfel', 'Birnen'], { locale: 'de-DE' }),
+    ).toEqual('Äpfel und Birnen');
   });
 });

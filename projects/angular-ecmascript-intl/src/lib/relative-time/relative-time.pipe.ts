@@ -1,10 +1,18 @@
-import {ChangeDetectorRef, Inject, OnDestroy, Optional, Pipe, PipeTransform} from '@angular/core';
-import {INTL_LOCALES} from "../locale";
-import {IntlPipeOptions} from "../intl-pipe-options";
-import {INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS} from "./relative-time-pipe-default-options";
-import {interval, Subject, takeUntil} from "rxjs";
+import {
+  ChangeDetectorRef,
+  Inject,
+  OnDestroy,
+  Optional,
+  Pipe,
+  PipeTransform,
+} from '@angular/core';
+import { INTL_LOCALES } from '../locale';
+import { IntlPipeOptions } from '../intl-pipe-options';
+import { INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS } from './relative-time-pipe-default-options';
+import { interval, Subject, takeUntil } from 'rxjs';
 
-export type IntlRelativeTimePipeOptions = Partial<Intl.RelativeTimeFormatOptions> & IntlPipeOptions;
+export type IntlRelativeTimePipeOptions =
+  Partial<Intl.RelativeTimeFormatOptions> & IntlPipeOptions;
 
 enum Time {
   oneSecond = 1000,
@@ -22,15 +30,25 @@ enum Time {
   pure: false,
 })
 export class IntlRelativeTimePipe implements PipeTransform, OnDestroy {
-
   #destroy$?: Subject<void>;
 
-  constructor(@Optional() @Inject(INTL_LOCALES) readonly locales?: string | string[] | null,
-              @Optional() @Inject(INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS) readonly defaultOptions?: Omit<IntlRelativeTimePipeOptions, 'locale'> | null,
-              @Optional() readonly cdr?: ChangeDetectorRef) {
-  }
+  constructor(
+    @Optional()
+    @Inject(INTL_LOCALES)
+    readonly locales?: string | string[] | null,
+    @Optional()
+    @Inject(INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS)
+    readonly defaultOptions?: Omit<
+      IntlRelativeTimePipeOptions,
+      'locale'
+    > | null,
+    @Optional() readonly cdr?: ChangeDetectorRef,
+  ) {}
 
-  transform(value: string | number | Date | null | undefined, options?: IntlRelativeTimePipeOptions): string | null {
+  transform(
+    value: string | number | Date | null | undefined,
+    options?: IntlRelativeTimePipeOptions,
+  ): string | null {
     if (typeof value !== 'number' && !value) {
       return null;
     }
@@ -48,24 +66,42 @@ export class IntlRelativeTimePipe implements PipeTransform, OnDestroy {
 
     const relativeTimeFormat = new Intl.RelativeTimeFormat(
       options?.locale ?? this.locales ?? undefined,
-      {...this.defaultOptions, ...options},
+      { ...this.defaultOptions, ...options },
     );
 
     const currentTime = new Date().getTime();
     const factor = time < currentTime ? -1 : 1;
     const diff = Math.abs(time - currentTime);
     if (diff > (Time.oneYear as number)) {
-      return relativeTimeFormat.format(factor * Math.floor(diff / Time.oneYear), 'year');
+      return relativeTimeFormat.format(
+        factor * Math.floor(diff / Time.oneYear),
+        'year',
+      );
     } else if (diff > (Time.oneMonth as number)) {
-      return relativeTimeFormat.format(factor * Math.floor(diff / Time.oneMonth), 'month');
+      return relativeTimeFormat.format(
+        factor * Math.floor(diff / Time.oneMonth),
+        'month',
+      );
     } else if (diff > (Time.oneWeek as number)) {
-      return relativeTimeFormat.format(factor * Math.floor(diff / Time.oneWeek), 'week');
+      return relativeTimeFormat.format(
+        factor * Math.floor(diff / Time.oneWeek),
+        'week',
+      );
     } else if (diff > (Time.oneDay as number)) {
-      return relativeTimeFormat.format(factor * Math.floor(diff / Time.oneDay), 'day');
+      return relativeTimeFormat.format(
+        factor * Math.floor(diff / Time.oneDay),
+        'day',
+      );
     } else if (diff > (Time.oneHour as number)) {
-      return relativeTimeFormat.format(factor * Math.floor(diff / Time.oneHour), 'hour');
+      return relativeTimeFormat.format(
+        factor * Math.floor(diff / Time.oneHour),
+        'hour',
+      );
     } else if (diff > (Time.oneMinute as number)) {
-      return relativeTimeFormat.format(factor * Math.floor(diff / Time.oneMinute), 'minute');
+      return relativeTimeFormat.format(
+        factor * Math.floor(diff / Time.oneMinute),
+        'minute',
+      );
     } else {
       return relativeTimeFormat.format(0, 'minute');
     }

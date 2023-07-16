@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {languages} from '../../languages';
+import { Component } from '@angular/core';
+import { languages } from '../../languages';
 
 @Component({
   selector: 'app-decimal',
@@ -12,9 +12,19 @@ export class DecimalComponent {
   locale?: string;
   notation?: Intl.NumberFormatOptions['notation'];
   signDisplay?: Intl.NumberFormatOptions['signDisplay'];
-  minimumIntegerDigits?: Intl.NumberFormatOptions['minimumIntegerDigits'] | null;
-  minimumFractionDigits?: Intl.NumberFormatOptions['minimumFractionDigits'] | null;
-  maximumFractionDigits?: Intl.NumberFormatOptions['maximumFractionDigits'] | null;
-  minimumSignificantDigits?: Intl.NumberFormatOptions['minimumSignificantDigits'] | null;
-  maximumSignificantDigits?: Intl.NumberFormatOptions['maximumSignificantDigits'] | null;
+  minimumIntegerDigits?:
+    | Intl.NumberFormatOptions['minimumIntegerDigits']
+    | null;
+  minimumFractionDigits?:
+    | Intl.NumberFormatOptions['minimumFractionDigits']
+    | null;
+  maximumFractionDigits?:
+    | Intl.NumberFormatOptions['maximumFractionDigits']
+    | null;
+  minimumSignificantDigits?:
+    | Intl.NumberFormatOptions['minimumSignificantDigits']
+    | null;
+  maximumSignificantDigits?:
+    | Intl.NumberFormatOptions['maximumSignificantDigits']
+    | null;
 }

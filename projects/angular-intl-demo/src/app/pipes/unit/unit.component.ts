@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {languages} from '../../languages';
-import {units} from "./units";
+import { Component } from '@angular/core';
+import { languages } from '../../languages';
+import { units } from './units';
 
 @Component({
   selector: 'app-unit',
@@ -16,9 +16,19 @@ export class UnitComponent {
   notation?: Intl.NumberFormatOptions['notation'];
   signDisplay?: Intl.NumberFormatOptions['signDisplay'];
   unitDisplay?: Intl.NumberFormatOptions['unitDisplay'];
-  minimumIntegerDigits?: Intl.NumberFormatOptions['minimumIntegerDigits'] | null;
-  minimumFractionDigits?: Intl.NumberFormatOptions['minimumFractionDigits'] | null;
-  maximumFractionDigits?: Intl.NumberFormatOptions['maximumFractionDigits'] | null;
-  minimumSignificantDigits?: Intl.NumberFormatOptions['minimumSignificantDigits'] | null;
-  maximumSignificantDigits?: Intl.NumberFormatOptions['maximumSignificantDigits'] | null;
+  minimumIntegerDigits?:
+    | Intl.NumberFormatOptions['minimumIntegerDigits']
+    | null;
+  minimumFractionDigits?:
+    | Intl.NumberFormatOptions['minimumFractionDigits']
+    | null;
+  maximumFractionDigits?:
+    | Intl.NumberFormatOptions['maximumFractionDigits']
+    | null;
+  minimumSignificantDigits?:
+    | Intl.NumberFormatOptions['minimumSignificantDigits']
+    | null;
+  maximumSignificantDigits?:
+    | Intl.NumberFormatOptions['maximumSignificantDigits']
+    | null;
 }

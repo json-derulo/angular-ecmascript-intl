@@ -1,6 +1,6 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {GettingStartedComponent} from "./getting-started/getting-started.component";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { GettingStartedComponent } from './getting-started/getting-started.component';
 
 const routes: Routes = [
   {
@@ -9,7 +9,8 @@ const routes: Routes = [
   },
   {
     path: 'pipes',
-    loadChildren: () => import('./pipes/pipes.module').then(mod => mod.PipesModule),
+    loadChildren: () =>
+      import('./pipes/pipes.module').then((mod) => mod.PipesModule),
   },
   {
     path: '**',
@@ -18,8 +19,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

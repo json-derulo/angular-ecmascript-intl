@@ -1,14 +1,16 @@
 <div class="fields-container">
   <mat-form-field>
     <mat-label>Number</mat-label>
-    <input [(ngModel)]="enteredNumber" matInput>
+    <input [(ngModel)]="enteredNumber" matInput />
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Locale</mat-label>
     <mat-select [(ngModel)]="locale">
       <mat-option [value]="undefined">Browser default</mat-option>
-      <mat-option *ngFor="let language of languages" [value]="language">{{language}}</mat-option>
+      <mat-option *ngFor="let language of languages" [value]="language">{{
+        language
+      }}</mat-option>
     </mat-select>
   </mat-form-field>
 
@@ -37,40 +39,78 @@
 
   <mat-form-field>
     <mat-label>Minimum integer digits</mat-label>
-    <input [(ngModel)]="minimumIntegerDigits" matInput max="21" min="1" type="number">
+    <input
+      [(ngModel)]="minimumIntegerDigits"
+      matInput
+      max="21"
+      min="1"
+      type="number"
+    />
     <mat-error>Please enter a number from 1 to 21</mat-error>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Minimum fraction digits</mat-label>
-    <input [(ngModel)]="minimumFractionDigits" matInput max="20" min="0" type="number">
+    <input
+      [(ngModel)]="minimumFractionDigits"
+      matInput
+      max="20"
+      min="0"
+      type="number"
+    />
     <mat-error>Please enter a number from 0 to 20</mat-error>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Maximum fraction digits</mat-label>
-    <input [(ngModel)]="maximumFractionDigits" matInput max="20" min="0" type="number">
+    <input
+      [(ngModel)]="maximumFractionDigits"
+      matInput
+      max="20"
+      min="0"
+      type="number"
+    />
     <mat-error>Please enter a number from 0 to 20</mat-error>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Minimum significant digits</mat-label>
-    <input [(ngModel)]="minimumSignificantDigits" matInput max="21" min="1" type="number">
+    <input
+      [(ngModel)]="minimumSignificantDigits"
+      matInput
+      max="21"
+      min="1"
+      type="number"
+    />
     <mat-error>Please enter a number from 1 to 21</mat-error>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Maximum significant digits</mat-label>
-    <input [(ngModel)]="maximumSignificantDigits" matInput max="21" min="1" type="number">
+    <input
+      [(ngModel)]="maximumSignificantDigits"
+      matInput
+      max="21"
+      min="1"
+      type="number"
+    />
     <mat-error>Please enter a number from 1 to 21</mat-error>
   </mat-form-field>
 </div>
 
-<p>{{enteredNumber | intlPercent: {
-  locale, notation, signDisplay,
-  minimumIntegerDigits: minimumIntegerDigits ?? undefined,
-  minimumFractionDigits: minimumFractionDigits ?? undefined,
-  maximumFractionDigits: maximumFractionDigits ?? undefined,
-  minimumSignificantDigits: minimumSignificantDigits ?? undefined,
-  maximumSignificantDigits: maximumSignificantDigits ?? undefined
-} }}</p>
+<p>
+  {{
+    enteredNumber
+      | intlPercent
+        : {
+            locale,
+            notation,
+            signDisplay,
+            minimumIntegerDigits: minimumIntegerDigits ?? undefined,
+            minimumFractionDigits: minimumFractionDigits ?? undefined,
+            maximumFractionDigits: maximumFractionDigits ?? undefined,
+            minimumSignificantDigits: minimumSignificantDigits ?? undefined,
+            maximumSignificantDigits: maximumSignificantDigits ?? undefined
+          }
+  }}
+</p>

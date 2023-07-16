@@ -1,7 +1,7 @@
-import {IntlDatePipe} from './intl-date.pipe';
-import {TestBed} from "@angular/core/testing";
-import {INTL_LOCALES} from "../locale";
-import {INTL_DATE_PIPE_DEFAULT_OPTIONS} from "./intl-date-pipe-default-options";
+import { IntlDatePipe } from './intl-date.pipe';
+import { TestBed } from '@angular/core/testing';
+import { INTL_LOCALES } from '../locale';
+import { INTL_DATE_PIPE_DEFAULT_OPTIONS } from './intl-date-pipe-default-options';
 
 describe('DatePipe', () => {
   let testUnit: IntlDatePipe;
@@ -32,11 +32,15 @@ describe('DatePipe', () => {
     });
 
     it('should transform UTC strings', () => {
-      expect(testUnit.transform('Sun, 19 Feb 2023 11:13:52 GMT')).toEqual('2/19/2023');
+      expect(testUnit.transform('Sun, 19 Feb 2023 11:13:52 GMT')).toEqual(
+        '2/19/2023',
+      );
     });
 
     it('should transform ISO strings', () => {
-      expect(testUnit.transform('2023-02-19T11:13:52.682Z')).toEqual('2/19/2023');
+      expect(testUnit.transform('2023-02-19T11:13:52.682Z')).toEqual(
+        '2/19/2023',
+      );
     });
 
     it('should support Date objects', () => {
@@ -81,7 +85,9 @@ describe('DatePipe', () => {
       TestBed.configureTestingModule({ providers: [IntlDatePipe] });
 
       const result1 = TestBed.inject(IntlDatePipe).transform('2023-02-19');
-      const result2 = new IntlDatePipe(navigator.language).transform('2023-02-19');
+      const result2 = new IntlDatePipe(navigator.language).transform(
+        '2023-02-19',
+      );
 
       expect(result1).toEqual(result2);
     });
@@ -107,7 +113,6 @@ describe('DatePipe', () => {
       testUnit = TestBed.inject(IntlDatePipe);
 
       expect(testUnit.transform('2023-02-19')).toEqual('Feb 19, 2023');
-
     });
 
     it('should give the user options a higher priority', () => {
@@ -128,7 +133,9 @@ describe('DatePipe', () => {
       });
       testUnit = TestBed.inject(IntlDatePipe);
 
-      expect(testUnit.transform('2023-02-19', {dateStyle: 'medium'})).toEqual('Feb 19, 2023');
+      expect(testUnit.transform('2023-02-19', { dateStyle: 'medium' })).toEqual(
+        'Feb 19, 2023',
+      );
     });
   });
 
@@ -144,6 +151,8 @@ describe('DatePipe', () => {
     });
     testUnit = TestBed.inject(IntlDatePipe);
 
-    expect(testUnit.transform('2023-02-19', {locale: 'de-DE'})).toEqual('19.2.2023');
+    expect(testUnit.transform('2023-02-19', { locale: 'de-DE' })).toEqual(
+      '19.2.2023',
+    );
   });
 });

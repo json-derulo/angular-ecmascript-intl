@@ -1,7 +1,7 @@
-import {IntlPercentPipe} from './intl-percent.pipe';
-import {TestBed} from "@angular/core/testing";
-import {INTL_LOCALES} from "../locale";
-import {INTL_PERCENT_PIPE_DEFAULT_OPTIONS} from "./intl-percent-pipe-default-options";
+import { IntlPercentPipe } from './intl-percent.pipe';
+import { TestBed } from '@angular/core/testing';
+import { INTL_LOCALES } from '../locale';
+import { INTL_PERCENT_PIPE_DEFAULT_OPTIONS } from './intl-percent-pipe-default-options';
 
 describe('IntlPercentPipe', () => {
   let testUnit: IntlPercentPipe;
@@ -66,7 +66,7 @@ describe('IntlPercentPipe', () => {
     });
 
     it('should fall back to the browser default locale', () => {
-      TestBed.configureTestingModule({providers: [IntlPercentPipe]});
+      TestBed.configureTestingModule({ providers: [IntlPercentPipe] });
 
       const result1 = TestBed.inject(IntlPercentPipe).transform(0.1);
       const result2 = new IntlPercentPipe(navigator.language).transform(0.1);
@@ -95,7 +95,6 @@ describe('IntlPercentPipe', () => {
       testUnit = TestBed.inject(IntlPercentPipe);
 
       expect(testUnit.transform(1)).toEqual('+100%');
-
     });
 
     it('should give the user options a higher priority', () => {
@@ -116,7 +115,7 @@ describe('IntlPercentPipe', () => {
       });
       testUnit = TestBed.inject(IntlPercentPipe);
 
-      expect(testUnit.transform(1, {signDisplay: 'never'})).toEqual('100%');
+      expect(testUnit.transform(1, { signDisplay: 'never' })).toEqual('100%');
     });
   });
 
@@ -132,7 +131,7 @@ describe('IntlPercentPipe', () => {
     });
     testUnit = TestBed.inject(IntlPercentPipe);
 
-    expect(testUnit.transform(1, {locale: 'de-DE'})).toEqual('100\xa0%');
+    expect(testUnit.transform(1, { locale: 'de-DE' })).toEqual('100\xa0%');
   });
 
   it('should not override the style option', () => {
@@ -153,6 +152,6 @@ describe('IntlPercentPipe', () => {
     });
     testUnit = TestBed.inject(IntlPercentPipe);
 
-    expect(testUnit.transform(1, {style: 'decimal'})).toEqual('100%');
+    expect(testUnit.transform(1, { style: 'decimal' })).toEqual('100%');
   });
 });

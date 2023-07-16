@@ -1,26 +1,79 @@
 <nav [tabPanel]="tabPanel" mat-tab-nav-bar>
-  <a #dateActive="routerLinkActive" [active]="dateActive.isActive" mat-tab-link routerLink="date"
-     routerLinkActive>Date</a>
-  <a #decimalActive="routerLinkActive" [active]="decimalActive.isActive" mat-tab-link routerLink="decimal"
-     routerLinkActive>Decimal</a>
-  <a #percentActive="routerLinkActive" [active]="percentActive.isActive" mat-tab-link routerLink="percent"
-     routerLinkActive>Percent</a>
-  <a #currencyActive="routerLinkActive" [active]="currencyActive.isActive" mat-tab-link routerLink="currency"
-     routerLinkActive>Currency</a>
-  <a #unitActive="routerLinkActive" [active]="unitActive.isActive" mat-tab-link routerLink="unit"
-     routerLinkActive>Unit</a>
-  <a #languageActive="routerLinkActive" [active]="languageActive.isActive" mat-tab-link routerLink="language"
-     routerLinkActive>Language</a>
-  <a #countryActive="routerLinkActive" [active]="countryActive.isActive" mat-tab-link routerLink="country"
-     routerLinkActive>Country</a>
-  <a #listActive="routerLinkActive" [active]="listActive.isActive" mat-tab-link routerLink="list"
-     routerLinkActive>List</a>
-  <a #relativeTimeActive="routerLinkActive" [active]="relativeTimeActive.isActive" mat-tab-link
-     routerLink="relative-time"
-     routerLinkActive>Relative Time</a>
+  <a
+    #dateActive="routerLinkActive"
+    [active]="dateActive.isActive"
+    mat-tab-link
+    routerLink="date"
+    routerLinkActive
+    >Date</a
+  >
+  <a
+    #decimalActive="routerLinkActive"
+    [active]="decimalActive.isActive"
+    mat-tab-link
+    routerLink="decimal"
+    routerLinkActive
+    >Decimal</a
+  >
+  <a
+    #percentActive="routerLinkActive"
+    [active]="percentActive.isActive"
+    mat-tab-link
+    routerLink="percent"
+    routerLinkActive
+    >Percent</a
+  >
+  <a
+    #currencyActive="routerLinkActive"
+    [active]="currencyActive.isActive"
+    mat-tab-link
+    routerLink="currency"
+    routerLinkActive
+    >Currency</a
+  >
+  <a
+    #unitActive="routerLinkActive"
+    [active]="unitActive.isActive"
+    mat-tab-link
+    routerLink="unit"
+    routerLinkActive
+    >Unit</a
+  >
+  <a
+    #languageActive="routerLinkActive"
+    [active]="languageActive.isActive"
+    mat-tab-link
+    routerLink="language"
+    routerLinkActive
+    >Language</a
+  >
+  <a
+    #countryActive="routerLinkActive"
+    [active]="countryActive.isActive"
+    mat-tab-link
+    routerLink="country"
+    routerLinkActive
+    >Country</a
+  >
+  <a
+    #listActive="routerLinkActive"
+    [active]="listActive.isActive"
+    mat-tab-link
+    routerLink="list"
+    routerLinkActive
+    >List</a
+  >
+  <a
+    #relativeTimeActive="routerLinkActive"
+    [active]="relativeTimeActive.isActive"
+    mat-tab-link
+    routerLink="relative-time"
+    routerLinkActive
+    >Relative Time</a
+  >
 </nav>
 <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
 
 <div class="panel-container">
-  <router-outlet/>
+  <router-outlet />
 </div>

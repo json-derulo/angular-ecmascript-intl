@@ -6,28 +6,16 @@
   ],
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": [
-      "on wednesday"
-    ]
+    "schedule": ["on wednesday"]
   },
   "packageRules": [
     {
-      "matchUpdateTypes": [
-        "patch",
-        "pin",
-        "digest",
-        "lockFileMaintenance"
-      ],
+      "matchUpdateTypes": ["patch", "pin", "digest", "lockFileMaintenance"],
       "automerge": true
     },
     {
-      "matchPackagePrefixes": [
-        "@angular/",
-        "@angular-devkit/"
-      ],
-      "matchPackageNames": [
-        "ng-packagr"
-      ],
+      "matchPackagePrefixes": ["@angular/", "@angular-devkit/"],
+      "matchPackageNames": ["ng-packagr"],
       "groupName": "angular"
     }
   ]

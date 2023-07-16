@@ -21,19 +21,13 @@
         "no-unused-vars": "off",
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/prefer-literal-enum-member": "off",
-        "comma-dangle": [
-          "error",
-          "always-multiline"
-        ]
+        "comma-dangle": ["error", "always-multiline"]
       }
     },
     {
       "files": "*.html",
-      "extends": [
-        "plugin:@angular-eslint/template/recommended"
-      ],
-      "rules": {
-      }
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {}
     }
   ]
 }
