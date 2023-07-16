@@ -212,6 +212,7 @@ describe('RelativeTimePipe', () => {
       testUnit.transform(0);
       tick(60000);
 
+      // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(cdrMock.markForCheck).toHaveBeenCalledTimes(1);
 
       testUnit.ngOnDestroy();
@@ -221,6 +222,7 @@ describe('RelativeTimePipe', () => {
       testUnit.transform(new Date());
       tick(600000);
 
+      // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(cdrMock.markForCheck).toHaveBeenCalledTimes(10);
 
       testUnit.ngOnDestroy();

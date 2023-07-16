@@ -55,7 +55,7 @@ export class IntlRelativeTimePipe implements PipeTransform, OnDestroy {
 
     const time = new Date(value).getTime();
     if (isNaN(time)) {
-      throw new Error(`${value} is not a valid date`);
+      throw new Error(`${value.toString()} is not a valid date`);
     }
 
     this.#destroy();
