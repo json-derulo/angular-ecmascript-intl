@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {languages} from '../../languages';
-import {getDateString} from "../date-utils";
+import { Component } from '@angular/core';
+import { languages } from '../../languages';
+import { getDateString } from '../date-utils';
 
 @Component({
   selector: 'app-date',

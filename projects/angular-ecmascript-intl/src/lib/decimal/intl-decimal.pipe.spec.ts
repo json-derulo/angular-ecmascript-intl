@@ -1,7 +1,7 @@
-import {IntlDecimalPipe} from './intl-decimal.pipe';
-import {TestBed} from "@angular/core/testing";
-import {INTL_LOCALES} from "../locale";
-import {INTL_DECIMAL_PIPE_DEFAULT_OPTIONS} from "./intl-decimal-pipe-default-options";
+import { IntlDecimalPipe } from './intl-decimal.pipe';
+import { TestBed } from '@angular/core/testing';
+import { INTL_LOCALES } from '../locale';
+import { INTL_DECIMAL_PIPE_DEFAULT_OPTIONS } from './intl-decimal-pipe-default-options';
 
 describe('IntlDecimalPipe', () => {
   let testUnit: IntlDecimalPipe;
@@ -66,10 +66,12 @@ describe('IntlDecimalPipe', () => {
     });
 
     it('should fall back to the browser default locale', () => {
-      TestBed.configureTestingModule({providers: [IntlDecimalPipe]});
+      TestBed.configureTestingModule({ providers: [IntlDecimalPipe] });
 
       const result1 = TestBed.inject(IntlDecimalPipe).transform(1024.2249);
-      const result2 = new IntlDecimalPipe(navigator.language).transform(1024.2249);
+      const result2 = new IntlDecimalPipe(navigator.language).transform(
+        1024.2249,
+      );
 
       expect(result1).toEqual(result2);
     });
@@ -95,7 +97,6 @@ describe('IntlDecimalPipe', () => {
       testUnit = TestBed.inject(IntlDecimalPipe);
 
       expect(testUnit.transform(1)).toEqual('+1');
-
     });
 
     it('should give the user options a higher priority', () => {
@@ -116,7 +117,7 @@ describe('IntlDecimalPipe', () => {
       });
       testUnit = TestBed.inject(IntlDecimalPipe);
 
-      expect(testUnit.transform(1, {signDisplay: 'never'})).toEqual('1');
+      expect(testUnit.transform(1, { signDisplay: 'never' })).toEqual('1');
     });
   });
 
@@ -132,7 +133,7 @@ describe('IntlDecimalPipe', () => {
     });
     testUnit = TestBed.inject(IntlDecimalPipe);
 
-    expect(testUnit.transform(1024, {locale: 'de-DE'})).toEqual('1.024');
+    expect(testUnit.transform(1024, { locale: 'de-DE' })).toEqual('1.024');
   });
 
   it('should not override the style option', () => {
@@ -153,6 +154,6 @@ describe('IntlDecimalPipe', () => {
     });
     testUnit = TestBed.inject(IntlDecimalPipe);
 
-    expect(testUnit.transform(1, {style: 'percent'})).toEqual('1');
+    expect(testUnit.transform(1, { style: 'percent' })).toEqual('1');
   });
 });

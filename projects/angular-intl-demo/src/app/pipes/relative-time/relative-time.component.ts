@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {IntlRelativeTimePipeOptions} from "projects/angular-ecmascript-intl/src/lib/relative-time/relative-time.pipe";
-import {languages} from "../../languages";
-import {getDateString} from "../date-utils";
+import { Component } from '@angular/core';
+import { IntlRelativeTimePipeOptions } from 'projects/angular-ecmascript-intl/src/lib/relative-time/relative-time.pipe';
+import { languages } from '../../languages';
+import { getDateString } from '../date-utils';
 
 @Component({
   selector: 'app-relative-time',

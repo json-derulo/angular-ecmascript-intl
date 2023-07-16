@@ -2,7 +2,7 @@ name: Verify build
 
 on:
   pull_request_target:
-    types: [ opened, synchronize, reopened ]
+    types: [opened, synchronize, reopened]
 
 jobs:
   build:
@@ -46,3 +46,17 @@ jobs:
 
       - name: test
         run: npm run test -- --watch=false --browsers=ChromeHeadless
+
+  prettier:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: install
+        run: npm ci
+
+      - name: prettier
+        run: npx prettier . --check

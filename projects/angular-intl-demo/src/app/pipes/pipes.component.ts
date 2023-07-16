@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pipes',
@@ -7,6 +7,5 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./pipes.component.scss'],
 })
 export class PipesComponent {
-  constructor(readonly route: ActivatedRoute) {
-  }
+  constructor(readonly route: ActivatedRoute) {}
 }

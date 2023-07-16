@@ -28,10 +28,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/angular-ecmascript-intl/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }
@@ -53,9 +50,7 @@
             "outputPath": "dist/angular-intl-demo",
             "index": "projects/angular-intl-demo/src/index.html",
             "main": "projects/angular-intl-demo/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/angular-intl-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [

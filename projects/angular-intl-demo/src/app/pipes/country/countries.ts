@@ -1,11 +1,1 @@
-export const countries = [
-  'AT',
-  'CA',
-  'CH',
-  'DE',
-  'GB',
-  'KR',
-  'SE',
-  'UA',
-  'US',
-];
+export const countries = ['AT', 'CA', 'CH', 'DE', 'GB', 'KR', 'SE', 'UA', 'US'];

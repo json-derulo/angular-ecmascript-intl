@@ -1,7 +1,7 @@
-import {IntlUnitPipe} from './intl-unit.pipe';
-import {TestBed} from "@angular/core/testing";
-import {INTL_LOCALES} from "../locale";
-import {INTL_UNIT_PIPE_DEFAULT_OPTIONS} from "./intl-unit-pipe-default-options";
+import { IntlUnitPipe } from './intl-unit.pipe';
+import { TestBed } from '@angular/core/testing';
+import { INTL_LOCALES } from '../locale';
+import { INTL_UNIT_PIPE_DEFAULT_OPTIONS } from './intl-unit-pipe-default-options';
 
 describe('IntlUnitPipe', () => {
   let testUnit: IntlUnitPipe;
@@ -66,7 +66,7 @@ describe('IntlUnitPipe', () => {
     });
 
     it('should fall back to the browser default locale', () => {
-      TestBed.configureTestingModule({providers: [IntlUnitPipe]});
+      TestBed.configureTestingModule({ providers: [IntlUnitPipe] });
 
       const result1 = TestBed.inject(IntlUnitPipe).transform(1, 'hour');
       const result2 = new IntlUnitPipe(navigator.language).transform(1, 'hour');
@@ -95,7 +95,6 @@ describe('IntlUnitPipe', () => {
       testUnit = TestBed.inject(IntlUnitPipe);
 
       expect(testUnit.transform(1, 'liter')).toEqual('1L');
-
     });
 
     it('should give the user options a higher priority', () => {
@@ -116,7 +115,9 @@ describe('IntlUnitPipe', () => {
       });
       testUnit = TestBed.inject(IntlUnitPipe);
 
-      expect(testUnit.transform(1, 'liter', {unitDisplay: 'narrow'})).toEqual('1L');
+      expect(testUnit.transform(1, 'liter', { unitDisplay: 'narrow' })).toEqual(
+        '1L',
+      );
     });
   });
 
@@ -132,7 +133,9 @@ describe('IntlUnitPipe', () => {
     });
     testUnit = TestBed.inject(IntlUnitPipe);
 
-    expect(testUnit.transform(1, 'hour', {locale: 'de-DE'})).toEqual('1 Std.');
+    expect(testUnit.transform(1, 'hour', { locale: 'de-DE' })).toEqual(
+      '1 Std.',
+    );
   });
 
   it('should not override the style option', () => {
@@ -153,6 +156,6 @@ describe('IntlUnitPipe', () => {
     });
     testUnit = TestBed.inject(IntlUnitPipe);
 
-    expect(testUnit.transform(1, 'hour', {style: 'decimal'})).toEqual('1 hr');
+    expect(testUnit.transform(1, 'hour', { style: 'decimal' })).toEqual('1 hr');
   });
 });

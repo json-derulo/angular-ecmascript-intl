@@ -1,7 +1,7 @@
-import {IntlLanguagePipe} from './intl-language.pipe';
-import {TestBed} from "@angular/core/testing";
-import {INTL_LOCALES} from "../locale";
-import {INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS} from "./intl-language-pipe-default-options";
+import { IntlLanguagePipe } from './intl-language.pipe';
+import { TestBed } from '@angular/core/testing';
+import { INTL_LOCALES } from '../locale';
+import { INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS } from './intl-language-pipe-default-options';
 
 describe('IntlLanguagePipe', () => {
   let testUnit: IntlLanguagePipe;
@@ -58,10 +58,12 @@ describe('IntlLanguagePipe', () => {
     });
 
     it('should fall back to the browser default locale', () => {
-      TestBed.configureTestingModule({providers: [IntlLanguagePipe]});
+      TestBed.configureTestingModule({ providers: [IntlLanguagePipe] });
 
       const result1 = TestBed.inject(IntlLanguagePipe).transform('en-US');
-      const result2 = new IntlLanguagePipe(navigator.language).transform('en-US');
+      const result2 = new IntlLanguagePipe(navigator.language).transform(
+        'en-US',
+      );
 
       expect(result1).toEqual(result2);
     });
@@ -87,7 +89,6 @@ describe('IntlLanguagePipe', () => {
       testUnit = TestBed.inject(IntlLanguagePipe);
 
       expect(testUnit.transform('de-AT')).toEqual('Deutsch (Österreich)');
-
     });
 
     it('should give the user options a higher priority', () => {
@@ -108,7 +109,9 @@ describe('IntlLanguagePipe', () => {
       });
       testUnit = TestBed.inject(IntlLanguagePipe);
 
-      expect(testUnit.transform('de-AT', {languageDisplay: 'standard'})).toEqual('Deutsch (Österreich)');
+      expect(
+        testUnit.transform('de-AT', { languageDisplay: 'standard' }),
+      ).toEqual('Deutsch (Österreich)');
     });
 
     it('should not override the type option', () => {
@@ -129,7 +132,7 @@ describe('IntlLanguagePipe', () => {
       });
       testUnit = TestBed.inject(IntlLanguagePipe);
 
-      expect(testUnit.transform('de', {type: 'region'})).toEqual('Deutsch');
+      expect(testUnit.transform('de', { type: 'region' })).toEqual('Deutsch');
     });
   });
 
@@ -145,6 +148,8 @@ describe('IntlLanguagePipe', () => {
     });
     testUnit = TestBed.inject(IntlLanguagePipe);
 
-    expect(testUnit.transform('en-US', {locale: 'de-DE'})).toEqual('Englisch (Vereinigte Staaten)');
+    expect(testUnit.transform('en-US', { locale: 'de-DE' })).toEqual(
+      'Englisch (Vereinigte Staaten)',
+    );
   });
 });
