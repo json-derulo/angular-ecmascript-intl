@@ -39,6 +39,10 @@ describe('IntlLanguagePipe', () => {
       expect(testUnit.transform('en-US')).toBeNull();
       expect(consoleError).toHaveBeenCalledTimes(1);
     });
+
+    it('should handle missing data', () => {
+      expect(testUnit.transform('yy', { fallback: 'none' })).toBeNull();
+    });
   });
 
   describe('internationalization', () => {
