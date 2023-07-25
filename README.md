@@ -46,7 +46,17 @@ Now you can use the pipes, see below.
 
 ## Pipes
 
-### Date Pipe
+* [Date pipe](#date-pipe)
+* [Decimal pipe](#decimal-pipe)
+* [Percent pipe](#percent-pipe)
+* [Currency pipe](#currency-pipe)
+* [Language pipe](#language-pipe)
+* [Country pipe](#country-pipe)
+* [Unit pipe](#unit-pipe)
+* [List pipe](#list-pipe)
+* [Relative Time (timeago) pipe](#relative-time-timeago-pipe)
+
+### Date pipe
 
 Use the date pipe like the following:
 
@@ -268,6 +278,16 @@ The following options are supported:
 - [`style`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat#style)
 
 With the `INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
+
+## Browser compatibility
+
+This library supports the latest major version of the following browsers:
+
+* Chrome
+* Firefox
+* Safari
+
+For each of those browsers, unit tests are being performed regularily.
 
 ## Angular compatibility table
 
