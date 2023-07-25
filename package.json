@@ -55,7 +55,7 @@
     "karma-firefox-launcher": "^2.1.2",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "karma-safari-launcher": "^1.0.0",
+    "karma-safarinative-launcher": "^1.1.0",
     "ng-packagr": "~16.1.0",
     "prettier": "~3.0.0",
     "typescript": "~5.1.0"

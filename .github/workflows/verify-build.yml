@@ -74,7 +74,7 @@ jobs:
         run: npm ci
 
       - name: test
-        run: npm run test -- --watch=false --browsers=SafariHeadless
+        run: npm run test -- --watch=false --browsers=SafariNative
 
   prettier:
     runs-on: ubuntu-latest
