@@ -46,15 +46,15 @@ Now you can use the pipes, see below.
 
 ## Pipes
 
-* [Date pipe](#date-pipe)
-* [Decimal pipe](#decimal-pipe)
-* [Percent pipe](#percent-pipe)
-* [Currency pipe](#currency-pipe)
-* [Language pipe](#language-pipe)
-* [Country pipe](#country-pipe)
-* [Unit pipe](#unit-pipe)
-* [List pipe](#list-pipe)
-* [Relative Time (timeago) pipe](#relative-time-timeago-pipe)
+- [Date pipe](#date-pipe)
+- [Decimal pipe](#decimal-pipe)
+- [Percent pipe](#percent-pipe)
+- [Currency pipe](#currency-pipe)
+- [Language pipe](#language-pipe)
+- [Country pipe](#country-pipe)
+- [Unit pipe](#unit-pipe)
+- [List pipe](#list-pipe)
+- [Relative Time (timeago) pipe](#relative-time-timeago-pipe)
 
 ### Date pipe
 
@@ -283,11 +283,11 @@ With the `INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS` injection token you can speci
 
 This library supports the latest major version of the following browsers:
 
-* Chrome
-* Firefox
-* Safari
+- Chrome
+- Firefox
+- Safari
 
-For each of those browsers, unit tests are being performed regularily.
+For each of those browsers, unit tests are being performed regularly.
 
 ## Angular compatibility table
 
