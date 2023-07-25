@@ -148,8 +148,8 @@ describe('IntlLanguagePipe', () => {
     });
     testUnit = TestBed.inject(IntlLanguagePipe);
 
-    expect(testUnit.transform('en-US', { locale: 'de-DE' })).toEqual(
-      'Englisch (Vereinigte Staaten)',
+    expect(testUnit.transform('de-DE', { locale: 'de-DE' })).toEqual(
+      'Deutsch (Deutschland)',
     );
   });
 });
