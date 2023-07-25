@@ -39,6 +39,10 @@ describe('IntlCountryPipe', () => {
       expect(testUnit.transform('US')).toBeNull();
       expect(consoleError).toHaveBeenCalledTimes(1);
     });
+
+    it('should handle missing data', () => {
+      expect(testUnit.transform('YY', { fallback: 'none' })).toBeNull();
+    });
   });
 
   describe('internationalization', () => {
