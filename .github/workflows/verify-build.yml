@@ -46,7 +46,7 @@ jobs:
         run: npm ci
 
       - name: test
-        run: npm run test -- --watch=false --browsers=Chrome
+        run: npm run test -- --watch=false --browsers=ChromeHeadless
 
   test-firefox:
     runs-on: ubuntu-latest
@@ -60,7 +60,7 @@ jobs:
         run: npm ci
 
       - name: test
-        run: npm run test -- --watch=false --browsers=Firefox
+        run: npm run test -- --watch=false --browsers=FirefoxHeadless
 
   test-safari:
     runs-on: macos-latest
@@ -74,7 +74,7 @@ jobs:
         run: npm ci
 
       - name: test
-        run: npm run test -- --watch=false --browsers=Safari
+        run: npm run test -- --watch=false --browsers=SafariHeadless
 
   prettier:
     runs-on: ubuntu-latest
