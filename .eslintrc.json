@@ -16,7 +16,8 @@
         "plugin:@typescript-eslint/strict-type-checked",
         "plugin:@typescript-eslint/stylistic-type-checked",
         "plugin:@angular-eslint/recommended",
-        "plugin:@angular-eslint/template/process-inline-templates"
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:deprecation/recommended"
       ],
       "rules": {
         "@typescript-eslint/no-extraneous-class": "off",
