@@ -14,10 +14,10 @@
       "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/strict-type-checked",
-        "plugin:@typescript-eslint/stylistic-type-checked",
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
-        "plugin:deprecation/recommended"
+        "plugin:deprecation/recommended",
+        "prettier"
       ],
       "rules": {
         "@typescript-eslint/no-extraneous-class": "off",
