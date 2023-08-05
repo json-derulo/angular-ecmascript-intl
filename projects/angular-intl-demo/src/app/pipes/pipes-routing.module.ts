@@ -1,15 +1,15 @@
-import { RouterModule, Routes } from '@angular/router';
-import { PipesComponent } from './pipes.component';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { CountryComponent } from './country/country.component';
+import { CurrencyComponent } from './currency/currency.component';
 import { DateComponent } from './date/date.component';
 import { DecimalComponent } from './decimal/decimal.component';
-import { PercentComponent } from './percent/percent.component';
-import { CurrencyComponent } from './currency/currency.component';
 import { LanguageComponent } from './language/language.component';
-import { CountryComponent } from './country/country.component';
-import { UnitComponent } from './unit/unit.component';
 import { ListComponent } from './list/list.component';
+import { PercentComponent } from './percent/percent.component';
+import { PipesComponent } from './pipes.component';
 import { RelativeTimeComponent } from './relative-time/relative-time.component';
+import { UnitComponent } from './unit/unit.component';
 
 const routes: Routes = [
   {

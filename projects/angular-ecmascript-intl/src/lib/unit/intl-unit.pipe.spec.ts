@@ -1,7 +1,7 @@
-import { IntlUnitPipe } from './intl-unit.pipe';
 import { TestBed } from '@angular/core/testing';
 import { INTL_LOCALES } from '../locale';
 import { INTL_UNIT_PIPE_DEFAULT_OPTIONS } from './intl-unit-pipe-default-options';
+import { IntlUnitPipe } from './intl-unit.pipe';
 
 describe('IntlUnitPipe', () => {
   let testUnit: IntlUnitPipe;

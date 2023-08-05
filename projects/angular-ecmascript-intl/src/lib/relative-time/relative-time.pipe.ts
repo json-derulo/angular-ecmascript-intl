@@ -6,10 +6,10 @@ import {
   Pipe,
   PipeTransform,
 } from '@angular/core';
-import { INTL_LOCALES } from '../locale';
-import { IntlPipeOptions } from '../intl-pipe-options';
-import { INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS } from './relative-time-pipe-default-options';
 import { interval, Subject, takeUntil } from 'rxjs';
+import { IntlPipeOptions } from '../intl-pipe-options';
+import { INTL_LOCALES } from '../locale';
+import { INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS } from './relative-time-pipe-default-options';
 
 export type IntlRelativeTimePipeOptions =
   Partial<Intl.RelativeTimeFormatOptions> & IntlPipeOptions;

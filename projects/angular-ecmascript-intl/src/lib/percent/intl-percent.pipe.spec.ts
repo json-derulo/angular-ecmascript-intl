@@ -1,7 +1,7 @@
-import { IntlPercentPipe } from './intl-percent.pipe';
 import { TestBed } from '@angular/core/testing';
 import { INTL_LOCALES } from '../locale';
 import { INTL_PERCENT_PIPE_DEFAULT_OPTIONS } from './intl-percent-pipe-default-options';
+import { IntlPercentPipe } from './intl-percent.pipe';
 
 describe('IntlPercentPipe', () => {
   let testUnit: IntlPercentPipe;

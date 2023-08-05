@@ -1,7 +1,7 @@
 import { Inject, Optional, Pipe, PipeTransform } from '@angular/core';
+import { IntlPipeOptions } from '../intl-pipe-options';
 import { INTL_LOCALES } from '../locale';
 import { INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS } from './intl-language-pipe-default-options';
-import { IntlPipeOptions } from '../intl-pipe-options';
 
 export type IntlLanguagePipeOptions = Partial<Intl.DisplayNamesOptions> &
   IntlPipeOptions;

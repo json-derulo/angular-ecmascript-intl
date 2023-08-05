@@ -1,7 +1,7 @@
-import { IntlCountryPipe } from './intl-country.pipe';
 import { TestBed } from '@angular/core/testing';
 import { INTL_LOCALES } from '../locale';
 import { INTL_COUNTRY_PIPE_DEFAULT_OPTIONS } from './intl-country-pipe-default-options';
+import { IntlCountryPipe } from './intl-country.pipe';
 
 describe('IntlCountryPipe', () => {
   let testUnit: IntlCountryPipe;

@@ -1,7 +1,7 @@
 import { Inject, Optional, Pipe, PipeTransform } from '@angular/core';
+import { IntlPipeOptions } from '../intl-pipe-options';
 import { INTL_LOCALES } from '../locale';
 import { INTL_DATE_PIPE_DEFAULT_OPTIONS } from './intl-date-pipe-default-options';
-import { IntlPipeOptions } from '../intl-pipe-options';
 
 export type IntlDatePipeOptions = Partial<Intl.DateTimeFormatOptions> &
   IntlPipeOptions;

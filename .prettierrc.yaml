@@ -1,0 +1,6 @@
+plugins:
+  - "@ianvs/prettier-plugin-sort-imports"
+importOrderParserPlugins:
+  - typescript
+  - decorators-legacy
+importOrderTypeScriptVersion: 5.1.0

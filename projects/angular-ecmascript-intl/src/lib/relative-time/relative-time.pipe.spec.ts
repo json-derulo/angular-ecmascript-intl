@@ -1,9 +1,9 @@
-import { IntlRelativeTimePipe } from './relative-time.pipe';
-import * as dayjs from 'dayjs';
-import { fakeAsync, TestBed, tick } from '@angular/core/testing';
-import { INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS } from './relative-time-pipe-default-options';
-import { INTL_LOCALES } from '../locale';
 import { ChangeDetectorRef } from '@angular/core';
+import { fakeAsync, TestBed, tick } from '@angular/core/testing';
+import * as dayjs from 'dayjs';
+import { INTL_LOCALES } from '../locale';
+import { INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS } from './relative-time-pipe-default-options';
+import { IntlRelativeTimePipe } from './relative-time.pipe';
 
 describe('RelativeTimePipe', () => {
   let testUnit: IntlRelativeTimePipe;
