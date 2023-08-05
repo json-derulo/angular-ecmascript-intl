@@ -1,7 +1,7 @@
-import { IntlDatePipe } from './intl-date.pipe';
 import { TestBed } from '@angular/core/testing';
 import { INTL_LOCALES } from '../locale';
 import { INTL_DATE_PIPE_DEFAULT_OPTIONS } from './intl-date-pipe-default-options';
+import { IntlDatePipe } from './intl-date.pipe';
 
 describe('DatePipe', () => {
   let testUnit: IntlDatePipe;

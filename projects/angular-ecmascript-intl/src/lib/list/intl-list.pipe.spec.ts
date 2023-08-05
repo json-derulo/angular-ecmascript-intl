@@ -1,6 +1,6 @@
-import { IntlListPipe } from './intl-list.pipe';
 import { TestBed } from '@angular/core/testing';
 import { INTL_LOCALES } from '../locale';
+import { IntlListPipe } from './intl-list.pipe';
 
 describe('IntlListPipe', () => {
   let testUnit: IntlListPipe;

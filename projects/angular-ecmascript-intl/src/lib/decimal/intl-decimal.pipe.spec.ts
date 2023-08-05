@@ -1,7 +1,7 @@
-import { IntlDecimalPipe } from './intl-decimal.pipe';
 import { TestBed } from '@angular/core/testing';
 import { INTL_LOCALES } from '../locale';
 import { INTL_DECIMAL_PIPE_DEFAULT_OPTIONS } from './intl-decimal-pipe-default-options';
+import { IntlDecimalPipe } from './intl-decimal.pipe';
 
 describe('IntlDecimalPipe', () => {
   let testUnit: IntlDecimalPipe;

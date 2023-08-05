@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
+import { IntlListPipeOptions } from 'projects/angular-ecmascript-intl/src/lib/list/intl-list.pipe';
 import { languages } from '../../languages';
 import { list } from './list';
-import { IntlListPipeOptions } from 'projects/angular-ecmascript-intl/src/lib/list/intl-list.pipe';
 
 @Component({
   selector: 'app-list',

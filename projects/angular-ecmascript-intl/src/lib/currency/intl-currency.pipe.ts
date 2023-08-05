@@ -1,8 +1,8 @@
 import { Inject, Optional, Pipe, PipeTransform } from '@angular/core';
 import { IntlPipeOptions } from '../intl-pipe-options';
 import { INTL_LOCALES } from '../locale';
-import { INTL_CURRENCY_PIPE_DEFAULT_OPTIONS } from './intl-currency-pipe-default-options';
 import { getNumericValue } from '../utils/number-utils';
+import { INTL_CURRENCY_PIPE_DEFAULT_OPTIONS } from './intl-currency-pipe-default-options';
 
 type OmitOptions = 'unit' | 'unitDisplay' | 'currency';
 export type IntlCurrencyPipeOptions = Omit<

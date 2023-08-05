@@ -1,7 +1,7 @@
-import { IntlCurrencyPipe } from './intl-currency.pipe';
 import { TestBed } from '@angular/core/testing';
 import { INTL_LOCALES } from '../locale';
 import { INTL_CURRENCY_PIPE_DEFAULT_OPTIONS } from './intl-currency-pipe-default-options';
+import { IntlCurrencyPipe } from './intl-currency.pipe';
 
 describe('IntlCurrencyPipe', () => {
   let testUnit: IntlCurrencyPipe;

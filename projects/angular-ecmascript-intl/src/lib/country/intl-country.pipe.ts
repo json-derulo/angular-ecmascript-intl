@@ -1,7 +1,7 @@
 import { Inject, Optional, Pipe, PipeTransform } from '@angular/core';
+import { IntlPipeOptions } from '../intl-pipe-options';
 import { INTL_LOCALES } from '../locale';
 import { INTL_COUNTRY_PIPE_DEFAULT_OPTIONS } from './intl-country-pipe-default-options';
-import { IntlPipeOptions } from '../intl-pipe-options';
 
 export type IntlCountryPipeOptions = Omit<
   Partial<Intl.DisplayNamesOptions>,
