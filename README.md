@@ -289,6 +289,20 @@ This library supports the latest major version of the following browsers:
 
 For each of those browsers, unit tests are being performed regularly.
 
+In case you need to support older versions of that browsers, see the below table with the minimum required browser version for each pipe:
+
+| Pipe          | Chrome | Firefox | Safari |
+| ------------- | ------ | ------- | ------ |
+| Date          | 24     | 29      | 10     |
+| Number        | 24     | 29      | 10     |
+| Percent       | 24     | 29      | 10     |
+| Currency      | 24     | 29      | 10     |
+| Language      | 81     | 86      | 14.1   |
+| Country       | 81     | 86      | 14.1   |
+| Unit          | 77     | 78      | 14.1   |
+| List          | 72     | 78      | 14.1   |
+| Relative Time | 71     | 65      | 14     |
+
 ## Angular compatibility table
 
 | Angular | angular-ecmascript-intl |
