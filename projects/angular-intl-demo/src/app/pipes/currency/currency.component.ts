@@ -1,4 +1,11 @@
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatOptionModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { IntlCurrencyPipe } from '../../../../../angular-ecmascript-intl/src/lib/currency/intl-currency.pipe';
 import { languages } from '../../languages';
 import { currencies } from './currencies';
 
@@ -6,6 +13,16 @@ import { currencies } from './currencies';
   selector: 'app-currency',
   templateUrl: './currency.component.html',
   styleUrls: ['./currency.component.scss'],
+  standalone: true,
+  imports: [
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatSelectModule,
+    NgFor,
+    MatOptionModule,
+    IntlCurrencyPipe,
+  ],
 })
 export class CurrencyComponent {
   enteredNumber = '0.24';

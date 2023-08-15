@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { GettingStartedComponent } from './getting-started/getting-started.component';
 
 @NgModule({
-  declarations: [AppComponent, GettingStartedComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,6 +20,7 @@ import { GettingStartedComponent } from './getting-started/getting-started.compo
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
+    GettingStartedComponent,
   ],
   providers: [
     {

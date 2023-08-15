@@ -1,4 +1,11 @@
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatOptionModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { IntlUnitPipe } from '../../../../../angular-ecmascript-intl/src/lib/unit/intl-unit.pipe';
 import { languages } from '../../languages';
 import { units } from './units';
 
@@ -6,6 +13,16 @@ import { units } from './units';
   selector: 'app-unit',
   templateUrl: './unit.component.html',
   styleUrls: ['./unit.component.scss'],
+  standalone: true,
+  imports: [
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatSelectModule,
+    NgFor,
+    MatOptionModule,
+    IntlUnitPipe,
+  ],
 })
 export class UnitComponent {
   enteredNumber = '1';

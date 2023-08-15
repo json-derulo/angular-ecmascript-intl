@@ -20,18 +20,6 @@ import { RelativeTimeComponent } from './relative-time/relative-time.component';
 import { UnitComponent } from './unit/unit.component';
 
 @NgModule({
-  declarations: [
-    DateComponent,
-    LanguageComponent,
-    DecimalComponent,
-    PercentComponent,
-    CurrencyComponent,
-    PipesComponent,
-    CountryComponent,
-    UnitComponent,
-    ListComponent,
-    RelativeTimeComponent,
-  ],
   imports: [
     CommonModule,
     PipesRoutingModule,
@@ -42,6 +30,16 @@ import { UnitComponent } from './unit/unit.component';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    DateComponent,
+    LanguageComponent,
+    DecimalComponent,
+    PercentComponent,
+    CurrencyComponent,
+    PipesComponent,
+    CountryComponent,
+    UnitComponent,
+    ListComponent,
+    RelativeTimeComponent,
   ],
 })
 export class PipesModule {}
