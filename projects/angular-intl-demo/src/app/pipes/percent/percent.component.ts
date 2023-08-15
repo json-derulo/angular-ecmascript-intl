@@ -1,10 +1,27 @@
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatOptionModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { IntlPercentPipe } from '../../../../../angular-ecmascript-intl/src/lib/percent/intl-percent.pipe';
 import { languages } from '../../languages';
 
 @Component({
   selector: 'app-percent',
   templateUrl: './percent.component.html',
   styleUrls: ['./percent.component.scss'],
+  standalone: true,
+  imports: [
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatSelectModule,
+    MatOptionModule,
+    NgFor,
+    IntlPercentPipe,
+  ],
 })
 export class PercentComponent {
   enteredNumber = '0.24';
