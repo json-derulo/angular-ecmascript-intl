@@ -1,6 +1,20 @@
 {
   "name": "angular-ecmascript-intl",
   "version": "2.0.0",
+  "description": "Contains Angular pipes to transform internationalization data using Intl.* browser APIs",
+  "keywords": [
+    "angular",
+    "pipe",
+    "i18n",
+    "intl",
+    "date",
+    "decimal",
+    "percent",
+    "currency",
+    "language",
+    "country",
+    "timeago"
+  ],
   "peerDependencies": {
     "@angular/common": ">=16",
     "@angular/core": ">=16"
@@ -16,5 +30,9 @@
   },
   "repository": {
     "url": "https://github.com/json-derulo/angular-ecmascript-intl"
-  }
+  },
+  "license": "MIT",
+  "homepage": "https://json-derulo.github.io/angular-ecmascript-intl/",
+  "bugs": "https://github.com/json-derulo/angular-ecmascript-intl/issues",
+  "funding": "https://github.com/sponsors/json-derulo"
 }
