@@ -67,6 +67,7 @@ MIT
 MIT
 
 angular-ecmascript-intl
+MIT
 
 marked
 MIT
