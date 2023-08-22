@@ -1,6 +1,6 @@
 {
   "name": "angular-ecmascript-intl",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Contains Angular pipes to transform internationalization data using Intl.* browser APIs",
   "keywords": [
     "angular",
