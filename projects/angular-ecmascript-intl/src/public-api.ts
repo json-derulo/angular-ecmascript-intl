@@ -10,6 +10,8 @@ export * from './lib/date/intl-date-pipe-default-options';
 export * from './lib/date/intl-date.pipe';
 export * from './lib/decimal/intl-decimal-pipe-default-options';
 export * from './lib/decimal/intl-decimal.pipe';
+export * from './lib/duration/intl-duration-pipe-default-options';
+export * from './lib/duration/intl-duration.pipe';
 export * from './lib/intl.module';
 export * from './lib/language/intl-language-pipe-default-options';
 export * from './lib/language/intl-language.pipe';
