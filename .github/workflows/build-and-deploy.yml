@@ -24,3 +24,21 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist/angular-intl-demo
+
+  report-coverage:
+    concurrency: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install
+        run: npm ci
+
+      - name: test
+        run: npm run test -- --watch=false --browsers=ChromeHeadless
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
