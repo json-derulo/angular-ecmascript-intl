@@ -23,7 +23,11 @@ module.exports = function (config) {
         "../../coverage/angular-ecmascript-intl",
       ),
       subdir: ".",
-      reporters: [{ type: "html" }, { type: "text-summary" }],
+      reporters: [
+        { type: "html" },
+        { type: "text-summary" },
+        { type: "cobertura" },
+      ],
     },
     reporters: ["progress", "kjhtml"],
     browsers: ["Chrome"],
