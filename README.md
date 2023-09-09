@@ -1,5 +1,7 @@
 # Angular ECMAScript Intl
 
+[![codecov](https://codecov.io/gh/json-derulo/angular-ecmascript-intl/graph/badge.svg?token=RHNUC3YCJP)](https://codecov.io/gh/json-derulo/angular-ecmascript-intl)
+
 Contains pipes to transform internationalization data using `Intl.*` browser APIs.
 
 ## Getting started
