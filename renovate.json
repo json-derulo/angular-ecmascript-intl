@@ -6,7 +6,7 @@
   ],
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["on wednesday"]
+    "schedule": ["on thursday"]
   },
   "packageRules": [
     {
