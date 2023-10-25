@@ -7,8 +7,9 @@
   ],
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["on thursday"]
+    "schedule": ["before 4am on thursday"]
   },
+  "minimumReleaseAge": "3 days",
   "packageRules": [
     {
       "matchUpdateTypes": ["patch", "pin", "digest", "lockFileMaintenance"],
