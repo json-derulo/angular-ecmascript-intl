@@ -6,8 +6,7 @@
     "group:typescript-eslintMonorepo"
   ],
   "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": ["before 4am on thursday"]
+    "enabled": true
   },
   "minimumReleaseAge": "3 days",
   "packageRules": [
