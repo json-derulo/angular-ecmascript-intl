@@ -46,11 +46,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/angular-intl-demo",
             "index": "projects/angular-intl-demo/src/index.html",
-            "main": "projects/angular-intl-demo/src/main.ts",
+            "browser": "projects/angular-intl-demo/src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "projects/angular-intl-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -90,9 +90,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
