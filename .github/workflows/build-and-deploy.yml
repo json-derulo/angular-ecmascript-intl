@@ -23,7 +23,7 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/angular-intl-demo
+          folder: dist/angular-intl-demo/browser
 
   report-coverage:
     concurrency: ci-${{ github.ref }}
