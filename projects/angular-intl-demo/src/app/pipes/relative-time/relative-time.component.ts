@@ -1,4 +1,3 @@
-import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -25,7 +24,6 @@ import { getDateString } from '../date-utils';
     MatIconModule,
     MatSelectModule,
     MatOptionModule,
-    NgFor,
     IntlRelativeTimePipe,
   ],
 })

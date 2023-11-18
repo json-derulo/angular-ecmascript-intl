@@ -7,9 +7,9 @@
   <mat-form-field>
     <mat-label>Currency</mat-label>
     <mat-select [(ngModel)]="currency">
-      <mat-option *ngFor="let currency of currencies" [value]="currency">{{
-        currency
-      }}</mat-option>
+      @for (currency of currencies; track currency) {
+        <mat-option [value]="currency">{{ currency }}</mat-option>
+      }
     </mat-select>
   </mat-form-field>
 
@@ -17,9 +17,9 @@
     <mat-label>Locale</mat-label>
     <mat-select [(ngModel)]="locale">
       <mat-option [value]="undefined">Browser default</mat-option>
-      <mat-option *ngFor="let language of languages" [value]="language">{{
-        language
-      }}</mat-option>
+      @for (language of languages; track language) {
+        <mat-option [value]="language">{{ language }}</mat-option>
+      }
     </mat-select>
   </mat-form-field>
 

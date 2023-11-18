@@ -2,9 +2,9 @@
   <mat-form-field>
     <mat-label>List items</mat-label>
     <mat-select [(ngModel)]="selectedItems" multiple>
-      <mat-option *ngFor="let item of list" [value]="item">{{
-        item
-      }}</mat-option>
+      @for (item of list; track item) {
+        <mat-option [value]="item">{{ item }}</mat-option>
+      }
     </mat-select>
   </mat-form-field>
 
@@ -12,9 +12,9 @@
     <mat-label>Locale</mat-label>
     <mat-select [(ngModel)]="locale">
       <mat-option [value]="undefined">Browser default</mat-option>
-      <mat-option *ngFor="let language of languages" [value]="language">{{
-        language
-      }}</mat-option>
+      @for (language of languages; track language) {
+        <mat-option [value]="language">{{ language }}</mat-option>
+      }
     </mat-select>
   </mat-form-field>
 

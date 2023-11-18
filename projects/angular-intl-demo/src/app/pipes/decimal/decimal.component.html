@@ -8,9 +8,9 @@
     <mat-label>Locale</mat-label>
     <mat-select [(ngModel)]="locale">
       <mat-option [value]="undefined">Browser default</mat-option>
-      <mat-option *ngFor="let language of languages" [value]="language">{{
-        language
-      }}</mat-option>
+      @for (language of languages; track language) {
+        <mat-option [value]="language">{{ language }}</mat-option>
+      }
     </mat-select>
   </mat-form-field>
 
