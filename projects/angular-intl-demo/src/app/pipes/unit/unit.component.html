@@ -7,9 +7,9 @@
   <mat-form-field>
     <mat-label>Unit</mat-label>
     <mat-select [(ngModel)]="selectedUnit">
-      <mat-option *ngFor="let unit of units" [value]="unit">{{
-        unit
-      }}</mat-option>
+      @for (unit of units; track unit) {
+        <mat-option [value]="unit">{{ unit }}</mat-option>
+      }
     </mat-select>
   </mat-form-field>
 
@@ -17,9 +17,9 @@
     <mat-label>Locale</mat-label>
     <mat-select [(ngModel)]="locale">
       <mat-option [value]="undefined">Browser default</mat-option>
-      <mat-option *ngFor="let language of languages" [value]="language">{{
-        language
-      }}</mat-option>
+      @for (language of languages; track language) {
+        <mat-option [value]="language">{{ language }}</mat-option>
+      }
     </mat-select>
   </mat-form-field>
 

@@ -1,4 +1,3 @@
-import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatOptionModule } from '@angular/material/core';
@@ -19,7 +18,6 @@ import { languages } from '../../languages';
     FormsModule,
     MatSelectModule,
     MatOptionModule,
-    NgFor,
     IntlPercentPipe,
   ],
 })
