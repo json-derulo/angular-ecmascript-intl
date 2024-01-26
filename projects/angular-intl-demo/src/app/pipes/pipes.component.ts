@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
-import {
-  ActivatedRoute,
-  RouterLink,
-  RouterLinkActive,
-  RouterOutlet,
-} from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-pipes',
@@ -14,6 +9,4 @@ import {
   standalone: true,
   imports: [MatTabsModule, RouterLink, RouterLinkActive, RouterOutlet],
 })
-export class PipesComponent {
-  constructor(readonly route: ActivatedRoute) {}
-}
+export default class PipesComponent {}
