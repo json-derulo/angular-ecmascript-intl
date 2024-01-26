@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatButton } from '@angular/material/button';
+import { MatAnchor, MatButton } from '@angular/material/button';
 import { MatToolbar } from '@angular/material/toolbar';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
@@ -8,6 +8,6 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   standalone: true,
-  imports: [RouterLink, RouterOutlet, MatToolbar, MatButton],
+  imports: [RouterLink, RouterOutlet, MatToolbar, MatButton, MatAnchor],
 })
 export class AppComponent {}
