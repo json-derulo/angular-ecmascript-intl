@@ -9,4 +9,4 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [MatTabsModule, RouterLink, RouterLinkActive, RouterOutlet],
 })
-export default class PipesComponent {}
+export class PipesComponent {}

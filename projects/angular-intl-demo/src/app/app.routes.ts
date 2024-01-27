@@ -8,7 +8,6 @@ export const routes: Routes = [
   },
   {
     path: 'pipes',
-    loadComponent: () => import('./pipes/pipes.component'),
     loadChildren: () => import('./pipes/pipes.routes'),
   },
   {
