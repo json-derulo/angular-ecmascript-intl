@@ -22,6 +22,7 @@
     "@angular/core": "~17.2.0",
     "@angular/forms": "~17.2.0",
     "@angular/material": "~17.2.0",
+    "@angular/material-experimental": "~17.2.0",
     "@angular/platform-browser": "~17.2.0",
     "@angular/platform-browser-dynamic": "~17.2.0",
     "@angular/router": "~17.2.0",

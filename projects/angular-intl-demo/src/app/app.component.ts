@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
+import { Component, signal } from '@angular/core';
 import { MatAnchor, MatButton } from '@angular/material/button';
 import { MatToolbar } from '@angular/material/toolbar';
 import { RouterLink, RouterOutlet } from '@angular/router';
@@ -8,6 +9,21 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   standalone: true,
-  imports: [RouterLink, RouterOutlet, MatToolbar, MatButton, MatAnchor],
+  imports: [
+    RouterLink,
+    RouterOutlet,
+    MatToolbar,
+    MatButton,
+    MatAnchor,
+    NgOptimizedImage,
+  ],
 })
-export class AppComponent {}
+export class AppComponent {
+  darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  isDarkTheme = signal(this.darkModeQuery.matches);
+  constructor() {
+    this.darkModeQuery.addEventListener('change', (event) => {
+      this.isDarkTheme.set(event.matches);
+    });
+  }
+}

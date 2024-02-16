@@ -12,7 +12,13 @@
       alt="GitHub logo"
       class="logo"
       matButtonIcon
-      src="assets/github-mark-white.png"
+      [ngSrc]="
+        isDarkTheme()
+          ? 'assets/github-mark-white.png'
+          : 'assets/github-mark.png'
+      "
+      height="24"
+      width="24"
     />
     GitHub
   </a>
