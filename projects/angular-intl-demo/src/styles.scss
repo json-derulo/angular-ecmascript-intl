@@ -1,43 +1,43 @@
 @use "@angular/material" as mat;
+@use "@angular/material-experimental" as matx;
 
 @include mat.core();
 
-$light-theme: mat.define-light-theme(
+$light-theme: matx.define-theme(
   (
     color: (
-      primary: mat.define-palette(mat.$deep-purple-palette),
-      accent: mat.define-palette(mat.$deep-orange-palette),
-    ),
-    typography: mat.define-typography-config(),
-    density: 0,
-  )
-);
-
-$dark-theme: mat.define-dark-theme(
-  (
-    color: (
-      primary: mat.define-palette(mat.$purple-palette),
-      accent: mat.define-palette(mat.$deep-orange-palette),
+      primary: matx.$m3-violet-palette,
     ),
   )
 );
 
-@include mat.core-theme($light-theme);
-@include mat.button-theme($light-theme);
-@include mat.toolbar-theme($light-theme);
-@include mat.tabs-theme($light-theme);
-@include mat.select-theme($light-theme);
-@include mat.input-theme($light-theme);
-@include mat.form-field-theme($light-theme);
+$dark-theme: matx.define-theme(
+  (
+    color: (
+      theme-type: dark,
+      primary: matx.$m3-magenta-palette,
+    ),
+  )
+);
 
-@media (prefers-color-scheme: dark) {
-  @include mat.core-color($dark-theme);
-  @include mat.button-color($dark-theme);
-  @include mat.toolbar-color($dark-theme);
-  @include mat.tabs-color($dark-theme);
-  @include mat.select-color($dark-theme);
-  @include mat.input-color($dark-theme);
-  @include mat.form-field-color($dark-theme);
+html {
+  @include mat.core-theme($light-theme);
+  @include mat.button-theme($light-theme);
+  @include mat.toolbar-theme($light-theme);
+  @include mat.tabs-theme($light-theme);
+  @include mat.select-theme($light-theme);
+  @include mat.input-theme($light-theme);
+  @include mat.form-field-theme($light-theme);
+
+  @media (prefers-color-scheme: dark) {
+    @include mat.core-color($dark-theme);
+    @include mat.button-color($dark-theme);
+    @include mat.toolbar-color($dark-theme);
+    @include mat.tabs-color($dark-theme);
+    @include mat.select-color($dark-theme);
+    @include mat.input-color($dark-theme);
+    @include mat.form-field-color($dark-theme);
+  }
 }
 
 html,
