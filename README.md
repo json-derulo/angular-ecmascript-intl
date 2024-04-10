@@ -12,20 +12,10 @@ Install the package:
 npm install angular-ecmascript-intl --save
 ```
 
-Import the `IntlModule`:
+Import the pipes individually as per usage, or import the `IntlModule` to import all pipes at once.
 
-```typescript
-import { NgModule } from "@angular/core";
-import { IntlModule } from "angular-ecmascript-intl";
-
-@NgModule({
-  imports: [IntlModule],
-})
-export class MyModule {}
-```
-
-By default, the pipe will use the browser default locale. If you want to override it, you can provide the `INTL_LOCALES`
-injection token:
+By default, all pipes will use the browser default locale.
+If you want to override it, you can provide the `INTL_LOCALES` injection token:
 
 ```typescript
 import { NgModule } from "@angular/core";
