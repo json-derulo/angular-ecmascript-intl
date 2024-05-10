@@ -10,10 +10,6 @@
   },
   "packageRules": [
     {
-      "matchUpdateTypes": ["patch", "pin", "digest", "lockFileMaintenance"],
-      "automerge": true
-    },
-    {
       "matchPackagePrefixes": ["@angular/", "@angular-devkit/"],
       "matchPackageNames": ["ng-packagr"],
       "groupName": "angular"
