@@ -32,8 +32,14 @@ export default [
     },
     processor: angularEslintPluginTemplate.processors["extract-inline-html"],
     rules: {
-      ...tseslint.configs.strictTypeChecked.rules,
-      ...tseslint.configs.stylisticTypeChecked.rules,
+      ...Object.assign(
+        {},
+        ...tseslint.configs.strictTypeChecked.map(({ rules }) => rules),
+      ),
+      ...Object.assign(
+        {},
+        ...tseslint.configs.stylisticTypeChecked.map(({ rules }) => rules),
+      ),
       ...angularEslintPlugin.configs.recommended.rules,
       "@typescript-eslint/no-extraneous-class": "off",
       "no-unused-vars": "off",
