@@ -299,6 +299,7 @@ In case you need to support older versions of that browsers, see the below table
 
 | Angular | angular-ecmascript-intl |
 | ------- | ----------------------- |
+| 18      | 4.x                     |
 | 17      | 3.x                     |
 | 16      | 2.x                     |
 | 15      | 1.x                     |
