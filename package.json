@@ -34,19 +34,14 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~18.0.0",
-    "@angular-eslint/builder": "^17.0.0",
-    "@angular-eslint/eslint-plugin": "^17.0.0",
-    "@angular-eslint/eslint-plugin-template": "^17.0.0",
-    "@angular-eslint/schematics": "^17.0.0",
-    "@angular-eslint/template-parser": "^17.0.0",
     "@angular/cli": "~18.0.0",
     "@angular/compiler-cli": "~18.0.0",
     "@eslint/js": "^9.2.0",
     "@types/jasmine": "~5.1.0",
+    "angular-eslint": "^18.0.0-alpha.16",
     "cpy-cli": "^5.0.0",
     "dayjs": "^1.11.7",
     "eslint": "^8.53.0",
-    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-deprecation": "^2.0.0",
     "globals": "^15.1.0",
     "jasmine-core": "~5.1.0",
@@ -61,12 +56,6 @@
     "prettier": "~3.2.0",
     "prettier-plugin-organize-imports": "^3.2.3",
     "typescript": "~5.4.0",
-    "typescript-eslint": "^7.0.0"
-  },
-  "overrides": {
-    "@angular/cli": "~18.0.0",
-    "@angular/common": "~18.0.0",
-    "@angular/core": "~18.0.0",
-    "@angular/platform-browser": "~18.0.0"
+    "typescript-eslint": "^8.0.0-alpha.20"
   }
 }

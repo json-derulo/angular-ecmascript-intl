@@ -1,17 +1,19 @@
-import angularEslintPlugin from "@angular-eslint/eslint-plugin";
-import angularEslintPluginTemplate from "@angular-eslint/eslint-plugin-template";
-import angularEslintTemplateParser from "@angular-eslint/template-parser";
 import js from "@eslint/js";
-import prettier from "eslint-config-prettier";
+import angularEslint from "angular-eslint";
 import deprecation from "eslint-plugin-deprecation";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
-export default [
-  js.configs.recommended,
+export default tseslint.config(
   { ignores: ["dist/", ".angular/", "**/*.js"] },
   {
     files: ["**/*.ts"],
+    extends: [
+      js.configs.recommended,
+      ...tseslint.configs.strictTypeChecked,
+      ...tseslint.configs.stylisticTypeChecked,
+      ...angularEslint.configs.tsRecommended,
+    ],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
@@ -25,22 +27,9 @@ export default [
         ...globals.browser,
       },
     },
-    plugins: {
-      "@typescript-eslint": tseslint.plugin,
-      deprecation,
-      "@angular-eslint": angularEslintPlugin,
-    },
-    processor: angularEslintPluginTemplate.processors["extract-inline-html"],
+    plugins: { deprecation },
+    processor: angularEslint.processInlineTemplates,
     rules: {
-      ...Object.assign(
-        {},
-        ...tseslint.configs.strictTypeChecked.map(({ rules }) => rules),
-      ),
-      ...Object.assign(
-        {},
-        ...tseslint.configs.stylisticTypeChecked.map(({ rules }) => rules),
-      ),
-      ...angularEslintPlugin.configs.recommended.rules,
       "@typescript-eslint/no-extraneous-class": "off",
       "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": "error",
@@ -59,16 +48,9 @@ export default [
   },
   {
     files: ["**/*.html"],
-    plugins: {
-      "@angular-eslint/template": angularEslintPluginTemplate,
-    },
-    languageOptions: {
-      parser: angularEslintTemplateParser,
-    },
+    extends: [...angularEslint.configs.templateRecommended],
     rules: {
-      ...angularEslintPluginTemplate.configs.recommended.rules,
       "@angular-eslint/template/prefer-control-flow": "error",
     },
   },
-  prettier,
-];
+);
