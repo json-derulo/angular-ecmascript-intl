@@ -3,6 +3,7 @@
   "extends": [
     "config:recommended",
     "group:angular-eslintMonorepo",
+    "group:eslintMonorepo",
     "group:typescript-eslintMonorepo"
   ],
   "lockFileMaintenance": {
