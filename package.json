@@ -36,12 +36,13 @@
     "@angular-devkit/build-angular": "~18.1.0",
     "@angular/cli": "~18.1.0",
     "@angular/compiler-cli": "~18.1.0",
+    "@eslint/compat": "^1.1.1",
     "@eslint/js": "^9.2.0",
     "@types/jasmine": "~5.1.0",
-    "angular-eslint": "^18.0.0-alpha.16",
+    "angular-eslint": "^18.0.0",
     "cpy-cli": "^5.0.0",
     "dayjs": "^1.11.7",
-    "eslint": "^8.53.0",
+    "eslint": "^9.0.0",
     "eslint-plugin-deprecation": "^3.0.0",
     "globals": "^15.1.0",
     "jasmine-core": "~5.2.0",
@@ -57,5 +58,8 @@
     "prettier-plugin-organize-imports": "^4.0.0",
     "typescript": "~5.5.0",
     "typescript-eslint": "^8.0.0-alpha.20"
+  },
+  "overrides": {
+    "eslint": "^9.0.0"
   }
 }
