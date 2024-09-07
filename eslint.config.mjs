@@ -1,7 +1,5 @@
-import { fixupPluginRules } from "@eslint/compat";
 import js from "@eslint/js";
 import angularEslint from "angular-eslint";
-import deprecation from "eslint-plugin-deprecation";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
@@ -28,14 +26,13 @@ export default tseslint.config(
         ...globals.browser,
       },
     },
-    plugins: { deprecation: fixupPluginRules(deprecation) },
     processor: angularEslint.processInlineTemplates,
     rules: {
       "@typescript-eslint/no-extraneous-class": "off",
       "no-unused-vars": "off",
+      "@typescript-eslint/no-deprecated": "error",
       "@typescript-eslint/no-unused-vars": "error",
       "@typescript-eslint/prefer-literal-enum-member": "off",
-      "deprecation/deprecation": "error",
       "@angular-eslint/prefer-standalone-component": "error",
     },
   },
