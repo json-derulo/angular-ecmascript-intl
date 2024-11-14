@@ -11,8 +11,11 @@
   },
   "packageRules": [
     {
-      "matchPackagePrefixes": ["@angular/", "@angular-devkit/"],
-      "matchPackageNames": ["ng-packagr"],
+      "matchPackageNames": [
+        "ng-packagr",
+        "@angular/{/,}**",
+        "@angular-devkit/{/,}**"
+      ],
       "groupName": "angular"
     }
   ]
