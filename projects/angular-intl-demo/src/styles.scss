@@ -1,42 +1,17 @@
 @use "@angular/material" as mat;
 
-@include mat.core();
-
-$light-theme: mat.define-theme(
-  (
-    color: (
-      primary: mat.$violet-palette,
-    ),
-  )
-);
-
-$dark-theme: mat.define-theme(
-  (
-    color: (
-      theme-type: dark,
-      primary: mat.$magenta-palette,
-    ),
-  )
-);
+@include mat.elevation-classes();
+@include mat.app-background();
 
 html {
-  @include mat.core-theme($light-theme);
-  @include mat.button-theme($light-theme);
-  @include mat.toolbar-theme($light-theme);
-  @include mat.tabs-theme($light-theme);
-  @include mat.select-theme($light-theme);
-  @include mat.input-theme($light-theme);
-  @include mat.form-field-theme($light-theme);
-
-  @media (prefers-color-scheme: dark) {
-    @include mat.core-color($dark-theme);
-    @include mat.button-color($dark-theme);
-    @include mat.toolbar-color($dark-theme);
-    @include mat.tabs-color($dark-theme);
-    @include mat.select-color($dark-theme);
-    @include mat.input-color($dark-theme);
-    @include mat.form-field-color($dark-theme);
-  }
+  color-scheme: light dark;
+  @include mat.theme(
+    (
+      color: mat.$azure-palette,
+      typography: Roboto,
+      density: 0,
+    )
+  );
 }
 
 html,

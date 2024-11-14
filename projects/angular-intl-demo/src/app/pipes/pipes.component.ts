@@ -6,7 +6,6 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   selector: 'app-pipes',
   templateUrl: './pipes.component.html',
   styleUrls: ['./pipes.component.scss'],
-  standalone: true,
   imports: [MatTabsModule, RouterLink, RouterLinkActive, RouterOutlet],
 })
 export class PipesComponent {}

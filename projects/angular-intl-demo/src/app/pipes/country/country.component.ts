@@ -11,7 +11,6 @@ import { countries } from './countries';
   selector: 'app-country',
   templateUrl: './country.component.html',
   styleUrls: ['./country.component.scss'],
-  standalone: true,
   imports: [
     MatFormFieldModule,
     MatSelectModule,

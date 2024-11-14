@@ -14,7 +14,6 @@ import { getDateString } from '../date-utils';
   selector: 'app-date',
   templateUrl: './date.component.html',
   styleUrls: ['./date.component.scss'],
-  standalone: true,
   imports: [
     MatFormFieldModule,
     MatInputModule,

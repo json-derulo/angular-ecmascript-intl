@@ -11,7 +11,6 @@ import { languages } from '../../languages';
   selector: 'app-percent',
   templateUrl: './percent.component.html',
   styleUrls: ['./percent.component.scss'],
-  standalone: true,
   imports: [
     MatFormFieldModule,
     MatInputModule,

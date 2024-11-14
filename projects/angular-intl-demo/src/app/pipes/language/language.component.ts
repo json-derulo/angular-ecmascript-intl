@@ -13,7 +13,6 @@ import { languages } from '../../languages';
   selector: 'app-language',
   templateUrl: './language.component.html',
   styleUrls: ['./language.component.scss'],
-  standalone: true,
   imports: [
     MatFormFieldModule,
     MatSelectModule,

@@ -15,7 +15,6 @@ import { getDateString } from '../date-utils';
   selector: 'app-relative-time',
   templateUrl: './relative-time.component.html',
   styleUrls: ['./relative-time.component.scss'],
-  standalone: true,
   imports: [
     MatFormFieldModule,
     MatInputModule,
