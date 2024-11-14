@@ -11,7 +11,6 @@ import { languages } from '../../languages';
   selector: 'app-decimal',
   templateUrl: './decimal.component.html',
   styleUrls: ['./decimal.component.scss'],
-  standalone: true,
   imports: [
     MatFormFieldModule,
     MatInputModule,

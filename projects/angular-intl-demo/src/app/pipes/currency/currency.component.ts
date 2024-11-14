@@ -12,7 +12,6 @@ import { currencies } from './currencies';
   selector: 'app-currency',
   templateUrl: './currency.component.html',
   styleUrls: ['./currency.component.scss'],
-  standalone: true,
   imports: [
     MatFormFieldModule,
     MatInputModule,

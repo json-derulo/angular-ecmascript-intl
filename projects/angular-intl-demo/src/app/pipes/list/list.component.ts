@@ -12,7 +12,6 @@ import { list } from './list';
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
-  standalone: true,
   imports: [
     MatFormFieldModule,
     MatSelectModule,

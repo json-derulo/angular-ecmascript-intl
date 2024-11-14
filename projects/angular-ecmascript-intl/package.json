@@ -16,8 +16,8 @@
     "timeago"
   ],
   "peerDependencies": {
-    "@angular/common": ">=18",
-    "@angular/core": ">=18"
+    "@angular/common": ">=19",
+    "@angular/core": ">=19"
   },
   "dependencies": {
     "tslib": "^2.3.0"

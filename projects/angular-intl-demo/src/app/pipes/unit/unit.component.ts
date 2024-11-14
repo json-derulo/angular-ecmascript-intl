@@ -12,7 +12,6 @@ import { units } from './units';
   selector: 'app-unit',
   templateUrl: './unit.component.html',
   styleUrls: ['./unit.component.scss'],
-  standalone: true,
   imports: [
     MatFormFieldModule,
     MatInputModule,

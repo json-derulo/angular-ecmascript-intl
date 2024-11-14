@@ -5,7 +5,6 @@ import { MarkdownModule } from 'ngx-markdown';
   selector: 'app-getting-started',
   templateUrl: './getting-started.component.html',
   styleUrls: ['./getting-started.component.scss'],
-  standalone: true,
   imports: [MarkdownModule],
 })
 export class GettingStartedComponent {}
