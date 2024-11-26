@@ -33,8 +33,7 @@ export default tseslint.config(
       "@typescript-eslint/no-deprecated": "error",
       "@typescript-eslint/no-unused-vars": "error",
       "@typescript-eslint/prefer-literal-enum-member": "off",
-      // ToDo: enable rule again once Angular ESLint adapted to v19 changes
-      // "@angular-eslint/prefer-standalone-component": "error",
+      "@angular-eslint/prefer-standalone": "error",
     },
   },
   {
