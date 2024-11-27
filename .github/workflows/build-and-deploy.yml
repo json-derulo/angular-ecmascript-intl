@@ -15,10 +15,13 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Install and Build 🔧
-        run: |
-          pnpm install --frozen-lockfile
-          pnpm build
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: true
+
+      - name: Build 🔧
+        run: pnpm build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
@@ -32,8 +35,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install
-        run: pnpm install --frozen-lockfile
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: true
 
       - name: test
         run: pnpm test -- --watch=false --browsers=ChromeHeadless

@@ -14,8 +14,10 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: install
-        run: pnpm install --frozen-lockfile
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: true
 
       - name: build
         run: pnpm build
@@ -28,8 +30,10 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: install
-        run: pnpm install --frozen-lockfile
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: true
 
       - name: lint
         run: pnpm lint
@@ -42,8 +46,10 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: install
-        run: pnpm install --frozen-lockfile
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: true
 
       - name: test
         run: pnpm test -- --watch=false --browsers=ChromeHeadless
@@ -61,8 +67,10 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: install
-        run: pnpm install --frozen-lockfile
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: true
 
       - name: test
         run: pnpm test -- --watch=false --browsers=FirefoxHeadless
@@ -75,8 +83,10 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: install
-        run: pnpm install --frozen-lockfile
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: true
 
       - name: test
         run: pnpm test -- --watch=false --browsers=SafariNative
@@ -89,8 +99,10 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: install
-        run: pnpm install --frozen-lockfile
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: true
 
       - name: prettier
         run: npx prettier . --check
