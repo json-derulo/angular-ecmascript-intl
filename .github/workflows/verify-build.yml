@@ -17,7 +17,10 @@ jobs:
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          run_install: true
+          run_install: false
+
+      - name: install
+        run: pnpm install --frozen-lockfile
 
       - name: build
         run: pnpm build
@@ -33,7 +36,10 @@ jobs:
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          run_install: true
+          run_install: false
+
+      - name: install
+        run: pnpm install --frozen-lockfile
 
       - name: lint
         run: pnpm lint
@@ -49,7 +55,10 @@ jobs:
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          run_install: true
+          run_install: false
+
+      - name: install
+        run: pnpm install --frozen-lockfile
 
       - name: test
         run: pnpm test -- --watch=false --browsers=ChromeHeadless
@@ -70,7 +79,10 @@ jobs:
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          run_install: true
+          run_install: false
+
+      - name: install
+        run: pnpm install --frozen-lockfile
 
       - name: test
         run: pnpm test -- --watch=false --browsers=FirefoxHeadless
@@ -86,7 +98,10 @@ jobs:
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          run_install: true
+          run_install: false
+
+      - name: install
+        run: pnpm install --frozen-lockfile
 
       - name: test
         run: pnpm test -- --watch=false --browsers=SafariNative
@@ -102,7 +117,10 @@ jobs:
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          run_install: true
+          run_install: false
+
+      - name: install
+        run: pnpm install --frozen-lockfile
 
       - name: prettier
         run: npx prettier . --check

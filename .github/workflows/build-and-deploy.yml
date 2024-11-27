@@ -18,7 +18,10 @@ jobs:
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          run_install: true
+          run_install: false
+
+      - name: install
+        run: pnpm install --frozen-lockfile
 
       - name: Build 🔧
         run: pnpm build
@@ -38,7 +41,10 @@ jobs:
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          run_install: true
+          run_install: false
+
+      - name: install
+        run: pnpm install --frozen-lockfile
 
       - name: test
         run: pnpm test -- --watch=false --browsers=ChromeHeadless
