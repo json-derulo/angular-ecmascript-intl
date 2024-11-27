@@ -8,7 +8,10 @@ describe('IntlLanguagePipe', () => {
 
   describe('parsing', () => {
     beforeEach(() => {
-      testUnit = new IntlLanguagePipe('en-US');
+      TestBed.runInInjectionContext(() => {
+        testUnit = new IntlLanguagePipe();
+        Object.defineProperty(testUnit, 'locale', { value: 'en-US' });
+      });
     });
 
     it('should create an instance', () => {
@@ -49,25 +52,34 @@ describe('IntlLanguagePipe', () => {
     it('should respect the set locale', () => {
       TestBed.configureTestingModule({
         providers: [
-          IntlLanguagePipe,
           {
             provide: INTL_LOCALES,
             useValue: 'de-DE',
           },
         ],
       });
-      testUnit = TestBed.inject(IntlLanguagePipe);
+      TestBed.runInInjectionContext(() => (testUnit = new IntlLanguagePipe()));
 
       expect(testUnit.transform('de-AT')).toEqual('Österreichisches Deutsch');
     });
 
     it('should fall back to the browser default locale', () => {
-      TestBed.configureTestingModule({ providers: [IntlLanguagePipe] });
+      let defaultLanguageTestUnit!: IntlLanguagePipe;
+      let browserLanguageTestUnit!: IntlLanguagePipe;
 
-      const result1 = TestBed.inject(IntlLanguagePipe).transform('en-US');
-      const result2 = new IntlLanguagePipe(navigator.language).transform(
-        'en-US',
-      );
+      TestBed.runInInjectionContext(() => {
+        defaultLanguageTestUnit = new IntlLanguagePipe();
+        browserLanguageTestUnit = new IntlLanguagePipe();
+        Object.defineProperty(browserLanguageTestUnit, 'locale', {
+          value: undefined,
+        });
+        Object.defineProperty(defaultLanguageTestUnit, 'locale', {
+          value: navigator.language,
+        });
+      });
+
+      const result1 = browserLanguageTestUnit.transform('en-US');
+      const result2 = defaultLanguageTestUnit.transform('en-US');
 
       expect(result1).toEqual(result2);
     });
@@ -77,7 +89,6 @@ describe('IntlLanguagePipe', () => {
     it('should respect the setting from default config', () => {
       TestBed.configureTestingModule({
         providers: [
-          IntlLanguagePipe,
           {
             provide: INTL_LOCALES,
             useValue: 'de-DE',
@@ -90,7 +101,7 @@ describe('IntlLanguagePipe', () => {
           },
         ],
       });
-      testUnit = TestBed.inject(IntlLanguagePipe);
+      TestBed.runInInjectionContext(() => (testUnit = new IntlLanguagePipe()));
 
       expect(testUnit.transform('de-AT')).toEqual('Deutsch (Österreich)');
     });
@@ -98,7 +109,6 @@ describe('IntlLanguagePipe', () => {
     it('should give the user options a higher priority', () => {
       TestBed.configureTestingModule({
         providers: [
-          IntlLanguagePipe,
           {
             provide: INTL_LOCALES,
             useValue: 'de-DE',
@@ -111,7 +121,7 @@ describe('IntlLanguagePipe', () => {
           },
         ],
       });
-      testUnit = TestBed.inject(IntlLanguagePipe);
+      TestBed.runInInjectionContext(() => (testUnit = new IntlLanguagePipe()));
 
       expect(
         testUnit.transform('de-AT', { languageDisplay: 'standard' }),
@@ -121,7 +131,6 @@ describe('IntlLanguagePipe', () => {
     it('should not override the type option', () => {
       TestBed.configureTestingModule({
         providers: [
-          IntlLanguagePipe,
           {
             provide: INTL_LOCALES,
             useValue: 'de-DE',
@@ -134,7 +143,7 @@ describe('IntlLanguagePipe', () => {
           },
         ],
       });
-      testUnit = TestBed.inject(IntlLanguagePipe);
+      TestBed.runInInjectionContext(() => (testUnit = new IntlLanguagePipe()));
 
       expect(testUnit.transform('de', { type: 'region' })).toEqual('Deutsch');
     });
@@ -143,14 +152,13 @@ describe('IntlLanguagePipe', () => {
   it('should respect locale option', () => {
     TestBed.configureTestingModule({
       providers: [
-        IntlLanguagePipe,
         {
           provide: INTL_LOCALES,
           useValue: 'en-US',
         },
       ],
     });
-    testUnit = TestBed.inject(IntlLanguagePipe);
+    TestBed.runInInjectionContext(() => (testUnit = new IntlLanguagePipe()));
 
     expect(testUnit.transform('de-DE', { locale: 'de-DE' })).toEqual(
       'Deutsch (Deutschland)',

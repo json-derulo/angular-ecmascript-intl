@@ -1,4 +1,3 @@
-import { ChangeDetectorRef } from '@angular/core';
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import dayjs from 'dayjs';
 import { INTL_LOCALES } from '../locale';
@@ -9,13 +8,18 @@ describe('RelativeTimePipe', () => {
   let testUnit: IntlRelativeTimePipe;
 
   it('should create an instance', () => {
-    testUnit = new IntlRelativeTimePipe();
+    TestBed.runInInjectionContext(
+      () => (testUnit = new IntlRelativeTimePipe()),
+    );
     expect(testUnit).toBeTruthy();
   });
 
   describe('parsing', () => {
     beforeEach(() => {
-      testUnit = new IntlRelativeTimePipe('en-US');
+      TestBed.runInInjectionContext(() => {
+        testUnit = new IntlRelativeTimePipe();
+        Object.defineProperty(testUnit, 'locales', { value: 'en-US' });
+      });
     });
 
     it('should handle null values', () => {
@@ -157,7 +161,6 @@ describe('RelativeTimePipe', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
         providers: [
-          IntlRelativeTimePipe,
           {
             provide: INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS,
             useValue: { numeric: 'auto', style: 'short' },
@@ -168,7 +171,9 @@ describe('RelativeTimePipe', () => {
           },
         ],
       });
-      testUnit = TestBed.inject(IntlRelativeTimePipe);
+      TestBed.runInInjectionContext(
+        () => (testUnit = new IntlRelativeTimePipe()),
+      );
     });
 
     it('should respect the default options', () => {
@@ -189,12 +194,22 @@ describe('RelativeTimePipe', () => {
   });
 
   it('should fall back to the default locale', () => {
-    TestBed.configureTestingModule({ providers: [IntlRelativeTimePipe] });
+    let defaultLanguageTestUnit!: IntlRelativeTimePipe;
+    let browserLanguageTestUnit!: IntlRelativeTimePipe;
 
-    const result1 = TestBed.inject(IntlRelativeTimePipe).transform(new Date());
-    const result2 = new IntlRelativeTimePipe(navigator.language).transform(
-      new Date(),
-    );
+    TestBed.runInInjectionContext(() => {
+      defaultLanguageTestUnit = new IntlRelativeTimePipe();
+      browserLanguageTestUnit = new IntlRelativeTimePipe();
+      Object.defineProperty(browserLanguageTestUnit, 'locales', {
+        value: undefined,
+      });
+      Object.defineProperty(defaultLanguageTestUnit, 'locales', {
+        value: navigator.language,
+      });
+    });
+
+    const result1 = browserLanguageTestUnit.transform(new Date());
+    const result2 = defaultLanguageTestUnit.transform(new Date());
 
     expect(result1).toEqual(result2);
   });
@@ -202,17 +217,19 @@ describe('RelativeTimePipe', () => {
   describe('timer', () => {
     const cdrMock = {
       markForCheck: jasmine.createSpy(),
-    } as unknown as ChangeDetectorRef;
+    };
 
     beforeEach(() => {
-      testUnit = new IntlRelativeTimePipe(null, null, cdrMock);
+      TestBed.runInInjectionContext(() => {
+        testUnit = new IntlRelativeTimePipe();
+        Object.defineProperty(testUnit, 'cdr', { value: cdrMock });
+      });
     });
 
     it('should mark for check once after 1 minute', fakeAsync(() => {
       testUnit.transform(0);
       tick(60000);
 
-      // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(cdrMock.markForCheck).toHaveBeenCalledTimes(1);
 
       testUnit.ngOnDestroy();
@@ -222,14 +239,13 @@ describe('RelativeTimePipe', () => {
       testUnit.transform(new Date());
       tick(600000);
 
-      // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(cdrMock.markForCheck).toHaveBeenCalledTimes(10);
 
       testUnit.ngOnDestroy();
     }));
 
     afterEach(() => {
-      (cdrMock.markForCheck as jasmine.Spy).calls.reset();
+      cdrMock.markForCheck.calls.reset();
     });
   });
 });

@@ -8,7 +8,10 @@ describe('IntlPercentPipe', () => {
 
   describe('parsing', () => {
     beforeEach(() => {
-      testUnit = new IntlPercentPipe('en-US');
+      TestBed.runInInjectionContext(() => {
+        testUnit = new IntlPercentPipe();
+        Object.defineProperty(testUnit, 'locale', { value: 'en-US' });
+      });
     });
 
     it('should create an instance', () => {
@@ -53,23 +56,34 @@ describe('IntlPercentPipe', () => {
     it('should respect the set locale', () => {
       TestBed.configureTestingModule({
         providers: [
-          IntlPercentPipe,
           {
             provide: INTL_LOCALES,
             useValue: 'de-DE',
           },
         ],
       });
-      testUnit = TestBed.inject(IntlPercentPipe);
+      TestBed.runInInjectionContext(() => (testUnit = new IntlPercentPipe()));
 
       expect(testUnit.transform(1)).toEqual('100\xa0%');
     });
 
     it('should fall back to the browser default locale', () => {
-      TestBed.configureTestingModule({ providers: [IntlPercentPipe] });
+      let defaultLanguageTestUnit!: IntlPercentPipe;
+      let browserLanguageTestUnit!: IntlPercentPipe;
 
-      const result1 = TestBed.inject(IntlPercentPipe).transform(0.1);
-      const result2 = new IntlPercentPipe(navigator.language).transform(0.1);
+      TestBed.runInInjectionContext(() => {
+        defaultLanguageTestUnit = new IntlPercentPipe();
+        browserLanguageTestUnit = new IntlPercentPipe();
+        Object.defineProperty(browserLanguageTestUnit, 'locale', {
+          value: undefined,
+        });
+        Object.defineProperty(defaultLanguageTestUnit, 'locale', {
+          value: navigator.language,
+        });
+      });
+
+      const result1 = browserLanguageTestUnit.transform(0.1);
+      const result2 = defaultLanguageTestUnit.transform(0.1);
 
       expect(result1).toEqual(result2);
     });
@@ -79,7 +93,6 @@ describe('IntlPercentPipe', () => {
     it('should respect the setting from default config', () => {
       TestBed.configureTestingModule({
         providers: [
-          IntlPercentPipe,
           {
             provide: INTL_LOCALES,
             useValue: 'en-US',
@@ -92,7 +105,7 @@ describe('IntlPercentPipe', () => {
           },
         ],
       });
-      testUnit = TestBed.inject(IntlPercentPipe);
+      TestBed.runInInjectionContext(() => (testUnit = new IntlPercentPipe()));
 
       expect(testUnit.transform(1)).toEqual('+100%');
     });
@@ -100,7 +113,6 @@ describe('IntlPercentPipe', () => {
     it('should give the user options a higher priority', () => {
       TestBed.configureTestingModule({
         providers: [
-          IntlPercentPipe,
           {
             provide: INTL_LOCALES,
             useValue: 'en-US',
@@ -113,7 +125,7 @@ describe('IntlPercentPipe', () => {
           },
         ],
       });
-      testUnit = TestBed.inject(IntlPercentPipe);
+      TestBed.runInInjectionContext(() => (testUnit = new IntlPercentPipe()));
 
       expect(testUnit.transform(1, { signDisplay: 'never' })).toEqual('100%');
     });
@@ -122,14 +134,13 @@ describe('IntlPercentPipe', () => {
   it('should respect locale option', () => {
     TestBed.configureTestingModule({
       providers: [
-        IntlPercentPipe,
         {
           provide: INTL_LOCALES,
           useValue: 'en-US',
         },
       ],
     });
-    testUnit = TestBed.inject(IntlPercentPipe);
+    TestBed.runInInjectionContext(() => (testUnit = new IntlPercentPipe()));
 
     expect(testUnit.transform(1, { locale: 'de-DE' })).toEqual('100\xa0%');
   });
@@ -137,7 +148,6 @@ describe('IntlPercentPipe', () => {
   it('should not override the style option', () => {
     TestBed.configureTestingModule({
       providers: [
-        IntlPercentPipe,
         {
           provide: INTL_LOCALES,
           useValue: 'en-US',
@@ -150,7 +160,7 @@ describe('IntlPercentPipe', () => {
         },
       ],
     });
-    testUnit = TestBed.inject(IntlPercentPipe);
+    TestBed.runInInjectionContext(() => (testUnit = new IntlPercentPipe()));
 
     expect(testUnit.transform(1, { style: 'decimal' })).toEqual('100%');
   });

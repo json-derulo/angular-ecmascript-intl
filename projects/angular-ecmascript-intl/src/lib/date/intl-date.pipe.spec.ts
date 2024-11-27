@@ -8,7 +8,10 @@ describe('DatePipe', () => {
 
   describe('date parsing', () => {
     beforeEach(() => {
-      testUnit = new IntlDatePipe('en-US');
+      TestBed.runInInjectionContext(() => {
+        testUnit = new IntlDatePipe();
+        Object.defineProperty(testUnit, 'locale', { value: 'en-US' });
+      });
     });
 
     it('should create an instance', () => {
@@ -69,25 +72,34 @@ describe('DatePipe', () => {
     it('should respect the set locale', () => {
       TestBed.configureTestingModule({
         providers: [
-          IntlDatePipe,
           {
             provide: INTL_LOCALES,
             useValue: 'de-DE',
           },
         ],
       });
-      testUnit = TestBed.inject(IntlDatePipe);
+      TestBed.runInInjectionContext(() => (testUnit = new IntlDatePipe()));
 
       expect(testUnit.transform('2023-02-19')).toEqual('19.2.2023');
     });
 
     it('should fall back to the browser default locale', () => {
-      TestBed.configureTestingModule({ providers: [IntlDatePipe] });
+      let defaultLanguageTestUnit!: IntlDatePipe;
+      let browserLanguageTestUnit!: IntlDatePipe;
 
-      const result1 = TestBed.inject(IntlDatePipe).transform('2023-02-19');
-      const result2 = new IntlDatePipe(navigator.language).transform(
-        '2023-02-19',
-      );
+      TestBed.runInInjectionContext(() => {
+        defaultLanguageTestUnit = new IntlDatePipe();
+        browserLanguageTestUnit = new IntlDatePipe();
+        Object.defineProperty(browserLanguageTestUnit, 'locale', {
+          value: undefined,
+        });
+        Object.defineProperty(defaultLanguageTestUnit, 'locale', {
+          value: navigator.language,
+        });
+      });
+
+      const result1 = browserLanguageTestUnit.transform('2023-02-19');
+      const result2 = defaultLanguageTestUnit.transform('2023-02-19');
 
       expect(result1).toEqual(result2);
     });
@@ -97,7 +109,6 @@ describe('DatePipe', () => {
     it('should respect the setting from default config', () => {
       TestBed.configureTestingModule({
         providers: [
-          IntlDatePipe,
           {
             provide: INTL_LOCALES,
             useValue: 'en-US',
@@ -110,7 +121,7 @@ describe('DatePipe', () => {
           },
         ],
       });
-      testUnit = TestBed.inject(IntlDatePipe);
+      TestBed.runInInjectionContext(() => (testUnit = new IntlDatePipe()));
 
       expect(testUnit.transform('2023-02-19')).toEqual('Feb 19, 2023');
     });
@@ -118,7 +129,6 @@ describe('DatePipe', () => {
     it('should give the user options a higher priority', () => {
       TestBed.configureTestingModule({
         providers: [
-          IntlDatePipe,
           {
             provide: INTL_LOCALES,
             useValue: 'en-US',
@@ -131,7 +141,7 @@ describe('DatePipe', () => {
           },
         ],
       });
-      testUnit = TestBed.inject(IntlDatePipe);
+      TestBed.runInInjectionContext(() => (testUnit = new IntlDatePipe()));
 
       expect(testUnit.transform('2023-02-19', { dateStyle: 'medium' })).toEqual(
         'Feb 19, 2023',
@@ -142,14 +152,13 @@ describe('DatePipe', () => {
   it('should respect locale option', () => {
     TestBed.configureTestingModule({
       providers: [
-        IntlDatePipe,
         {
           provide: INTL_LOCALES,
           useValue: 'en-US',
         },
       ],
     });
-    testUnit = TestBed.inject(IntlDatePipe);
+    TestBed.runInInjectionContext(() => (testUnit = new IntlDatePipe()));
 
     expect(testUnit.transform('2023-02-19', { locale: 'de-DE' })).toEqual(
       '19.2.2023',

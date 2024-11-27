@@ -7,7 +7,10 @@ describe('IntlListPipe', () => {
 
   describe('parsing', () => {
     beforeEach(() => {
-      testUnit = new IntlListPipe('en-US');
+      TestBed.runInInjectionContext(() => {
+        testUnit = new IntlListPipe();
+        Object.defineProperty(testUnit, 'locale', { value: 'en-US' });
+      });
     });
 
     it('should create an instance', () => {
@@ -44,14 +47,13 @@ describe('IntlListPipe', () => {
     it('should respect the set locale', () => {
       TestBed.configureTestingModule({
         providers: [
-          IntlListPipe,
           {
             provide: INTL_LOCALES,
             useValue: 'de-DE',
           },
         ],
       });
-      testUnit = TestBed.inject(IntlListPipe);
+      TestBed.runInInjectionContext(() => (testUnit = new IntlListPipe()));
 
       expect(testUnit.transform(['Äpfel', 'Birnen'])).toEqual(
         'Äpfel und Birnen',
@@ -59,13 +61,22 @@ describe('IntlListPipe', () => {
     });
 
     it('should fall back to the browser default locale', () => {
-      TestBed.configureTestingModule({ providers: [IntlListPipe] });
+      let defaultLanguageTestUnit!: IntlListPipe;
+      let browserLanguageTestUnit!: IntlListPipe;
 
-      const result1 = TestBed.inject(IntlListPipe).transform(['some', 'val']);
-      const result2 = new IntlListPipe(navigator.language).transform([
-        'some',
-        'val',
-      ]);
+      TestBed.runInInjectionContext(() => {
+        defaultLanguageTestUnit = new IntlListPipe();
+        browserLanguageTestUnit = new IntlListPipe();
+        Object.defineProperty(browserLanguageTestUnit, 'locale', {
+          value: undefined,
+        });
+        Object.defineProperty(defaultLanguageTestUnit, 'locale', {
+          value: navigator.language,
+        });
+      });
+
+      const result1 = browserLanguageTestUnit.transform(['some', 'val']);
+      const result2 = defaultLanguageTestUnit.transform(['some', 'val']);
 
       expect(result1).toEqual(result2);
     });
@@ -74,14 +85,13 @@ describe('IntlListPipe', () => {
   it('should respect locale option', () => {
     TestBed.configureTestingModule({
       providers: [
-        IntlListPipe,
         {
           provide: INTL_LOCALES,
           useValue: 'en-US',
         },
       ],
     });
-    testUnit = TestBed.inject(IntlListPipe);
+    TestBed.runInInjectionContext(() => (testUnit = new IntlListPipe()));
 
     expect(
       testUnit.transform(['Äpfel', 'Birnen'], { locale: 'de-DE' }),

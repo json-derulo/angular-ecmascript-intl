@@ -1,4 +1,4 @@
-import { Inject, Optional, Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { IntlPipeOptions } from '../intl-pipe-options';
 import { INTL_LOCALES } from '../locale';
 import { getNumericValue } from '../utils/number-utils';
@@ -16,14 +16,11 @@ export type IntlCurrencyPipeOptions = Omit<
   standalone: true,
 })
 export class IntlCurrencyPipe implements PipeTransform {
-  constructor(
-    @Optional()
-    @Inject(INTL_LOCALES)
-    readonly locale?: string | string[] | null,
-    @Optional()
-    @Inject(INTL_CURRENCY_PIPE_DEFAULT_OPTIONS)
-    readonly defaultOptions?: Omit<IntlCurrencyPipeOptions, 'locale'> | null,
-  ) {}
+  private readonly locale? = inject(INTL_LOCALES, { optional: true });
+  private readonly defaultOptions? = inject<Omit<
+    IntlCurrencyPipeOptions,
+    'locale'
+  > | null>(INTL_CURRENCY_PIPE_DEFAULT_OPTIONS, { optional: true });
 
   transform(
     value: number | string | null | undefined,
