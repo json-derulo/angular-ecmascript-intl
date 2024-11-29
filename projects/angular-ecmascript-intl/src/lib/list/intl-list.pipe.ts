@@ -1,4 +1,4 @@
-import { Inject, Optional, Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { IntlPipeOptions } from '../intl-pipe-options';
 import { INTL_LOCALES } from '../locale';
 import { INTL_LIST_PIPE_DEFAULT_OPTIONS } from './intl-list-pipe-default-options';
@@ -11,14 +11,11 @@ export type IntlListPipeOptions = Partial<Intl.ListFormatOptions> &
   standalone: true,
 })
 export class IntlListPipe implements PipeTransform {
-  constructor(
-    @Optional()
-    @Inject(INTL_LOCALES)
-    readonly locale?: string | string[] | null,
-    @Optional()
-    @Inject(INTL_LIST_PIPE_DEFAULT_OPTIONS)
-    readonly defaultOptions?: Omit<IntlListPipeOptions, 'locale'> | null,
-  ) {}
+  private readonly locale? = inject(INTL_LOCALES, { optional: true });
+  private readonly defaultOptions? = inject<Omit<
+    IntlListPipeOptions,
+    'locale'
+  > | null>(INTL_LIST_PIPE_DEFAULT_OPTIONS, { optional: true });
 
   transform(
     value: Iterable<string> | null | undefined,

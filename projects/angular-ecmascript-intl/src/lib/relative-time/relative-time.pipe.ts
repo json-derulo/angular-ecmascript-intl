@@ -1,10 +1,9 @@
 import {
   ChangeDetectorRef,
-  Inject,
   OnDestroy,
-  Optional,
   Pipe,
   PipeTransform,
+  inject,
 } from '@angular/core';
 import { Subject, interval, takeUntil } from 'rxjs';
 import { IntlPipeOptions } from '../intl-pipe-options';
@@ -30,20 +29,14 @@ enum Time {
   pure: false,
 })
 export class IntlRelativeTimePipe implements PipeTransform, OnDestroy {
-  #destroy$?: Subject<void>;
+  private readonly locales? = inject(INTL_LOCALES, { optional: true });
+  private readonly defaultOptions? = inject<Omit<
+    IntlRelativeTimePipeOptions,
+    'locale'
+  > | null>(INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS, { optional: true });
+  private readonly cdr? = inject(ChangeDetectorRef, { optional: true });
 
-  constructor(
-    @Optional()
-    @Inject(INTL_LOCALES)
-    readonly locales?: string | string[] | null,
-    @Optional()
-    @Inject(INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS)
-    readonly defaultOptions?: Omit<
-      IntlRelativeTimePipeOptions,
-      'locale'
-    > | null,
-    @Optional() readonly cdr?: ChangeDetectorRef,
-  ) {}
+  #destroy$?: Subject<void>;
 
   transform(
     value: string | number | Date | null | undefined,

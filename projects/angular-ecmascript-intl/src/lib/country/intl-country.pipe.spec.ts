@@ -8,7 +8,10 @@ describe('IntlCountryPipe', () => {
 
   describe('parsing', () => {
     beforeEach(() => {
-      testUnit = new IntlCountryPipe('en-US');
+      TestBed.runInInjectionContext(() => {
+        testUnit = new IntlCountryPipe();
+        Object.defineProperty(testUnit, 'locale', { value: 'en-US' });
+      });
     });
 
     it('should create an instance', () => {
@@ -49,23 +52,34 @@ describe('IntlCountryPipe', () => {
     it('should respect the set locale', () => {
       TestBed.configureTestingModule({
         providers: [
-          IntlCountryPipe,
           {
             provide: INTL_LOCALES,
             useValue: 'de-DE',
           },
         ],
       });
-      testUnit = TestBed.inject(IntlCountryPipe);
+      TestBed.runInInjectionContext(() => (testUnit = new IntlCountryPipe()));
 
       expect(testUnit.transform('AT')).toEqual('Österreich');
     });
 
     it('should fall back to the browser default locale', () => {
-      TestBed.configureTestingModule({ providers: [IntlCountryPipe] });
+      let defaultLanguageTestUnit!: IntlCountryPipe;
+      let browserLanguageTestUnit!: IntlCountryPipe;
 
-      const result1 = TestBed.inject(IntlCountryPipe).transform('US');
-      const result2 = new IntlCountryPipe(navigator.language).transform('US');
+      TestBed.runInInjectionContext(() => {
+        defaultLanguageTestUnit = new IntlCountryPipe();
+        browserLanguageTestUnit = new IntlCountryPipe();
+        Object.defineProperty(browserLanguageTestUnit, 'locale', {
+          value: undefined,
+        });
+        Object.defineProperty(defaultLanguageTestUnit, 'locale', {
+          value: navigator.language,
+        });
+      });
+
+      const result1 = browserLanguageTestUnit.transform('US');
+      const result2 = defaultLanguageTestUnit.transform('US');
 
       expect(result1).toEqual(result2);
     });
@@ -75,7 +89,6 @@ describe('IntlCountryPipe', () => {
     it('should not override the type option', () => {
       TestBed.configureTestingModule({
         providers: [
-          IntlCountryPipe,
           {
             provide: INTL_LOCALES,
             useValue: 'de-DE',
@@ -88,7 +101,7 @@ describe('IntlCountryPipe', () => {
           },
         ],
       });
-      testUnit = TestBed.inject(IntlCountryPipe);
+      TestBed.runInInjectionContext(() => (testUnit = new IntlCountryPipe()));
 
       expect(testUnit.transform('DE', { type: 'language' })).toEqual(
         'Deutschland',
@@ -99,14 +112,13 @@ describe('IntlCountryPipe', () => {
   it('should respect locale option', () => {
     TestBed.configureTestingModule({
       providers: [
-        IntlCountryPipe,
         {
           provide: INTL_LOCALES,
           useValue: 'en-US',
         },
       ],
     });
-    testUnit = TestBed.inject(IntlCountryPipe);
+    TestBed.runInInjectionContext(() => (testUnit = new IntlCountryPipe()));
 
     expect(testUnit.transform('US', { locale: 'de-DE' })).toEqual(
       'Vereinigte Staaten',

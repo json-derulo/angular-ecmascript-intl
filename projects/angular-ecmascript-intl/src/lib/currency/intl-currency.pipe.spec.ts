@@ -8,7 +8,10 @@ describe('IntlCurrencyPipe', () => {
 
   describe('parsing', () => {
     beforeEach(() => {
-      testUnit = new IntlCurrencyPipe('en-US');
+      TestBed.runInInjectionContext(() => {
+        testUnit = new IntlCurrencyPipe();
+        Object.defineProperty(testUnit, 'locale', { value: 'en-US' });
+      });
     });
 
     it('should create an instance', () => {
@@ -53,29 +56,34 @@ describe('IntlCurrencyPipe', () => {
     it('should respect the set locale', () => {
       TestBed.configureTestingModule({
         providers: [
-          IntlCurrencyPipe,
           {
             provide: INTL_LOCALES,
             useValue: 'de-DE',
           },
         ],
       });
-      testUnit = TestBed.inject(IntlCurrencyPipe);
+      TestBed.runInInjectionContext(() => (testUnit = new IntlCurrencyPipe()));
 
       expect(testUnit.transform(1024.2249, 'EUR')).toEqual('1.024,22\xa0€');
     });
 
     it('should fall back to the browser default locale', () => {
-      TestBed.configureTestingModule({ providers: [IntlCurrencyPipe] });
+      let defaultLanguageTestUnit!: IntlCurrencyPipe;
+      let browserLanguageTestUnit!: IntlCurrencyPipe;
 
-      const result1 = TestBed.inject(IntlCurrencyPipe).transform(
-        1024.2249,
-        'EUR',
-      );
-      const result2 = new IntlCurrencyPipe(navigator.language).transform(
-        1024.2249,
-        'EUR',
-      );
+      TestBed.runInInjectionContext(() => {
+        defaultLanguageTestUnit = new IntlCurrencyPipe();
+        browserLanguageTestUnit = new IntlCurrencyPipe();
+        Object.defineProperty(browserLanguageTestUnit, 'locale', {
+          value: undefined,
+        });
+        Object.defineProperty(defaultLanguageTestUnit, 'locale', {
+          value: navigator.language,
+        });
+      });
+
+      const result1 = browserLanguageTestUnit.transform(1024.2249, 'EUR');
+      const result2 = defaultLanguageTestUnit.transform(1024.2249, 'EUR');
 
       expect(result1).toEqual(result2);
     });
@@ -85,7 +93,6 @@ describe('IntlCurrencyPipe', () => {
     it('should respect the setting from default config', () => {
       TestBed.configureTestingModule({
         providers: [
-          IntlCurrencyPipe,
           {
             provide: INTL_LOCALES,
             useValue: 'en-US',
@@ -98,7 +105,7 @@ describe('IntlCurrencyPipe', () => {
           },
         ],
       });
-      testUnit = TestBed.inject(IntlCurrencyPipe);
+      TestBed.runInInjectionContext(() => (testUnit = new IntlCurrencyPipe()));
 
       expect(testUnit.transform(1, 'USD')).toEqual('+$1.00');
     });
@@ -106,7 +113,6 @@ describe('IntlCurrencyPipe', () => {
     it('should give the user options a higher priority', () => {
       TestBed.configureTestingModule({
         providers: [
-          IntlCurrencyPipe,
           {
             provide: INTL_LOCALES,
             useValue: 'en-US',
@@ -119,7 +125,7 @@ describe('IntlCurrencyPipe', () => {
           },
         ],
       });
-      testUnit = TestBed.inject(IntlCurrencyPipe);
+      TestBed.runInInjectionContext(() => (testUnit = new IntlCurrencyPipe()));
 
       expect(testUnit.transform(1, 'USD', { signDisplay: 'never' })).toEqual(
         '$1.00',
@@ -130,14 +136,13 @@ describe('IntlCurrencyPipe', () => {
   it('should respect locale option', () => {
     TestBed.configureTestingModule({
       providers: [
-        IntlCurrencyPipe,
         {
           provide: INTL_LOCALES,
           useValue: 'en-US',
         },
       ],
     });
-    testUnit = TestBed.inject(IntlCurrencyPipe);
+    TestBed.runInInjectionContext(() => (testUnit = new IntlCurrencyPipe()));
 
     expect(testUnit.transform(1024, 'USD', { locale: 'de-DE' })).toEqual(
       '1.024,00\xa0$',
@@ -147,7 +152,6 @@ describe('IntlCurrencyPipe', () => {
   it('should not override the style option', () => {
     TestBed.configureTestingModule({
       providers: [
-        IntlCurrencyPipe,
         {
           provide: INTL_LOCALES,
           useValue: 'en-US',
@@ -160,7 +164,7 @@ describe('IntlCurrencyPipe', () => {
         },
       ],
     });
-    testUnit = TestBed.inject(IntlCurrencyPipe);
+    TestBed.runInInjectionContext(() => (testUnit = new IntlCurrencyPipe()));
 
     expect(testUnit.transform(1, 'USD', { style: 'percent' })).toEqual('$1.00');
   });
