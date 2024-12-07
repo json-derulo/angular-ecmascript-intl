@@ -3,6 +3,7 @@ import { CountryComponent } from './country/country.component';
 import { CurrencyComponent } from './currency/currency.component';
 import { DateComponent } from './date/date.component';
 import { DecimalComponent } from './decimal/decimal.component';
+import { DurationComponent } from './duration/duration.component';
 import { LanguageComponent } from './language/language.component';
 import { ListComponent } from './list/list.component';
 import { PercentComponent } from './percent/percent.component';
@@ -50,6 +51,10 @@ const routes: Routes = [
       {
         path: 'relative-time',
         component: RelativeTimeComponent,
+      },
+      {
+        path: 'duration',
+        component: DurationComponent,
       },
       {
         path: '',
