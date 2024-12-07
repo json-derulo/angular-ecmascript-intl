@@ -47,6 +47,7 @@ Now you can use the pipes, see below.
 - [Unit pipe](#unit-pipe)
 - [List pipe](#list-pipe)
 - [Relative Time (timeago) pipe](#relative-time-timeago-pipe)
+- [Duration pipe](#duration-pipe)
 
 ### Date pipe
 
@@ -271,6 +272,27 @@ The following options are supported:
 
 With the `INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS` injection token you can specify default options.
 
+## Duration pipe
+
+Use the duration pipe like the following:
+
+```
+{{ { hours: 2, minutes: 53 } | intlDuration: options }}
+```
+
+The input can be one of the following:
+
+- [duration object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DurationFormat/format#parameters)
+- null
+- undefined
+
+The following options are supported:
+
+- [`style`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DurationFormat/DurationFormat#style)
+- [`fractionalDigits`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DurationFormat/DurationFormat#fractionalDigits)
+
+For each duration unit, there is a style and display option.
+
 ## Browser compatibility
 
 This library supports the latest major version of the following browsers:
@@ -294,6 +316,7 @@ In case you need to support older versions of that browsers, see the below table
 | Unit          | 77     | 78      | 14.1   |
 | List          | 72     | 78      | 14.1   |
 | Relative Time | 71     | 65      | 14     |
+| Duration      | 129    | 136     | 16.4   |
 
 ## Angular compatibility table
 
