@@ -71,6 +71,14 @@
     routerLinkActive
     >Relative Time</a
   >
+  <a
+    #durationActive="routerLinkActive"
+    [active]="durationActive.isActive"
+    mat-tab-link
+    routerLink="duration"
+    routerLinkActive
+    >Duration</a
+  >
 </nav>
 <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
 
