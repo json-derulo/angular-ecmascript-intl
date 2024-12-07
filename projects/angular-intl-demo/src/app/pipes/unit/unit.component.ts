@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatOptionModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { IntlUnitPipe } from '../../../../../angular-ecmascript-intl/src/lib/unit/intl-unit.pipe';
+import { IntlUnitPipe, IntlUnitPipeOptions } from 'angular-ecmascript-intl';
 import { languages } from '../../languages';
 import { units } from './units';
 
@@ -22,27 +22,38 @@ import { units } from './units';
   ],
 })
 export class UnitComponent {
-  enteredNumber = '1';
-  selectedUnit = 'hour';
+  enteredNumber = signal('1');
+  selectedUnit = signal('hour');
   languages = languages;
   units = units;
-  locale?: string;
-  notation?: Intl.NumberFormatOptions['notation'];
-  signDisplay?: Intl.NumberFormatOptions['signDisplay'];
-  unitDisplay?: Intl.NumberFormatOptions['unitDisplay'];
-  minimumIntegerDigits?:
-    | Intl.NumberFormatOptions['minimumIntegerDigits']
-    | null;
-  minimumFractionDigits?:
-    | Intl.NumberFormatOptions['minimumFractionDigits']
-    | null;
-  maximumFractionDigits?:
-    | Intl.NumberFormatOptions['maximumFractionDigits']
-    | null;
-  minimumSignificantDigits?:
-    | Intl.NumberFormatOptions['minimumSignificantDigits']
-    | null;
-  maximumSignificantDigits?:
-    | Intl.NumberFormatOptions['maximumSignificantDigits']
-    | null;
+  locale = signal<string | undefined>(undefined);
+  notation = signal<IntlUnitPipeOptions['notation']>(undefined);
+  signDisplay = signal<IntlUnitPipeOptions['signDisplay']>(undefined);
+  unitDisplay = signal<IntlUnitPipeOptions['unitDisplay']>(undefined);
+  minimumIntegerDigits = signal<
+    IntlUnitPipeOptions['minimumIntegerDigits'] | null
+  >(undefined);
+  minimumFractionDigits = signal<
+    IntlUnitPipeOptions['minimumFractionDigits'] | null
+  >(undefined);
+  maximumFractionDigits = signal<
+    IntlUnitPipeOptions['maximumFractionDigits'] | null
+  >(undefined);
+  minimumSignificantDigits = signal<
+    IntlUnitPipeOptions['minimumSignificantDigits'] | null
+  >(undefined);
+  maximumSignificantDigits = signal<
+    IntlUnitPipeOptions['maximumSignificantDigits'] | null
+  >(undefined);
+  options = computed<IntlUnitPipeOptions>(() => ({
+    locale: this.locale(),
+    notation: this.notation(),
+    signDisplay: this.signDisplay(),
+    unitDisplay: this.unitDisplay(),
+    minimumIntegerDigits: this.minimumIntegerDigits() ?? undefined,
+    minimumFractionDigits: this.minimumFractionDigits() ?? undefined,
+    maximumFractionDigits: this.maximumFractionDigits() ?? undefined,
+    minimumSignificantDigits: this.minimumSignificantDigits() ?? undefined,
+    maximumSignificantDigits: this.maximumSignificantDigits() ?? undefined,
+  }));
 }

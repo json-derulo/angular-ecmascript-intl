@@ -8,7 +8,7 @@
     <mat-label>Locale</mat-label>
     <mat-select [(ngModel)]="locale">
       <mat-option [value]="undefined">Browser default</mat-option>
-      @for (language of languages; track language) {
+      @for (language of languages; track $index) {
         <mat-option [value]="language">{{ language }}</mat-option>
       }
     </mat-select>
@@ -99,18 +99,5 @@
 </div>
 
 <p>
-  {{
-    enteredNumber
-      | intlDecimal
-        : {
-            locale,
-            notation,
-            signDisplay,
-            minimumIntegerDigits: minimumIntegerDigits ?? undefined,
-            minimumFractionDigits: minimumFractionDigits ?? undefined,
-            maximumFractionDigits: maximumFractionDigits ?? undefined,
-            minimumSignificantDigits: minimumSignificantDigits ?? undefined,
-            maximumSignificantDigits: maximumSignificantDigits ?? undefined,
-          }
-  }}
+  {{ enteredNumber() | intlDecimal: options() }}
 </p>

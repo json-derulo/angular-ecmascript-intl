@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatOptionModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { IntlDecimalPipe } from '../../../../../angular-ecmascript-intl/src/lib/decimal/intl-decimal.pipe';
+import {
+  IntlDecimalPipe,
+  IntlDecimalPipeOptions,
+} from 'angular-ecmascript-intl';
 import { languages } from '../../languages';
 
 @Component({
@@ -21,24 +24,34 @@ import { languages } from '../../languages';
   ],
 })
 export class DecimalComponent {
-  enteredNumber = '1024.4539';
+  enteredNumber = signal('1024.4539');
   languages = languages;
-  locale?: string;
-  notation?: Intl.NumberFormatOptions['notation'];
-  signDisplay?: Intl.NumberFormatOptions['signDisplay'];
-  minimumIntegerDigits?:
-    | Intl.NumberFormatOptions['minimumIntegerDigits']
-    | null;
-  minimumFractionDigits?:
-    | Intl.NumberFormatOptions['minimumFractionDigits']
-    | null;
-  maximumFractionDigits?:
-    | Intl.NumberFormatOptions['maximumFractionDigits']
-    | null;
-  minimumSignificantDigits?:
-    | Intl.NumberFormatOptions['minimumSignificantDigits']
-    | null;
-  maximumSignificantDigits?:
-    | Intl.NumberFormatOptions['maximumSignificantDigits']
-    | null;
+  locale = signal<string | undefined>(undefined);
+  notation = signal<IntlDecimalPipeOptions['notation']>(undefined);
+  signDisplay = signal<IntlDecimalPipeOptions['signDisplay']>(undefined);
+  minimumIntegerDigits = signal<
+    IntlDecimalPipeOptions['minimumIntegerDigits'] | null
+  >(undefined);
+  minimumFractionDigits = signal<
+    IntlDecimalPipeOptions['minimumFractionDigits'] | null
+  >(undefined);
+  maximumFractionDigits = signal<
+    IntlDecimalPipeOptions['maximumFractionDigits'] | null
+  >(undefined);
+  minimumSignificantDigits = signal<
+    IntlDecimalPipeOptions['minimumSignificantDigits'] | null
+  >(undefined);
+  maximumSignificantDigits = signal<
+    IntlDecimalPipeOptions['maximumSignificantDigits'] | null
+  >(undefined);
+  options = computed<IntlDecimalPipeOptions>(() => ({
+    locale: this.locale(),
+    notation: this.notation(),
+    signDisplay: this.signDisplay(),
+    minimumIntegerDigits: this.minimumIntegerDigits() ?? undefined,
+    minimumFractionDigits: this.minimumFractionDigits() ?? undefined,
+    maximumFractionDigits: this.maximumFractionDigits() ?? undefined,
+    minimumSignificantDigits: this.minimumSignificantDigits() ?? undefined,
+    maximumSignificantDigits: this.maximumSignificantDigits() ?? undefined,
+  }));
 }

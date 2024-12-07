@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatOptionModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { IntlCurrencyPipe } from '../../../../../angular-ecmascript-intl/src/lib/currency/intl-currency.pipe';
+import {
+  IntlCurrencyPipe,
+  IntlCurrencyPipeOptions,
+} from 'angular-ecmascript-intl';
 import { languages } from '../../languages';
 import { currencies } from './currencies';
 
@@ -22,28 +25,41 @@ import { currencies } from './currencies';
   ],
 })
 export class CurrencyComponent {
-  enteredNumber = '0.24';
-  currency = 'USD';
+  enteredNumber = signal('0.24');
+  currency = signal('USD');
   languages = languages;
   currencies = currencies;
-  locale?: string;
-  notation?: Intl.NumberFormatOptions['notation'];
-  signDisplay?: Intl.NumberFormatOptions['signDisplay'];
-  currencyDisplay?: Intl.NumberFormatOptions['currencyDisplay'];
-  currencySign?: Intl.NumberFormatOptions['currencySign'];
-  minimumIntegerDigits?:
-    | Intl.NumberFormatOptions['minimumIntegerDigits']
-    | null;
-  minimumFractionDigits?:
-    | Intl.NumberFormatOptions['minimumFractionDigits']
-    | null;
-  maximumFractionDigits?:
-    | Intl.NumberFormatOptions['maximumFractionDigits']
-    | null;
-  minimumSignificantDigits?:
-    | Intl.NumberFormatOptions['minimumSignificantDigits']
-    | null;
-  maximumSignificantDigits?:
-    | Intl.NumberFormatOptions['maximumSignificantDigits']
-    | null;
+  locale = signal<string | undefined>(undefined);
+  notation = signal<IntlCurrencyPipeOptions['notation']>(undefined);
+  signDisplay = signal<IntlCurrencyPipeOptions['signDisplay']>(undefined);
+  currencyDisplay =
+    signal<IntlCurrencyPipeOptions['currencyDisplay']>(undefined);
+  currencySign = signal<IntlCurrencyPipeOptions['currencySign']>(undefined);
+  minimumIntegerDigits = signal<
+    IntlCurrencyPipeOptions['minimumIntegerDigits'] | null
+  >(undefined);
+  minimumFractionDigits = signal<
+    IntlCurrencyPipeOptions['minimumFractionDigits'] | null
+  >(undefined);
+  maximumFractionDigits = signal<
+    IntlCurrencyPipeOptions['maximumFractionDigits'] | null
+  >(undefined);
+  minimumSignificantDigits = signal<
+    IntlCurrencyPipeOptions['minimumSignificantDigits'] | null
+  >(undefined);
+  maximumSignificantDigits = signal<
+    IntlCurrencyPipeOptions['maximumSignificantDigits'] | null
+  >(undefined);
+  options = computed<IntlCurrencyPipeOptions>(() => ({
+    locale: this.locale(),
+    currencyDisplay: this.currencyDisplay(),
+    currencySign: this.currencySign(),
+    notation: this.notation(),
+    signDisplay: this.signDisplay(),
+    minimumIntegerDigits: this.minimumIntegerDigits() ?? undefined,
+    minimumFractionDigits: this.minimumFractionDigits() ?? undefined,
+    maximumFractionDigits: this.maximumFractionDigits() ?? undefined,
+    minimumSignificantDigits: this.minimumSignificantDigits() ?? undefined,
+    maximumSignificantDigits: this.maximumSignificantDigits() ?? undefined,
+  }));
 }

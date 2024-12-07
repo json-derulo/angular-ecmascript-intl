@@ -17,7 +17,7 @@
     <mat-label>Locale</mat-label>
     <mat-select [(ngModel)]="locale">
       <mat-option [value]="undefined">Browser default</mat-option>
-      @for (language of languages; track language) {
+      @for (language of languages; track $index) {
         <mat-option [value]="language">{{ language }}</mat-option>
       }
     </mat-select>
@@ -43,4 +43,4 @@
   </mat-form-field>
 </div>
 
-<p>{{ selectedDate | intlRelativeTime: { locale, numeric, style } }}</p>
+<p>{{ selectedDate() | intlRelativeTime: options() }}</p>

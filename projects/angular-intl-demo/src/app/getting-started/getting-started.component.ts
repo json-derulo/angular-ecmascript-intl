@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { MarkdownModule } from 'ngx-markdown';
+import { MarkdownComponent } from 'ngx-markdown';
 
 @Component({
   selector: 'app-getting-started',
   templateUrl: './getting-started.component.html',
   styleUrls: ['./getting-started.component.scss'],
-  imports: [MarkdownModule],
+  imports: [MarkdownComponent],
 })
 export class GettingStartedComponent {}
