@@ -2,7 +2,7 @@
   <mat-form-field>
     <mat-label>List items</mat-label>
     <mat-select [(ngModel)]="selectedItems" multiple>
-      @for (item of list; track item) {
+      @for (item of list; track $index) {
         <mat-option [value]="item">{{ item }}</mat-option>
       }
     </mat-select>
@@ -12,7 +12,7 @@
     <mat-label>Locale</mat-label>
     <mat-select [(ngModel)]="locale">
       <mat-option [value]="undefined">Browser default</mat-option>
-      @for (language of languages; track language) {
+      @for (language of languages; track $index) {
         <mat-option [value]="language">{{ language }}</mat-option>
       }
     </mat-select>
@@ -39,4 +39,4 @@
   </mat-form-field>
 </div>
 
-<p>{{ selectedItems | intlList: { locale, type, style } }}</p>
+<p>{{ selectedItems() | intlList: options() }}</p>

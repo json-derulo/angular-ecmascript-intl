@@ -2,7 +2,7 @@
   <mat-form-field>
     <mat-label>Country to transform</mat-label>
     <mat-select [(ngModel)]="selectedCountry">
-      @for (country of countries; track country) {
+      @for (country of countries; track $index) {
         <mat-option [value]="country">{{ country }}</mat-option>
       }
     </mat-select>
@@ -12,11 +12,11 @@
     <mat-label>Locale</mat-label>
     <mat-select [(ngModel)]="locale">
       <mat-option [value]="undefined">Browser default</mat-option>
-      @for (language of languages; track language) {
+      @for (language of languages; track $index) {
         <mat-option [value]="language">{{ language }}</mat-option>
       }
     </mat-select>
   </mat-form-field>
 </div>
 
-<p>{{ selectedCountry | intlCountry: { locale } }}</p>
+<p>{{ selectedCountry() | intlCountry: options() }}</p>

@@ -7,7 +7,7 @@
   <mat-form-field>
     <mat-label>Unit</mat-label>
     <mat-select [(ngModel)]="selectedUnit">
-      @for (unit of units; track unit) {
+      @for (unit of units; track $index) {
         <mat-option [value]="unit">{{ unit }}</mat-option>
       }
     </mat-select>
@@ -17,7 +17,7 @@
     <mat-label>Locale</mat-label>
     <mat-select [(ngModel)]="locale">
       <mat-option [value]="undefined">Browser default</mat-option>
-      @for (language of languages; track language) {
+      @for (language of languages; track $index) {
         <mat-option [value]="language">{{ language }}</mat-option>
       }
     </mat-select>
@@ -118,20 +118,5 @@
 </div>
 
 <p>
-  {{
-    enteredNumber
-      | intlUnit
-        : selectedUnit
-        : {
-            locale,
-            unitDisplay: unitDisplay,
-            notation,
-            signDisplay,
-            minimumIntegerDigits: minimumIntegerDigits ?? undefined,
-            minimumFractionDigits: minimumFractionDigits ?? undefined,
-            maximumFractionDigits: maximumFractionDigits ?? undefined,
-            minimumSignificantDigits: minimumSignificantDigits ?? undefined,
-            maximumSignificantDigits: maximumSignificantDigits ?? undefined,
-          }
-  }}
+  {{ enteredNumber() | intlUnit: selectedUnit() : options() }}
 </p>

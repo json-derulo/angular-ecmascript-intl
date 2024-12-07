@@ -3,7 +3,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "angular-ecmascript-intl": ["dist/angular-ecmascript-intl"]
+      "angular-ecmascript-intl": [
+        "./projects/angular-ecmascript-intl/src/public-api.ts"
+      ]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

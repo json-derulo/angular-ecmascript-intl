@@ -7,7 +7,7 @@
   <mat-form-field>
     <mat-label>Currency</mat-label>
     <mat-select [(ngModel)]="currency">
-      @for (currency of currencies; track currency) {
+      @for (currency of currencies; track $index) {
         <mat-option [value]="currency">{{ currency }}</mat-option>
       }
     </mat-select>
@@ -17,7 +17,7 @@
     <mat-label>Locale</mat-label>
     <mat-select [(ngModel)]="locale">
       <mat-option [value]="undefined">Browser default</mat-option>
-      @for (language of languages; track language) {
+      @for (language of languages; track $index) {
         <mat-option [value]="language">{{ language }}</mat-option>
       }
     </mat-select>
@@ -128,21 +128,5 @@
 </div>
 
 <p>
-  {{
-    enteredNumber
-      | intlCurrency
-        : currency
-        : {
-            locale,
-            currencyDisplay,
-            currencySign,
-            notation,
-            signDisplay,
-            minimumIntegerDigits: minimumIntegerDigits ?? undefined,
-            minimumFractionDigits: minimumFractionDigits ?? undefined,
-            maximumFractionDigits: maximumFractionDigits ?? undefined,
-            minimumSignificantDigits: minimumSignificantDigits ?? undefined,
-            maximumSignificantDigits: maximumSignificantDigits ?? undefined,
-          }
-  }}
+  {{ enteredNumber() | intlCurrency: currency() : options() }}
 </p>
