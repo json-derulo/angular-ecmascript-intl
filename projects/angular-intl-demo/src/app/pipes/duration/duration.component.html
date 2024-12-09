@@ -1,0 +1,76 @@
+<div class="fields-container">
+  <mat-form-field>
+    <mat-label>Years</mat-label>
+    <input matInput type="number" [(ngModel)]="years" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Months</mat-label>
+    <input matInput type="number" [(ngModel)]="months" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Weeks</mat-label>
+    <input matInput type="number" [(ngModel)]="weeks" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Days</mat-label>
+    <input matInput type="number" [(ngModel)]="days" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Hours</mat-label>
+    <input matInput type="number" [(ngModel)]="hours" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Minutes</mat-label>
+    <input matInput type="number" [(ngModel)]="minutes" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Seconds</mat-label>
+    <input matInput type="number" [(ngModel)]="seconds" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Milliseconds</mat-label>
+    <input matInput type="number" [(ngModel)]="milliseconds" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Microseconds</mat-label>
+    <input matInput type="number" [(ngModel)]="microseconds" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nanoseconds</mat-label>
+    <input matInput type="number" [(ngModel)]="nanoseconds" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Locale</mat-label>
+    <mat-select [(ngModel)]="locale">
+      <mat-option [value]="undefined">Browser default</mat-option>
+      @for (language of languages; track $index) {
+        <mat-option [value]="language">{{ language }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Style</mat-label>
+    <mat-select [(ngModel)]="style">
+      <mat-option [value]="undefined">Browser default</mat-option>
+      <mat-option [value]="'long'">long</mat-option>
+      <mat-option [value]="'short'">short</mat-option>
+      <mat-option [value]="'narrow'">narrow</mat-option>
+      <mat-option [value]="'digital'">digital</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<p>
+  {{ value() | intlDuration: options() }}
+</p>
