@@ -52,7 +52,7 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "karma-safarinative-launcher": "^1.1.0",
     "ng-packagr": "~19.1.0",
-    "prettier": "~3.4.0",
+    "prettier": "~3.5.0",
     "prettier-plugin-organize-imports": "^4.0.0",
     "typescript": "~5.7.0",
     "typescript-eslint": "^8.0.0"
