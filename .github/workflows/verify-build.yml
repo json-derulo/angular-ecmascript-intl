@@ -4,7 +4,6 @@ permissions:
   contents: read
 
 on:
-  workflow_dispatch:
   pull_request_target:
     types: [opened, synchronize, reopened]
 
@@ -12,11 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
+      - uses: actions/checkout@v4
 
       - uses: pnpm/action-setup@v4
         name: Install pnpm
@@ -32,11 +27,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
+      - uses: actions/checkout@v4
 
       - uses: pnpm/action-setup@v4
         name: Install pnpm
@@ -52,11 +43,7 @@ jobs:
   test-chrome:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
+      - uses: actions/checkout@v4
 
       - uses: pnpm/action-setup@v4
         name: Install pnpm
@@ -77,11 +64,7 @@ jobs:
   test-firefox:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
+      - uses: actions/checkout@v4
 
       - uses: pnpm/action-setup@v4
         name: Install pnpm
@@ -97,11 +80,7 @@ jobs:
   test-safari:
     runs-on: macos-14
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
+      - uses: actions/checkout@v4
 
       - uses: pnpm/action-setup@v4
         name: Install pnpm
@@ -117,11 +96,7 @@ jobs:
   prettier:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
+      - uses: actions/checkout@v4
 
       - uses: pnpm/action-setup@v4
         name: Install pnpm
