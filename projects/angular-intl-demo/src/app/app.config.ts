@@ -1,24 +1,16 @@
 import { provideHttpClient } from '@angular/common/http';
-import { ApplicationConfig } from '@angular/core';
 import {
-  MAT_FORM_FIELD_DEFAULT_OPTIONS,
-  MatFormFieldDefaultOptions,
-} from '@angular/material/form-field';
-import { provideAnimations } from '@angular/platform-browser/animations';
+  ApplicationConfig,
+  provideZonelessChangeDetection,
+} from '@angular/core';
 import { provideRouter, withHashLocation } from '@angular/router';
 import { provideMarkdown } from 'ngx-markdown';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideZonelessChangeDetection(),
     provideMarkdown(),
-    {
-      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
-      useValue: {
-        subscriptSizing: 'dynamic',
-      } satisfies MatFormFieldDefaultOptions,
-    },
-    provideAnimations(),
     provideHttpClient(),
     provideRouter(routes, withHashLocation()),
   ],

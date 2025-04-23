@@ -1,9 +1,9 @@
 import { Component, computed, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatOptionModule } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
+import { MatOption } from '@angular/material/core';
+import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
+import { MatSelect } from '@angular/material/select';
 import {
   IntlDecimalPipe,
   IntlDecimalPipeOptions,
@@ -15,12 +15,14 @@ import { languages } from '../../languages';
   templateUrl: './decimal.component.html',
   styleUrls: ['./decimal.component.scss'],
   imports: [
-    MatFormFieldModule,
-    MatInputModule,
     FormsModule,
-    MatSelectModule,
-    MatOptionModule,
     IntlDecimalPipe,
+    MatFormField,
+    MatInput,
+    MatSelect,
+    MatOption,
+    MatLabel,
+    MatError,
   ],
 })
 export class DecimalComponent {

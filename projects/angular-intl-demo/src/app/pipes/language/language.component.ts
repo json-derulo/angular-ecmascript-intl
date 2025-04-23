@@ -1,8 +1,8 @@
 import { Component, computed, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatOptionModule } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
+import { MatOption } from '@angular/material/core';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatSelect } from '@angular/material/select';
 import {
   IntlLanguagePipe,
   IntlLanguagePipeOptions,
@@ -14,11 +14,12 @@ import { languages } from '../../languages';
   templateUrl: './language.component.html',
   styleUrls: ['./language.component.scss'],
   imports: [
-    MatFormFieldModule,
-    MatSelectModule,
     FormsModule,
-    MatOptionModule,
     IntlLanguagePipe,
+    MatFormField,
+    MatSelect,
+    MatOption,
+    MatLabel,
   ],
 })
 export class LanguageComponent {
