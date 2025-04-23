@@ -51,7 +51,6 @@
             "outputPath": "dist/angular-intl-demo",
             "index": "projects/angular-intl-demo/src/index.html",
             "browser": "projects/angular-intl-demo/src/main.ts",
-            "polyfills": ["zone.js"],
             "tsConfig": "projects/angular-intl-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [

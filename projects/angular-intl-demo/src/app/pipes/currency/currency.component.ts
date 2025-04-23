@@ -1,9 +1,8 @@
 import { Component, computed, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatOptionModule } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
+import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
+import { MatOption, MatSelect } from '@angular/material/select';
 import {
   IntlCurrencyPipe,
   IntlCurrencyPipeOptions,
@@ -16,12 +15,14 @@ import { currencies } from './currencies';
   templateUrl: './currency.component.html',
   styleUrls: ['./currency.component.scss'],
   imports: [
-    MatFormFieldModule,
-    MatInputModule,
     FormsModule,
-    MatSelectModule,
-    MatOptionModule,
     IntlCurrencyPipe,
+    MatFormField,
+    MatInput,
+    MatSelect,
+    MatOption,
+    MatLabel,
+    MatError,
   ],
 })
 export class CurrencyComponent {

@@ -1,9 +1,8 @@
-import { CommonModule } from '@angular/common';
 import { Component, computed, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
+import { MatOption, MatSelect } from '@angular/material/select';
 import {
   IntlDurationPipe,
   IntlDurationPipeOptions,
@@ -13,12 +12,13 @@ import { languages } from '../../languages';
 @Component({
   selector: 'app-duration',
   imports: [
-    CommonModule,
-    MatFormFieldModule,
-    MatSelectModule,
     IntlDurationPipe,
     FormsModule,
-    MatInputModule,
+    MatFormField,
+    MatInput,
+    MatSelect,
+    MatOption,
+    MatLabel,
   ],
   templateUrl: './duration.component.html',
   styleUrls: ['./duration.component.scss'],

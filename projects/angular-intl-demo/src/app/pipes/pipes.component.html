@@ -5,24 +5,27 @@
     mat-tab-link
     routerLink="date"
     routerLinkActive
-    >Date</a
   >
+    Date
+  </a>
   <a
     #decimalActive="routerLinkActive"
     [active]="decimalActive.isActive"
     mat-tab-link
     routerLink="decimal"
     routerLinkActive
-    >Decimal</a
   >
+    Decimal
+  </a>
   <a
     #percentActive="routerLinkActive"
     [active]="percentActive.isActive"
     mat-tab-link
     routerLink="percent"
     routerLinkActive
-    >Percent</a
   >
+    Percent
+  </a>
   <a
     #currencyActive="routerLinkActive"
     [active]="currencyActive.isActive"
@@ -37,8 +40,9 @@
     mat-tab-link
     routerLink="unit"
     routerLinkActive
-    >Unit</a
   >
+    Unit
+  </a>
   <a
     #languageActive="routerLinkActive"
     [active]="languageActive.isActive"
@@ -53,16 +57,18 @@
     mat-tab-link
     routerLink="country"
     routerLinkActive
-    >Country</a
   >
+    Country
+  </a>
   <a
     #listActive="routerLinkActive"
     [active]="listActive.isActive"
     mat-tab-link
     routerLink="list"
     routerLinkActive
-    >List</a
   >
+    List
+  </a>
   <a
     #relativeTimeActive="routerLinkActive"
     [active]="relativeTimeActive.isActive"
@@ -77,10 +83,11 @@
     mat-tab-link
     routerLink="duration"
     routerLinkActive
-    >Duration</a
   >
+    Duration
+  </a>
 </nav>
-<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+<mat-tab-nav-panel #tabPanel />
 
 <div class="panel-container">
   <router-outlet />
