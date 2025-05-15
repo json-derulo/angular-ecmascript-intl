@@ -61,5 +61,10 @@
     "yarn": "Please use pnpm instead of yarn to install dependencies",
     "pnpm": "^10.7.0"
   },
+  "pnpm": {
+    "overrides": {
+      "jasmine-core": "$jasmine-core"
+    }
+  },
   "packageManager": "pnpm@10.11.0"
 }
