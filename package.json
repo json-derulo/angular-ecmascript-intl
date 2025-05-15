@@ -15,7 +15,6 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "20.0.0-rc.1",
     "@angular/cdk": "20.0.0-rc.1",
     "@angular/common": "20.0.0-rc.1",
     "@angular/compiler": "20.0.0-rc.1",
@@ -33,7 +32,7 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "20.0.0-rc.2",
+    "@angular/build": "20.0.0-rc.2",
     "@angular/cli": "20.0.0-rc.2",
     "@angular/compiler-cli": "20.0.0-rc.1",
     "@eslint/js": "^9.2.0",
