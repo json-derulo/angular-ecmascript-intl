@@ -97,25 +97,27 @@ jobs:
       - name: test
         run: pnpm test --browsers=firefox
 
-  # ToDo: investigate errors &  enable Safari testing again
-  #  test-safari:
-  #    runs-on: macos-14
-  #    steps:
-  #      - name: Checkout
-  #        uses: actions/checkout@v4
-  #        with:
-  #          ref: refs/pull/${{ github.event.pull_request.number }}/merge
-  #
-  #      - uses: pnpm/action-setup@v4
-  #        name: Install pnpm
-  #        with:
-  #          run_install: false
-  #
-  #      - name: install
-  #        run: pnpm install --frozen-lockfile
-  #
-  #      - name: test
-  #        run: pnpm test --watch=false --browsers=SafariNative
+  test-safari:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: refs/pull/${{ github.event.pull_request.number }}/merge
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: false
+
+      - name: install
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: test
+        run: pnpm test --browsers=webkit
 
   prettier:
     runs-on: ubuntu-latest
