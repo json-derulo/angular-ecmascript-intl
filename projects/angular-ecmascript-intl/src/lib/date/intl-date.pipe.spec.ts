@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { INTL_LOCALES } from '../locale';
 import { INTL_DATE_PIPE_DEFAULT_OPTIONS } from './intl-date-pipe-default-options';
 import { IntlDatePipe } from './intl-date.pipe';
@@ -60,11 +61,15 @@ describe('DatePipe', () => {
 
     it('should handle missing Intl.DateTimeFormat browser API', () => {
       // @ts-expect-error Intl APIs are not expected to be undefined
-      spyOn(Intl, 'DateTimeFormat').and.returnValue(undefined);
-      const consoleError = spyOn(console, 'error');
+      vi.spyOn(Intl, 'DateTimeFormat').mockReturnValue(undefined);
+      const consoleError = vi
+        .spyOn(console, 'error')
+        .mockImplementation(() => null);
 
       expect(testUnit.transform('2023-02-19')).toBeNull();
       expect(consoleError).toHaveBeenCalledTimes(1);
+
+      vi.restoreAllMocks();
     });
   });
 

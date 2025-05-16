@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { INTL_LOCALES } from '../locale';
 import { IntlListPipe } from './intl-list.pipe';
 
@@ -35,11 +36,15 @@ describe('IntlListPipe', () => {
 
     it('should handle missing Intl.DisplayNames browser API', () => {
       // @ts-expect-error Intl APIs are not expected to be undefined
-      spyOn(Intl, 'ListFormat').and.returnValue(undefined);
-      const consoleError = spyOn(console, 'error');
+      vi.spyOn(Intl, 'ListFormat').mockReturnValue(undefined);
+      const consoleError = vi
+        .spyOn(console, 'error')
+        .mockImplementation(() => null);
 
       expect(testUnit.transform(['some', 'val'])).toBeNull();
       expect(consoleError).toHaveBeenCalledTimes(1);
+
+      vi.restoreAllMocks();
     });
   });
 

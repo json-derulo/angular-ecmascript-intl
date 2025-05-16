@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { INTL_LOCALES } from '../locale';
 import { INTL_COUNTRY_PIPE_DEFAULT_OPTIONS } from './intl-country-pipe-default-options';
 import { IntlCountryPipe } from './intl-country.pipe';
@@ -36,11 +37,15 @@ describe('IntlCountryPipe', () => {
 
     it('should handle missing Intl.DisplayNames browser API', () => {
       // @ts-expect-error Intl APIs are not expected to be undefined
-      spyOn(Intl, 'DisplayNames').and.returnValue(undefined);
-      const consoleError = spyOn(console, 'error');
+      vi.spyOn(Intl, 'DisplayNames').mockReturnValue(undefined);
+      const consoleError = vi
+        .spyOn(console, 'error')
+        .mockImplementation(() => null);
 
       expect(testUnit.transform('US')).toBeNull();
       expect(consoleError).toHaveBeenCalledTimes(1);
+
+      vi.restoreAllMocks();
     });
 
     it('should handle missing data', () => {
