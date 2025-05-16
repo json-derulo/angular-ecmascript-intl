@@ -29,7 +29,6 @@
           "options": {
             "buildTarget": "angular-ecmascript-intl:build",
             "browsers": ["chromium"],
-            "reporters": ["default", "junit"],
             "runner": "vitest",
             "providersFile": "projects/angular-ecmascript-intl/src/providers.ts",
             "tsConfig": "projects/angular-ecmascript-intl/tsconfig.spec.json"
