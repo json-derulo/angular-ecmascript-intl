@@ -64,7 +64,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        run: npx playwright install chromium
 
       - name: test
         run: pnpm test --browsers=chromium
@@ -92,7 +92,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        run: npx playwright install firefox
 
       - name: test
         run: pnpm test --browsers=firefox
@@ -114,7 +114,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        run: npx playwright install webkit
 
       - name: test
         run: pnpm test --browsers=webkit
