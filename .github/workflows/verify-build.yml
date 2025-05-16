@@ -114,7 +114,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Install Playwright Browsers
-        run: npx playwright install webkit
+        run: npx playwright install webkit --with-deps
 
       - name: test
         run: pnpm test --browsers=webkit
