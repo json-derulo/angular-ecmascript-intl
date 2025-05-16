@@ -30,26 +30,26 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist/angular-intl-demo/browser
-
-  report-coverage:
-    concurrency: ci-${{ github.ref }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-        with:
-          run_install: false
-
-      - name: install
-        run: pnpm install --frozen-lockfile
-
-      - name: test
-        run: pnpm test --watch=false --browsers=ChromeHeadless
-
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v5
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+# ToDo: investigate coverage reporting
+#  report-coverage:
+#    concurrency: ci-${{ github.ref }}
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v4
+#
+#      - uses: pnpm/action-setup@v4
+#        name: Install pnpm
+#        with:
+#          run_install: false
+#
+#      - name: install
+#        run: pnpm install --frozen-lockfile
+#
+#      - name: test
+#        run: pnpm test --watch=false --browsers=ChromeHeadless
+#
+#      - name: Upload coverage reports to Codecov
+#        uses: codecov/codecov-action@v5
+#        env:
+#          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

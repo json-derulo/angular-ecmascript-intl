@@ -1,5 +1,6 @@
-import { fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import dayjs from 'dayjs';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { INTL_LOCALES } from '../locale';
 import { INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS } from './relative-time-pipe-default-options';
 import { IntlRelativeTimePipe } from './relative-time.pipe';
@@ -215,37 +216,37 @@ describe('RelativeTimePipe', () => {
   });
 
   describe('timer', () => {
-    const cdrMock = {
-      markForCheck: jasmine.createSpy(),
-    };
-
     beforeEach(() => {
+      vi.useFakeTimers();
       TestBed.runInInjectionContext(() => {
         testUnit = new IntlRelativeTimePipe();
-        Object.defineProperty(testUnit, 'cdr', { value: cdrMock });
+        Object.defineProperty(testUnit, 'cdr', {
+          value: { markForCheck: () => null },
+        });
       });
     });
 
-    it('should mark for check once after 1 minute', fakeAsync(() => {
-      testUnit.transform(0);
-      tick(60000);
-
-      expect(cdrMock.markForCheck).toHaveBeenCalledTimes(1);
-
-      testUnit.ngOnDestroy();
-    }));
-
-    it('should mark for check 10 times after 10 minutes', fakeAsync(() => {
-      testUnit.transform(new Date());
-      tick(600000);
-
-      expect(cdrMock.markForCheck).toHaveBeenCalledTimes(10);
-
-      testUnit.ngOnDestroy();
-    }));
-
     afterEach(() => {
-      cdrMock.markForCheck.calls.reset();
+      testUnit.ngOnDestroy();
+      vi.restoreAllMocks();
+    });
+
+    it('should mark for check once after 1 minute', () => {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      const spy = vi.spyOn(testUnit.cdr!, 'markForCheck');
+      testUnit.transform(0);
+      vi.advanceTimersByTime(60000);
+
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+    it('should mark for check 10 times after 10 minutes', () => {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      const spy = vi.spyOn(testUnit.cdr!, 'markForCheck');
+      testUnit.transform(new Date());
+      vi.advanceTimersByTime(600000);
+
+      expect(spy).toHaveBeenCalledTimes(10);
     });
   });
 });

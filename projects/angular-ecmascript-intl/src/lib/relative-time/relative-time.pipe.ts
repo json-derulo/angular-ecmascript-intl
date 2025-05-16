@@ -29,12 +29,12 @@ enum Time {
   pure: false,
 })
 export class IntlRelativeTimePipe implements PipeTransform, OnDestroy {
+  readonly cdr = inject(ChangeDetectorRef, { optional: true });
   private readonly locales? = inject(INTL_LOCALES, { optional: true });
   private readonly defaultOptions? = inject<Omit<
     IntlRelativeTimePipeOptions,
     'locale'
   > | null>(INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS, { optional: true });
-  private readonly cdr? = inject(ChangeDetectorRef, { optional: true });
 
   #destroy$?: Subject<void>;
 

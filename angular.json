@@ -25,11 +25,14 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "projects/angular-ecmascript-intl/tsconfig.spec.json",
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "karmaConfig": "projects/angular-ecmascript-intl/karma.conf.js"
+            "buildTarget": "angular-ecmascript-intl:build",
+            "browsers": ["chromium"],
+            "reporters": ["default", "junit"],
+            "runner": "vitest",
+            "providersFile": "projects/angular-ecmascript-intl/src/providers.ts",
+            "tsConfig": "projects/angular-ecmascript-intl/tsconfig.spec.json"
           }
         }
       }

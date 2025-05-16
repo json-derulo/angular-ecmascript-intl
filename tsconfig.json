@@ -19,6 +19,7 @@
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
+    "skipLibCheck": true,
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",

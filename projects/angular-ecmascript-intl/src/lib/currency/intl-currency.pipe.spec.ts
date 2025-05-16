@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { INTL_LOCALES } from '../locale';
 import { INTL_CURRENCY_PIPE_DEFAULT_OPTIONS } from './intl-currency-pipe-default-options';
 import { IntlCurrencyPipe } from './intl-currency.pipe';
@@ -44,11 +45,15 @@ describe('IntlCurrencyPipe', () => {
 
     it('should handle missing Intl.NumberFormat browser API', () => {
       // @ts-expect-error Intl APIs are not expected to be undefined
-      spyOn(Intl, 'NumberFormat').and.returnValue(undefined);
-      const consoleError = spyOn(console, 'error');
+      vi.spyOn(Intl, 'NumberFormat').mockReturnValue(undefined);
+      const consoleError = vi
+        .spyOn(console, 'error')
+        .mockImplementation(() => null);
       expect(testUnit.transform('1', 'USD')).toBeNull();
 
       expect(consoleError).toHaveBeenCalledTimes(1);
+
+      vi.restoreAllMocks();
     });
   });
 
