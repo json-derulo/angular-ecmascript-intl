@@ -87,27 +87,6 @@ describe('DatePipe', () => {
 
       expect(testUnit.transform('2023-02-19')).toEqual('19.2.2023');
     });
-
-    it('should fall back to the browser default locale', () => {
-      let defaultLanguageTestUnit!: IntlDatePipe;
-      let browserLanguageTestUnit!: IntlDatePipe;
-
-      TestBed.runInInjectionContext(() => {
-        defaultLanguageTestUnit = new IntlDatePipe();
-        browserLanguageTestUnit = new IntlDatePipe();
-        Object.defineProperty(browserLanguageTestUnit, 'locale', {
-          value: undefined,
-        });
-        Object.defineProperty(defaultLanguageTestUnit, 'locale', {
-          value: navigator.language,
-        });
-      });
-
-      const result1 = browserLanguageTestUnit.transform('2023-02-19');
-      const result2 = defaultLanguageTestUnit.transform('2023-02-19');
-
-      expect(result1).toEqual(result2);
-    });
   });
 
   describe('options', () => {

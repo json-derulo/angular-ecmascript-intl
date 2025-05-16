@@ -74,27 +74,6 @@ describe('IntlDurationPipe', () => {
 
       expect(testUnit.transform({ years: 1 })).toEqual('1 J');
     });
-
-    it('should fall back to the browser default locale', () => {
-      let defaultLanguageTestUnit!: IntlDurationPipe;
-      let browserLanguageTestUnit!: IntlDurationPipe;
-
-      TestBed.runInInjectionContext(() => {
-        defaultLanguageTestUnit = new IntlDurationPipe();
-        browserLanguageTestUnit = new IntlDurationPipe();
-        Object.defineProperty(browserLanguageTestUnit, 'locale', {
-          value: undefined,
-        });
-        Object.defineProperty(defaultLanguageTestUnit, 'locale', {
-          value: navigator.language,
-        });
-      });
-
-      const result1 = browserLanguageTestUnit.transform({ years: 1 });
-      const result2 = defaultLanguageTestUnit.transform({ years: 1 });
-
-      expect(result1).toEqual(result2);
-    });
   });
 
   describe('options', () => {

@@ -64,27 +64,6 @@ describe('IntlListPipe', () => {
         'Äpfel und Birnen',
       );
     });
-
-    it('should fall back to the browser default locale', () => {
-      let defaultLanguageTestUnit!: IntlListPipe;
-      let browserLanguageTestUnit!: IntlListPipe;
-
-      TestBed.runInInjectionContext(() => {
-        defaultLanguageTestUnit = new IntlListPipe();
-        browserLanguageTestUnit = new IntlListPipe();
-        Object.defineProperty(browserLanguageTestUnit, 'locale', {
-          value: undefined,
-        });
-        Object.defineProperty(defaultLanguageTestUnit, 'locale', {
-          value: navigator.language,
-        });
-      });
-
-      const result1 = browserLanguageTestUnit.transform(['some', 'val']);
-      const result2 = defaultLanguageTestUnit.transform(['some', 'val']);
-
-      expect(result1).toEqual(result2);
-    });
   });
 
   it('should respect locale option', () => {

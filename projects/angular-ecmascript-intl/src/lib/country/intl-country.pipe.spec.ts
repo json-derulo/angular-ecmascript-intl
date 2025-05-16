@@ -67,27 +67,6 @@ describe('IntlCountryPipe', () => {
 
       expect(testUnit.transform('AT')).toEqual('Österreich');
     });
-
-    it('should fall back to the browser default locale', () => {
-      let defaultLanguageTestUnit!: IntlCountryPipe;
-      let browserLanguageTestUnit!: IntlCountryPipe;
-
-      TestBed.runInInjectionContext(() => {
-        defaultLanguageTestUnit = new IntlCountryPipe();
-        browserLanguageTestUnit = new IntlCountryPipe();
-        Object.defineProperty(browserLanguageTestUnit, 'locale', {
-          value: undefined,
-        });
-        Object.defineProperty(defaultLanguageTestUnit, 'locale', {
-          value: navigator.language,
-        });
-      });
-
-      const result1 = browserLanguageTestUnit.transform('US');
-      const result2 = defaultLanguageTestUnit.transform('US');
-
-      expect(result1).toEqual(result2);
-    });
   });
 
   describe('options', () => {

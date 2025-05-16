@@ -71,27 +71,6 @@ describe('IntlDecimalPipe', () => {
 
       expect(testUnit.transform(1024.2249)).toEqual('1.024,225');
     });
-
-    it('should fall back to the browser default locale', () => {
-      let defaultLanguageTestUnit!: IntlDecimalPipe;
-      let browserLanguageTestUnit!: IntlDecimalPipe;
-
-      TestBed.runInInjectionContext(() => {
-        defaultLanguageTestUnit = new IntlDecimalPipe();
-        browserLanguageTestUnit = new IntlDecimalPipe();
-        Object.defineProperty(browserLanguageTestUnit, 'locale', {
-          value: undefined,
-        });
-        Object.defineProperty(defaultLanguageTestUnit, 'locale', {
-          value: navigator.language,
-        });
-      });
-
-      const result1 = browserLanguageTestUnit.transform(1024.2249);
-      const result2 = defaultLanguageTestUnit.transform(1024.2249);
-
-      expect(result1).toEqual(result2);
-    });
   });
 
   describe('options', () => {

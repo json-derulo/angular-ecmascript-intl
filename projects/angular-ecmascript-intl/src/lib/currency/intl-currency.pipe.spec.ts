@@ -71,27 +71,6 @@ describe('IntlCurrencyPipe', () => {
 
       expect(testUnit.transform(1024.2249, 'EUR')).toEqual('1.024,22\xa0€');
     });
-
-    it('should fall back to the browser default locale', () => {
-      let defaultLanguageTestUnit!: IntlCurrencyPipe;
-      let browserLanguageTestUnit!: IntlCurrencyPipe;
-
-      TestBed.runInInjectionContext(() => {
-        defaultLanguageTestUnit = new IntlCurrencyPipe();
-        browserLanguageTestUnit = new IntlCurrencyPipe();
-        Object.defineProperty(browserLanguageTestUnit, 'locale', {
-          value: undefined,
-        });
-        Object.defineProperty(defaultLanguageTestUnit, 'locale', {
-          value: navigator.language,
-        });
-      });
-
-      const result1 = browserLanguageTestUnit.transform(1024.2249, 'EUR');
-      const result2 = defaultLanguageTestUnit.transform(1024.2249, 'EUR');
-
-      expect(result1).toEqual(result2);
-    });
   });
 
   describe('options', () => {

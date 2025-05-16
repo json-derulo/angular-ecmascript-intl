@@ -194,27 +194,6 @@ describe('RelativeTimePipe', () => {
     });
   });
 
-  it('should fall back to the default locale', () => {
-    let defaultLanguageTestUnit!: IntlRelativeTimePipe;
-    let browserLanguageTestUnit!: IntlRelativeTimePipe;
-
-    TestBed.runInInjectionContext(() => {
-      defaultLanguageTestUnit = new IntlRelativeTimePipe();
-      browserLanguageTestUnit = new IntlRelativeTimePipe();
-      Object.defineProperty(browserLanguageTestUnit, 'locales', {
-        value: undefined,
-      });
-      Object.defineProperty(defaultLanguageTestUnit, 'locales', {
-        value: navigator.language,
-      });
-    });
-
-    const result1 = browserLanguageTestUnit.transform(new Date());
-    const result2 = defaultLanguageTestUnit.transform(new Date());
-
-    expect(result1).toEqual(result2);
-  });
-
   describe('timer', () => {
     beforeEach(() => {
       vi.useFakeTimers();

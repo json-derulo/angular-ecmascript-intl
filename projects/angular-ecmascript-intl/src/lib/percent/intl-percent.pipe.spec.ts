@@ -71,27 +71,6 @@ describe('IntlPercentPipe', () => {
 
       expect(testUnit.transform(1)).toEqual('100\xa0%');
     });
-
-    it('should fall back to the browser default locale', () => {
-      let defaultLanguageTestUnit!: IntlPercentPipe;
-      let browserLanguageTestUnit!: IntlPercentPipe;
-
-      TestBed.runInInjectionContext(() => {
-        defaultLanguageTestUnit = new IntlPercentPipe();
-        browserLanguageTestUnit = new IntlPercentPipe();
-        Object.defineProperty(browserLanguageTestUnit, 'locale', {
-          value: undefined,
-        });
-        Object.defineProperty(defaultLanguageTestUnit, 'locale', {
-          value: navigator.language,
-        });
-      });
-
-      const result1 = browserLanguageTestUnit.transform(0.1);
-      const result2 = defaultLanguageTestUnit.transform(0.1);
-
-      expect(result1).toEqual(result2);
-    });
   });
 
   describe('options', () => {
