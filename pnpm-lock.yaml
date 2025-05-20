@@ -37,10 +37,10 @@ importers:
         version: 20.0.0-rc.1(@angular/common@20.0.0-rc.1(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@20.0.0-rc.1(@angular/common@20.0.0-rc.1(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2)
       marked:
         specifier: ^15.0.11
-        version: 15.0.11
+        version: 15.0.12
       ngx-markdown:
         specifier: ^19.1.1
-        version: 19.1.1(@angular/common@20.0.0-rc.1(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@20.0.0-rc.1(@angular/common@20.0.0-rc.1(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0)))(marked@15.0.11)(rxjs@7.8.2)(zone.js@0.15.0)
+        version: 19.1.1(@angular/common@20.0.0-rc.1(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@20.0.0-rc.1(@angular/common@20.0.0-rc.1(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0)))(marked@15.0.12)(rxjs@7.8.2)(zone.js@0.15.0)
       prismjs:
         specifier: ^1.30.0
         version: 1.30.0
@@ -2755,8 +2755,8 @@ packages:
     resolution: {integrity: sha512-QMjGbFTP0blj97EeidG5hk/QhKQ3T4ICckQGLgz38QF7Vgbk6e6FTARN8KhKxyBbWn8R0HU+bnw8aSoFPD4qtQ==}
     engines: {node: ^18.17.0 || >=20.5.0}
 
-  marked@15.0.11:
-    resolution: {integrity: sha512-1BEXAU2euRCG3xwgLVT1y0xbJEld1XOrmRJpUwRCcy7rxhSCwMrmEu9LXoPhHSCJG41V7YcQ2mjKRr5BA3ITIA==}
+  marked@15.0.12:
+    resolution: {integrity: sha512-8dD6FusOQSrpv9Z1rdNMdlSgQOIP880DHqnohobOmYLElGEqAL/JvxvuxZO16r4HtjTlfPRDC1hbvxC9dPN2nA==}
     engines: {node: '>= 18'}
     hasBin: true
 
@@ -6618,7 +6618,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  marked@15.0.11: {}
+  marked@15.0.12: {}
 
   meow@12.1.1: {}
 
@@ -6641,7 +6641,7 @@ snapshots:
       katex: 0.16.22
       khroma: 2.1.0
       lodash-es: 4.17.21
-      marked: 15.0.11
+      marked: 15.0.12
       roughjs: 4.6.6
       stylis: 4.3.6
       ts-dedent: 2.2.0
@@ -6791,12 +6791,12 @@ snapshots:
     optionalDependencies:
       rollup: 4.41.0
 
-  ngx-markdown@19.1.1(@angular/common@20.0.0-rc.1(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@20.0.0-rc.1(@angular/common@20.0.0-rc.1(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0)))(marked@15.0.11)(rxjs@7.8.2)(zone.js@0.15.0):
+  ngx-markdown@19.1.1(@angular/common@20.0.0-rc.1(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@20.0.0-rc.1(@angular/common@20.0.0-rc.1(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0)))(marked@15.0.12)(rxjs@7.8.2)(zone.js@0.15.0):
     dependencies:
       '@angular/common': 20.0.0-rc.1(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2)
       '@angular/core': 20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0)
       '@angular/platform-browser': 20.0.0-rc.1(@angular/common@20.0.0-rc.1(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@20.0.0-rc.1(@angular/compiler@20.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.0))
-      marked: 15.0.11
+      marked: 15.0.12
       rxjs: 7.8.2
       tslib: 2.8.1
       zone.js: 0.15.0
