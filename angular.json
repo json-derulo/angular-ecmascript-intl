@@ -27,7 +27,7 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "buildTarget": "angular-ecmascript-intl:build",
+            "buildTarget": "::development",
             "browsers": ["chromium"],
             "runner": "vitest",
             "providersFile": "projects/angular-ecmascript-intl/src/providers.ts",
