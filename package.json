@@ -32,8 +32,8 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular/build": "20.0.0-rc.3",
-    "@angular/cli": "20.0.0-rc.3",
+    "@angular/build": "20.0.0-rc.4",
+    "@angular/cli": "20.0.0-rc.4",
     "@angular/compiler-cli": "20.0.0-rc.2",
     "@eslint/js": "^9.26.0",
     "@types/node": "^22.15.18",
@@ -45,7 +45,7 @@
     "eslint": "^9.26.0",
     "globals": "^16.1.0",
     "jsdom": "^26.1.0",
-    "ng-packagr": "20.0.0-rc.1",
+    "ng-packagr": "20.0.0-rc.2",
     "playwright": "^1.52.0",
     "prettier": "~3.5.3",
     "prettier-plugin-organize-imports": "^4.1.0",
