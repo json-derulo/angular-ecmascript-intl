@@ -1,6 +1,6 @@
 {
   "name": "angular-ecmascript-intl",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "Contains Angular pipes to transform internationalization data using Intl.* browser APIs",
   "keywords": [
     "angular",
@@ -13,11 +13,12 @@
     "currency",
     "language",
     "country",
-    "timeago"
+    "timeago",
+    "duration"
   ],
   "peerDependencies": {
-    "@angular/common": ">=19",
-    "@angular/core": ">=19"
+    "@angular/common": ">=20",
+    "@angular/core": ">=20"
   },
   "dependencies": {
     "tslib": "^2.3.0"

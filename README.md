@@ -322,6 +322,7 @@ In case you need to support older versions of that browsers, see the below table
 
 | Angular | angular-ecmascript-intl |
 | ------- | ----------------------- |
+| 20      | 6.x                     |
 | 19      | 5.x                     |
 | 18      | 4.x                     |
 | 17      | 3.x                     |
