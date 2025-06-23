@@ -47,7 +47,7 @@
     "jsdom": "^26.1.0",
     "ng-packagr": "20.0.1",
     "playwright": "^1.52.0",
-    "prettier": "~3.5.3",
+    "prettier": "~3.6.0",
     "prettier-plugin-organize-imports": "^4.1.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.32.1",
