@@ -12,6 +12,11 @@ Install the package:
 npm install angular-ecmascript-intl --save
 ```
 
+This package requires TypeScript with a lib setting of ES2021 or later.
+Older lib targets (e.g., ES2020 or below) are not supported and may cause
+type errors or missing type definitions. Make sure your `tsconfig.json` includes
+`"lib": ["ES2021"]` (or a newer standard such as ES2022) to ensure full compatibility.
+
 Import the pipes individually as per usage, or import the `IntlModule` to import all pipes at once.
 
 By default, all pipes will use the browser default locale.
