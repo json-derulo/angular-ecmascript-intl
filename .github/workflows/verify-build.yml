@@ -67,7 +67,7 @@ jobs:
         run: npx playwright install chromium
 
       - name: test
-        run: pnpm test --browsers=chromium
+        run: pnpm test --browsers=chromiumHeadless
 
   # ToDo: investigate coverage reporting
   #      - name: Upload coverage reports to Codecov
@@ -95,7 +95,7 @@ jobs:
         run: npx playwright install firefox
 
       - name: test
-        run: pnpm test --browsers=firefox
+        run: pnpm test --browsers=firefoxHeadless
 
   test-safari:
     runs-on: ubuntu-latest
@@ -117,7 +117,7 @@ jobs:
         run: npx playwright install webkit --with-deps
 
       - name: test
-        run: pnpm test --browsers=webkit
+        run: pnpm test --browsers=webkitHeadless
 
   prettier:
     runs-on: ubuntu-latest
