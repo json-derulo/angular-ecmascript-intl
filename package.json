@@ -6,6 +6,7 @@
     "build": "pnpm build-libs && pnpm --filter demo build",
     "start": "pnpm build-libs && pnpm --filter demo start",
     "test": "pnpm -r test",
+    "prelint": "pnpm build-libs",
     "lint": "eslint .",
     "release": "release-it",
     "prettier": "prettier . --write"
