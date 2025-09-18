@@ -1,3 +1,9 @@
+useNodeVersion: 24.8.0
+
+packages:
+  - libs/*
+  - demo
+
 ignoredBuiltDependencies:
   - esbuild
   - lmdb

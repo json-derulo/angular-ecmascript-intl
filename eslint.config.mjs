@@ -4,7 +4,7 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
-  { ignores: ["dist/", ".angular/", "**/*.js"] },
+  { ignores: ["**/dist/", "**/.angular/", "**/*.js", "**/coverage/"] },
   {
     files: ["**/*.ts"],
     extends: [
@@ -17,9 +17,9 @@ export default tseslint.config(
       parser: tseslint.parser,
       parserOptions: {
         project: [
-          "./projects/angular-ecmascript-intl/tsconfig.lib.json",
-          "./projects/angular-ecmascript-intl/tsconfig.spec.json",
-          "./projects/angular-intl-demo/tsconfig.app.json",
+          "./libs/angular-ecmascript-intl/tsconfig.lib.json",
+          "./libs/angular-ecmascript-intl/tsconfig.spec.json",
+          "./demo/tsconfig.app.json",
         ],
       },
       globals: {

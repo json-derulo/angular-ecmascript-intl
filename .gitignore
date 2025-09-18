@@ -1,13 +1,13 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
-/dist
+**/dist
 /tmp
-/out-tsc
+**/out-tsc
 /bazel-out
 
 # Node
-/node_modules
+**/node_modules
 npm-debug.log
 yarn-error.log
 
@@ -29,10 +29,10 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular/cache
+**/.angular/cache
 .sass-cache/
 /connect.lock
-/coverage
+**/coverage
 /libpeerconnection.log
 testem.log
 /typings
@@ -42,4 +42,4 @@ testem.log
 .DS_Store
 Thumbs.db
 
-projects/angular-ecmascript-intl/README.md
+libs/angular-ecmascript-intl/README.md

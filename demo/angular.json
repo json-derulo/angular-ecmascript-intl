@@ -1,41 +1,7 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "$schema": "../node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
   "projects": {
-    "angular-ecmascript-intl": {
-      "projectType": "library",
-      "root": "projects/angular-ecmascript-intl",
-      "sourceRoot": "projects/angular-ecmascript-intl/src",
-      "prefix": "intl",
-      "architect": {
-        "build": {
-          "builder": "@angular/build:ng-packagr",
-          "options": {
-            "project": "projects/angular-ecmascript-intl/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/angular-ecmascript-intl/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/angular-ecmascript-intl/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular/build:unit-test",
-          "options": {
-            "buildTarget": "::development",
-            "browsers": ["chromium"],
-            "runner": "vitest",
-            "providersFile": "projects/angular-ecmascript-intl/src/providers.ts",
-            "tsConfig": "projects/angular-ecmascript-intl/tsconfig.spec.json"
-          }
-        }
-      }
-    },
     "angular-intl-demo": {
       "projectType": "application",
       "schematics": {
@@ -43,30 +9,30 @@
           "style": "scss"
         }
       },
-      "root": "projects/angular-intl-demo",
-      "sourceRoot": "projects/angular-intl-demo/src",
+      "root": "",
+      "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/angular-intl-demo",
-            "index": "projects/angular-intl-demo/src/index.html",
-            "browser": "projects/angular-intl-demo/src/main.ts",
-            "tsConfig": "projects/angular-intl-demo/tsconfig.app.json",
+            "outputPath": "../dist/angular-intl-demo",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "README.md",
-                "input": "./",
+                "input": "../",
                 "output": "/"
               },
-              "projects/angular-intl-demo/src/favicon.ico",
-              "projects/angular-intl-demo/src/assets"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "node_modules/prismjs/themes/prism-okaidia.css",
-              "projects/angular-intl-demo/src/styles.scss"
+              "src/styles.scss"
             ],
             "scripts": [
               "node_modules/marked/lib/marked.umd.js",
