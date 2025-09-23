@@ -32,5 +32,5 @@
     "yarn": "Please use pnpm instead of yarn to install dependencies",
     "pnpm": "^10.7.0"
   },
-  "packageManager": "pnpm@10.17.0"
+  "packageManager": "pnpm@10.17.1"
 }
