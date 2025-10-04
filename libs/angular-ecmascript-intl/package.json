@@ -28,7 +28,7 @@
     "test": "ng test"
   },
   "devDependencies": {
-    "@angular/cli": "20.3.3",
+    "@angular/cli": "20.3.4",
     "@angular/common": "20.3.3",
     "@angular/core": "20.3.3",
     "@angular/platform-browser": "20.3.3",
