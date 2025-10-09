@@ -6,4 +6,4 @@ ignoredBuiltDependencies:
   - esbuild
   - lmdb
 
-minimumReleaseAge: 1440
+minimumReleaseAge: 4320
