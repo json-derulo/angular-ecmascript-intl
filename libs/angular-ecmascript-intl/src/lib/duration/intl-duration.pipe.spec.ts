@@ -47,7 +47,7 @@ describe('IntlDurationPipe', () => {
     });
 
     it('should handle missing Intl.NumberFormat browser API', () => {
-      // @ts-expect-error Intl APIs are not expected to be undefined
+      // @ts-expect-error Intl APIs are not yet part of the TS types
       vi.spyOn(Intl, 'DurationFormat').mockReturnValue(undefined);
       const consoleError = vi
         .spyOn(console, 'error')
