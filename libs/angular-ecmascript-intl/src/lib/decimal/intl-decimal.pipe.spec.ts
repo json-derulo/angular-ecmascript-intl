@@ -44,7 +44,6 @@ describe('IntlDecimalPipe', () => {
     });
 
     it('should handle missing Intl.NumberFormat browser API', () => {
-      // @ts-expect-error Intl APIs are not expected to be undefined
       vi.spyOn(Intl, 'NumberFormat').mockReturnValue(undefined);
       const consoleError = vi
         .spyOn(console, 'error')
