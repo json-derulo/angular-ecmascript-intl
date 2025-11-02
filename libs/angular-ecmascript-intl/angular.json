@@ -30,7 +30,7 @@
             "runner": "vitest",
             "providersFile": "src/providers.ts",
             "tsConfig": "tsconfig.spec.json",
-            "codeCoverage": true
+            "coverage": true
           }
         }
       }

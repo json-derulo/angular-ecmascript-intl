@@ -103,7 +103,7 @@ describe('RelativeTimePipe', () => {
       });
 
       it('should transform a date almost 4 weeks in past', () => {
-        const date = dayjs().subtract(4, 'weeks').add(1, 'second').toDate();
+        const date = dayjs().subtract(4, 'weeks').add(1, 'day').toDate();
 
         expect(testUnit.transform(date)).toEqual('3 weeks ago');
       });
