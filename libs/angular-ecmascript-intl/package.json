@@ -28,10 +28,10 @@
     "test": "ng test"
   },
   "devDependencies": {
-    "@angular/cli": "21.0.0-rc.0",
-    "@angular/common": "21.0.0-rc.0",
-    "@angular/core": "21.0.0-rc.0",
-    "@angular/platform-browser": "21.0.0-rc.0",
+    "@angular/cli": "21.0.0-rc.1",
+    "@angular/common": "21.0.0-rc.1",
+    "@angular/core": "21.0.0-rc.1",
+    "@angular/platform-browser": "21.0.0-rc.1",
     "@vitest/coverage-v8": "^4.0.0",
     "cpy-cli": "^6.0.0",
     "dayjs": "^1.11.13",
