@@ -76,11 +76,11 @@ importers:
         specifier: ../dist/angular-ecmascript-intl
         version: link:../dist/angular-ecmascript-intl
       marked:
-        specifier: ^16.0.0
-        version: 16.4.2
+        specifier: ^17.0.0
+        version: 17.0.0
       ngx-markdown:
         specifier: ^20.0.0
-        version: 20.1.0(@angular/common@21.0.0-rc.1(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@21.0.0-rc.1(@angular/common@21.0.0-rc.1(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1)))(marked@16.4.2)(rxjs@7.8.2)(zone.js@0.15.1)
+        version: 20.1.0(@angular/common@21.0.0-rc.1(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@21.0.0-rc.1(@angular/common@21.0.0-rc.1(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1)))(marked@17.0.0)(rxjs@7.8.2)(zone.js@0.15.1)
       prismjs:
         specifier: ^1.30.0
         version: 1.30.0
@@ -3156,6 +3156,11 @@ packages:
 
   marked@16.4.2:
     resolution: {integrity: sha512-TI3V8YYWvkVf3KJe1dRkpnjs68JUPyEa5vjKrp1XEEJUAOaQc+Qj+L1qWbPd0SJuAdQkFU0h73sXXqwDYxsiDA==}
+    engines: {node: '>= 20'}
+    hasBin: true
+
+  marked@17.0.0:
+    resolution: {integrity: sha512-KkDYEWEEiYJw/KC+DVm1zzlpMQSMIu6YRltkcCvwheCp8HWPXCk9JwOmHJKBlGfzcpzcIt6x3sMnTsRm/51oDg==}
     engines: {node: '>= 20'}
     hasBin: true
 
@@ -7584,7 +7589,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  marked@16.4.2: {}
+  marked@16.4.2:
+    optional: true
+
+  marked@17.0.0: {}
 
   math-intrinsics@1.1.0: {}
 
@@ -7758,12 +7766,12 @@ snapshots:
     optionalDependencies:
       rollup: 4.52.5
 
-  ngx-markdown@20.1.0(@angular/common@21.0.0-rc.1(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@21.0.0-rc.1(@angular/common@21.0.0-rc.1(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1)))(marked@16.4.2)(rxjs@7.8.2)(zone.js@0.15.1):
+  ngx-markdown@20.1.0(@angular/common@21.0.0-rc.1(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@21.0.0-rc.1(@angular/common@21.0.0-rc.1(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1)))(marked@17.0.0)(rxjs@7.8.2)(zone.js@0.15.1):
     dependencies:
       '@angular/common': 21.0.0-rc.1(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
       '@angular/core': 21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1)
       '@angular/platform-browser': 21.0.0-rc.1(@angular/common@21.0.0-rc.1(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(rxjs@7.8.2)(zone.js@0.15.1))
-      marked: 16.4.2
+      marked: 17.0.0
       rxjs: 7.8.2
       tslib: 2.8.1
       zone.js: 0.15.1
