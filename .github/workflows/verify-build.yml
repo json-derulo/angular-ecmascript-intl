@@ -94,7 +94,7 @@ jobs:
         run: pnpm dlx playwright install firefox
 
       - name: test
-        run: pnpm test --browsers=firefoxHeadless --code-coverage=false
+        run: pnpm test --browsers=firefoxHeadless --coverage=false
 
   test-safari:
     runs-on: ubuntu-latest
@@ -116,7 +116,7 @@ jobs:
         run: pnpm dlx playwright install webkit --with-deps
 
       - name: test
-        run: pnpm test --browsers=webkitHeadless --code-coverage=false
+        run: pnpm test --browsers=webkitHeadless --coverage=false
 
   prettier:
     runs-on: ubuntu-latest
