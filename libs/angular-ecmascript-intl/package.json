@@ -28,15 +28,18 @@
     "test": "ng test"
   },
   "devDependencies": {
-    "@angular/cli": "21.0.0-rc.1",
+    "@angular/build": "21.0.0-rc.3",
+    "@angular/cli": "21.0.0-rc.3",
     "@angular/common": "21.0.0-rc.1",
     "@angular/core": "21.0.0-rc.1",
     "@angular/platform-browser": "21.0.0-rc.1",
+    "@vitest/browser-playwright": "^4.0.0",
     "@vitest/coverage-v8": "^4.0.0",
     "cpy-cli": "^6.0.0",
     "dayjs": "^1.11.13",
     "jsdom": "^27.0.0",
     "ng-packagr": "21.0.0-rc.0",
+    "playwright": "^1.56.1",
     "vitest": "^4.0.0"
   },
   "sideEffects": false,

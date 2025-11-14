@@ -47,7 +47,7 @@ jobs:
       - name: lint
         run: pnpm lint
 
-  test:
+  test-chrome:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -63,13 +63,60 @@ jobs:
       - name: install
         run: pnpm install --frozen-lockfile
 
+      - name: Install Playwright Browsers
+        run: npx playwright install chromium
+
       - name: test
-        run: pnpm test
+        run: pnpm test --browsers=chromiumHeadless
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+  test-firefox:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          ref: refs/pull/${{ github.event.pull_request.number }}/merge
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: false
+
+      - name: install
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Playwright Browsers
+        run: npx playwright install firefox
+
+      - name: test
+        run: pnpm test --browsers=firefoxHeadless
+
+  test-safari:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          ref: refs/pull/${{ github.event.pull_request.number }}/merge
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: false
+
+      - name: install
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Playwright Browsers
+        run: npx playwright install webkit --with-deps
+
+      - name: test
+        run: pnpm test --browsers=webkitHeadless
 
   prettier:
     runs-on: ubuntu-latest
