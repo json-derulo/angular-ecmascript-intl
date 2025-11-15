@@ -136,7 +136,7 @@ importers:
         version: 1.11.19
       jsdom:
         specifier: ^27.0.0
-        version: 27.1.0
+        version: 27.2.0
       ng-packagr:
         specifier: 21.0.0-rc.0
         version: 21.0.0-rc.0(@angular/compiler-cli@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(typescript@5.9.3))(tslib@2.8.1)(typescript@5.9.3)
@@ -145,12 +145,12 @@ importers:
         version: 1.56.1
       vitest:
         specifier: ^4.0.0
-        version: 4.0.8(@types/node@24.10.0)(@vitest/browser-playwright@4.0.8)(jsdom@27.1.0)(less@4.4.2)(sass@1.93.2)
+        version: 4.0.8(@types/node@24.10.0)(@vitest/browser-playwright@4.0.8)(jsdom@27.2.0)(less@4.4.2)(sass@1.93.2)
 
 packages:
 
-  '@acemir/cssom@0.9.20':
-    resolution: {integrity: sha512-YUSA5jW8qn/c6nZUlFsn2Nt5qFFRBcGTgL9CzbiZbJCtEFY0Nv/ycO3BHT9tLjus9++zOYWe5mLCRIesuay25g==}
+  '@acemir/cssom@0.9.23':
+    resolution: {integrity: sha512-2kJ1HxBKzPLbmhZpxBiTZggjtgCwKg1ma5RHShxvd6zgqhDEdEkzpiwe7jLkI2p2BrZvFCXIihdoMkl1H39VnA==}
 
   '@algolia/abtesting@1.6.1':
     resolution: {integrity: sha512-wV/gNRkzb7sI9vs1OneG129hwe3Q5zPj7zigz3Ps7M5Lpo2hSorrOnXNodHEOV+yXE/ks4Pd+G3CDFIjFTWhMQ==}
@@ -624,8 +624,8 @@ packages:
     peerDependencies:
       '@csstools/css-tokenizer': ^3.0.4
 
-  '@csstools/css-syntax-patches-for-csstree@1.0.15':
-    resolution: {integrity: sha512-q0p6zkVq2lJnmzZVPR33doA51G7YOja+FBvRdp5ISIthL0MtFCgYHHhR563z9WFGxcOn0WfjSkPDJ5Qig3H3Sw==}
+  '@csstools/css-syntax-patches-for-csstree@1.0.16':
+    resolution: {integrity: sha512-2SpS4/UaWQaGpBINyG5ZuCHnUDeVByOhvbkARwfmnfxDvTaj80yOI1cD8Tw93ICV5Fx4fnyDKWQZI1CDtcWyUg==}
     engines: {node: '>=18'}
 
   '@csstools/css-tokenizer@3.0.4':
@@ -2765,8 +2765,8 @@ packages:
     resolution: {integrity: sha512-wD5oz5xibMOPHzy13CyGmogB3phdvcDaB5t0W/Nr5Z2O/agcB8YwOz6e2Lsp10pNDzBoDO9nVa3RGs/2BttpHQ==}
     engines: {node: '>= 6'}
 
-  cssstyle@5.3.2:
-    resolution: {integrity: sha512-zDMqXh8Vs1CdRYZQ2M633m/SFgcjlu8RB8b/1h82i+6vpArF507NSYIWJHGlJaTWoS+imcnctmEz43txhbVkOw==}
+  cssstyle@5.3.3:
+    resolution: {integrity: sha512-OytmFH+13/QXONJcC75QNdMtKpceNk3u8ThBjyyYjkEcy/ekBwR1mMAuNvi3gdBPW3N5TlCzQ0WZw8H0lN/bDw==}
     engines: {node: '>=20'}
 
   cytoscape-cose-bilkent@4.1.0:
@@ -3516,8 +3516,8 @@ packages:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
     hasBin: true
 
-  jsdom@27.1.0:
-    resolution: {integrity: sha512-Pcfm3eZ+eO4JdZCXthW9tCDT3nF4K+9dmeZ+5X39n+Kqz0DDIABRP5CAEOHRFZk8RGuC2efksTJxrjp8EXCunQ==}
+  jsdom@27.2.0:
+    resolution: {integrity: sha512-454TI39PeRDW1LgpyLPyURtB4Zx1tklSr6+OFOipsxGUH1WMTvk6C65JQdrj455+DP2uJ1+veBEHTGFKWVLFoA==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
     peerDependencies:
       canvas: ^3.0.0
@@ -4910,7 +4910,7 @@ packages:
 
 snapshots:
 
-  '@acemir/cssom@0.9.20': {}
+  '@acemir/cssom@0.9.23': {}
 
   '@algolia/abtesting@1.6.1':
     dependencies:
@@ -5187,7 +5187,7 @@ snapshots:
       lmdb: 3.4.3
       ng-packagr: 21.0.0-rc.0(@angular/compiler-cli@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(typescript@5.9.3))(tslib@2.8.1)(typescript@5.9.3)
       postcss: 8.5.6
-      vitest: 4.0.8(@types/node@24.10.0)(@vitest/browser-playwright@4.0.8)(jsdom@27.1.0)(less@4.4.2)(sass@1.93.2)
+      vitest: 4.0.8(@types/node@24.10.0)(@vitest/browser-playwright@4.0.8)(jsdom@27.2.0)(less@4.4.2)(sass@1.93.2)
     transitivePeerDependencies:
       - '@types/node'
       - chokidar
@@ -5241,7 +5241,7 @@ snapshots:
       lmdb: 3.4.3
       ng-packagr: 21.0.0-rc.0(@angular/compiler-cli@21.0.0-rc.1(@angular/compiler@21.0.0-rc.1)(typescript@5.9.3))(tslib@2.8.1)(typescript@5.9.3)
       postcss: 8.5.6
-      vitest: 4.0.8(@types/node@24.10.0)(@vitest/browser-playwright@4.0.8)(jsdom@27.1.0)(less@4.4.2)(sass@1.93.2)
+      vitest: 4.0.8(@types/node@24.10.0)(@vitest/browser-playwright@4.0.8)(jsdom@27.2.0)(less@4.4.2)(sass@1.93.2)
     transitivePeerDependencies:
       - '@types/node'
       - chokidar
@@ -5562,7 +5562,7 @@ snapshots:
     dependencies:
       '@csstools/css-tokenizer': 3.0.4
 
-  '@csstools/css-syntax-patches-for-csstree@1.0.15': {}
+  '@csstools/css-syntax-patches-for-csstree@1.0.16': {}
 
   '@csstools/css-tokenizer@3.0.4': {}
 
@@ -6994,7 +6994,7 @@ snapshots:
       '@vitest/mocker': 4.0.8(vite@7.1.11(@types/node@24.10.0)(less@4.4.2)(sass@1.93.2))
       playwright: 1.56.1
       tinyrainbow: 3.0.3
-      vitest: 4.0.8(@types/node@24.10.0)(@vitest/browser-playwright@4.0.8)(jsdom@27.1.0)(less@4.4.2)(sass@1.93.2)
+      vitest: 4.0.8(@types/node@24.10.0)(@vitest/browser-playwright@4.0.8)(jsdom@27.2.0)(less@4.4.2)(sass@1.93.2)
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -7008,7 +7008,7 @@ snapshots:
       '@vitest/mocker': 4.0.8(vite@7.2.2(@types/node@24.10.0)(less@4.4.2)(sass@1.93.2))
       playwright: 1.56.1
       tinyrainbow: 3.0.3
-      vitest: 4.0.8(@types/node@24.10.0)(@vitest/browser-playwright@4.0.8)(jsdom@27.1.0)(less@4.4.2)(sass@1.93.2)
+      vitest: 4.0.8(@types/node@24.10.0)(@vitest/browser-playwright@4.0.8)(jsdom@27.2.0)(less@4.4.2)(sass@1.93.2)
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -7024,7 +7024,7 @@ snapshots:
       pngjs: 7.0.0
       sirv: 3.0.2
       tinyrainbow: 3.0.3
-      vitest: 4.0.8(@types/node@24.10.0)(@vitest/browser-playwright@4.0.8)(jsdom@27.1.0)(less@4.4.2)(sass@1.93.2)
+      vitest: 4.0.8(@types/node@24.10.0)(@vitest/browser-playwright@4.0.8)(jsdom@27.2.0)(less@4.4.2)(sass@1.93.2)
       ws: 8.18.3
     transitivePeerDependencies:
       - bufferutil
@@ -7042,7 +7042,7 @@ snapshots:
       pngjs: 7.0.0
       sirv: 3.0.2
       tinyrainbow: 3.0.3
-      vitest: 4.0.8(@types/node@24.10.0)(@vitest/browser-playwright@4.0.8)(jsdom@27.1.0)(less@4.4.2)(sass@1.93.2)
+      vitest: 4.0.8(@types/node@24.10.0)(@vitest/browser-playwright@4.0.8)(jsdom@27.2.0)(less@4.4.2)(sass@1.93.2)
       ws: 8.18.3
     transitivePeerDependencies:
       - bufferutil
@@ -7063,7 +7063,7 @@ snapshots:
       magicast: 0.5.1
       std-env: 3.10.0
       tinyrainbow: 3.0.3
-      vitest: 4.0.8(@types/node@24.10.0)(@vitest/browser-playwright@4.0.8)(jsdom@27.1.0)(less@4.4.2)(sass@1.93.2)
+      vitest: 4.0.8(@types/node@24.10.0)(@vitest/browser-playwright@4.0.8)(jsdom@27.2.0)(less@4.4.2)(sass@1.93.2)
     optionalDependencies:
       '@vitest/browser': 4.0.8(vite@7.2.2(@types/node@24.10.0)(less@4.4.2)(sass@1.93.2))(vitest@4.0.8)
     transitivePeerDependencies:
@@ -7480,10 +7480,10 @@ snapshots:
 
   css-what@7.0.0: {}
 
-  cssstyle@5.3.2:
+  cssstyle@5.3.3:
     dependencies:
       '@asamuzakjp/css-color': 4.0.5
-      '@csstools/css-syntax-patches-for-csstree': 1.0.15
+      '@csstools/css-syntax-patches-for-csstree': 1.0.16
       css-tree: 3.1.0
 
   cytoscape-cose-bilkent@4.1.0(cytoscape@3.33.1):
@@ -8379,11 +8379,11 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  jsdom@27.1.0:
+  jsdom@27.2.0:
     dependencies:
-      '@acemir/cssom': 0.9.20
+      '@acemir/cssom': 0.9.23
       '@asamuzakjp/dom-selector': 6.7.4
-      cssstyle: 5.3.2
+      cssstyle: 5.3.3
       data-urls: 6.0.0
       decimal.js: 10.6.0
       html-encoding-sniffer: 4.0.0
@@ -9679,7 +9679,7 @@ snapshots:
       less: 4.4.2
       sass: 1.93.2
 
-  vitest@4.0.8(@types/node@24.10.0)(@vitest/browser-playwright@4.0.8)(jsdom@27.1.0)(less@4.4.2)(sass@1.93.2):
+  vitest@4.0.8(@types/node@24.10.0)(@vitest/browser-playwright@4.0.8)(jsdom@27.2.0)(less@4.4.2)(sass@1.93.2):
     dependencies:
       '@vitest/expect': 4.0.8
       '@vitest/mocker': 4.0.8(vite@7.2.2(@types/node@24.10.0)(less@4.4.2)(sass@1.93.2))
@@ -9704,7 +9704,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 24.10.0
       '@vitest/browser-playwright': 4.0.8(playwright@1.56.1)(vite@7.1.11(@types/node@24.10.0)(less@4.4.2)(sass@1.93.2))(vitest@4.0.8)
-      jsdom: 27.1.0
+      jsdom: 27.2.0
     transitivePeerDependencies:
       - jiti
       - less
