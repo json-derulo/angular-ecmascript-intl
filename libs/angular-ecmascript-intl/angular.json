@@ -30,7 +30,8 @@
             "runner": "vitest",
             "providersFile": "src/providers.ts",
             "tsConfig": "tsconfig.spec.json",
-            "coverage": true
+            "coverage": true,
+            "browsers": ["chromiumHeadless"]
           }
         }
       }
