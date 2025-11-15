@@ -45,7 +45,7 @@ jobs:
 
       - name: install
         run: pnpm install --frozen-lockfile
-      
+
       - name: Install Playwright Browsers
         run: pnpm dlx playwright install chromium
 
