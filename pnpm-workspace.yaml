@@ -12,3 +12,4 @@ minimumReleaseAgeExclude:
   - "@angular/*"
   - "@angular-devkit/*"
   - "@schematics/angular"
+  - ng-packagr
