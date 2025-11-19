@@ -7,6 +7,8 @@ import { IntlLanguagePipe } from './intl-language.pipe';
 describe('IntlLanguagePipe', () => {
   let testUnit: IntlLanguagePipe;
 
+  beforeEach(() => TestBed.resetTestingModule());
+
   describe('parsing', () => {
     beforeEach(() => {
       TestBed.runInInjectionContext(() => {
@@ -54,14 +56,7 @@ describe('IntlLanguagePipe', () => {
 
   describe('internationalization', () => {
     it('should respect the set locale', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'de-DE',
-          },
-        ],
-      });
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'de-DE' });
       TestBed.runInInjectionContext(() => (testUnit = new IntlLanguagePipe()));
 
       expect(testUnit.transform('de-AT')).toEqual('Österreichisches Deutsch');
@@ -70,19 +65,11 @@ describe('IntlLanguagePipe', () => {
 
   describe('options', () => {
     it('should respect the setting from default config', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'de-DE',
-          },
-          {
-            provide: INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS,
-            useValue: {
-              languageDisplay: 'standard',
-            },
-          },
-        ],
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'de-DE' });
+      TestBed.overrideProvider(INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS, {
+        useValue: {
+          languageDisplay: 'standard',
+        },
       });
       TestBed.runInInjectionContext(() => (testUnit = new IntlLanguagePipe()));
 
@@ -90,19 +77,11 @@ describe('IntlLanguagePipe', () => {
     });
 
     it('should give the user options a higher priority', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'de-DE',
-          },
-          {
-            provide: INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS,
-            useValue: {
-              languageDisplay: 'dialect',
-            },
-          },
-        ],
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'de-DE' });
+      TestBed.overrideProvider(INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS, {
+        useValue: {
+          languageDisplay: 'dialect',
+        },
       });
       TestBed.runInInjectionContext(() => (testUnit = new IntlLanguagePipe()));
 
@@ -112,19 +91,11 @@ describe('IntlLanguagePipe', () => {
     });
 
     it('should not override the type option', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'de-DE',
-          },
-          {
-            provide: INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS,
-            useValue: {
-              type: 'region',
-            },
-          },
-        ],
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'de-DE' });
+      TestBed.overrideProvider(INTL_LANGUAGE_PIPE_DEFAULT_OPTIONS, {
+        useValue: {
+          type: 'region',
+        },
       });
       TestBed.runInInjectionContext(() => (testUnit = new IntlLanguagePipe()));
 
@@ -133,14 +104,7 @@ describe('IntlLanguagePipe', () => {
   });
 
   it('should respect locale option', () => {
-    TestBed.configureTestingModule({
-      providers: [
-        {
-          provide: INTL_LOCALES,
-          useValue: 'en-US',
-        },
-      ],
-    });
+    TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
     TestBed.runInInjectionContext(() => (testUnit = new IntlLanguagePipe()));
 
     expect(testUnit.transform('de-DE', { locale: 'de-DE' })).toEqual(

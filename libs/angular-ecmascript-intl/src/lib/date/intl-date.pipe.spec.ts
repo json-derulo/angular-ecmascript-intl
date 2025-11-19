@@ -7,6 +7,8 @@ import { IntlDatePipe } from './intl-date.pipe';
 describe('DatePipe', () => {
   let testUnit: IntlDatePipe;
 
+  beforeEach(() => TestBed.resetTestingModule());
+
   describe('date parsing', () => {
     beforeEach(() => {
       TestBed.runInInjectionContext(() => {
@@ -74,14 +76,7 @@ describe('DatePipe', () => {
 
   describe('internationalization', () => {
     it('should respect the set locale', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'de-DE',
-          },
-        ],
-      });
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'de-DE' });
       TestBed.runInInjectionContext(() => (testUnit = new IntlDatePipe()));
 
       expect(testUnit.transform('2023-02-19')).toEqual('19.2.2023');
@@ -90,19 +85,11 @@ describe('DatePipe', () => {
 
   describe('options', () => {
     it('should respect the setting from default config', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'en-US',
-          },
-          {
-            provide: INTL_DATE_PIPE_DEFAULT_OPTIONS,
-            useValue: {
-              dateStyle: 'medium',
-            },
-          },
-        ],
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
+      TestBed.overrideProvider(INTL_DATE_PIPE_DEFAULT_OPTIONS, {
+        useValue: {
+          dateStyle: 'medium',
+        },
       });
       TestBed.runInInjectionContext(() => (testUnit = new IntlDatePipe()));
 
@@ -110,19 +97,11 @@ describe('DatePipe', () => {
     });
 
     it('should give the user options a higher priority', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'en-US',
-          },
-          {
-            provide: INTL_DATE_PIPE_DEFAULT_OPTIONS,
-            useValue: {
-              dateStyle: 'full',
-            },
-          },
-        ],
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
+      TestBed.overrideProvider(INTL_DATE_PIPE_DEFAULT_OPTIONS, {
+        useValue: {
+          dateStyle: 'full',
+        },
       });
       TestBed.runInInjectionContext(() => (testUnit = new IntlDatePipe()));
 
@@ -133,14 +112,8 @@ describe('DatePipe', () => {
   });
 
   it('should respect locale option', () => {
-    TestBed.configureTestingModule({
-      providers: [
-        {
-          provide: INTL_LOCALES,
-          useValue: 'en-US',
-        },
-      ],
-    });
+    TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
+
     TestBed.runInInjectionContext(() => (testUnit = new IntlDatePipe()));
 
     expect(testUnit.transform('2023-02-19', { locale: 'de-DE' })).toEqual(

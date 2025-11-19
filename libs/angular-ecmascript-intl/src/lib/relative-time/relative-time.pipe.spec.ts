@@ -8,6 +8,8 @@ import { IntlRelativeTimePipe } from './relative-time.pipe';
 describe('RelativeTimePipe', () => {
   let testUnit: IntlRelativeTimePipe;
 
+  beforeEach(() => TestBed.resetTestingModule());
+
   it('should create an instance', () => {
     TestBed.runInInjectionContext(
       () => (testUnit = new IntlRelativeTimePipe()),
@@ -160,17 +162,9 @@ describe('RelativeTimePipe', () => {
 
   describe('options', () => {
     beforeEach(() => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS,
-            useValue: { numeric: 'auto', style: 'short' },
-          },
-          {
-            provide: INTL_LOCALES,
-            useValue: 'en-US',
-          },
-        ],
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
+      TestBed.overrideProvider(INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS, {
+        useValue: { numeric: 'auto', style: 'short' },
       });
       TestBed.runInInjectionContext(
         () => (testUnit = new IntlRelativeTimePipe()),

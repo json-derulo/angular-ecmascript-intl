@@ -7,6 +7,8 @@ import { IntlCountryPipe } from './intl-country.pipe';
 describe('IntlCountryPipe', () => {
   let testUnit: IntlCountryPipe;
 
+  beforeEach(() => TestBed.resetTestingModule());
+
   describe('parsing', () => {
     beforeEach(() => {
       TestBed.runInInjectionContext(() => {
@@ -54,14 +56,7 @@ describe('IntlCountryPipe', () => {
 
   describe('internationalization', () => {
     it('should respect the set locale', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'de-DE',
-          },
-        ],
-      });
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'de-DE' });
       TestBed.runInInjectionContext(() => (testUnit = new IntlCountryPipe()));
 
       expect(testUnit.transform('AT')).toEqual('Österreich');
@@ -70,19 +65,9 @@ describe('IntlCountryPipe', () => {
 
   describe('options', () => {
     it('should not override the type option', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'de-DE',
-          },
-          {
-            provide: INTL_COUNTRY_PIPE_DEFAULT_OPTIONS,
-            useValue: {
-              type: 'language',
-            },
-          },
-        ],
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'de-DE' });
+      TestBed.overrideProvider(INTL_COUNTRY_PIPE_DEFAULT_OPTIONS, {
+        useValue: { type: 'language' },
       });
       TestBed.runInInjectionContext(() => (testUnit = new IntlCountryPipe()));
 
@@ -93,14 +78,7 @@ describe('IntlCountryPipe', () => {
   });
 
   it('should respect locale option', () => {
-    TestBed.configureTestingModule({
-      providers: [
-        {
-          provide: INTL_LOCALES,
-          useValue: 'en-US',
-        },
-      ],
-    });
+    TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
     TestBed.runInInjectionContext(() => (testUnit = new IntlCountryPipe()));
 
     expect(testUnit.transform('US', { locale: 'de-DE' })).toEqual(

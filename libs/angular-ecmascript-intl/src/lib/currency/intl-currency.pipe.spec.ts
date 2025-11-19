@@ -7,6 +7,8 @@ import { IntlCurrencyPipe } from './intl-currency.pipe';
 describe('IntlCurrencyPipe', () => {
   let testUnit: IntlCurrencyPipe;
 
+  beforeEach(() => TestBed.resetTestingModule());
+
   describe('parsing', () => {
     beforeEach(() => {
       TestBed.runInInjectionContext(() => {
@@ -58,14 +60,7 @@ describe('IntlCurrencyPipe', () => {
 
   describe('internationalization', () => {
     it('should respect the set locale', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'de-DE',
-          },
-        ],
-      });
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'de-DE' });
       TestBed.runInInjectionContext(() => (testUnit = new IntlCurrencyPipe()));
 
       expect(testUnit.transform(1024.2249, 'EUR')).toEqual('1.024,22\xa0€');
@@ -74,19 +69,11 @@ describe('IntlCurrencyPipe', () => {
 
   describe('options', () => {
     it('should respect the setting from default config', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'en-US',
-          },
-          {
-            provide: INTL_CURRENCY_PIPE_DEFAULT_OPTIONS,
-            useValue: {
-              signDisplay: 'always',
-            },
-          },
-        ],
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
+      TestBed.overrideProvider(INTL_CURRENCY_PIPE_DEFAULT_OPTIONS, {
+        useValue: {
+          signDisplay: 'always',
+        },
       });
       TestBed.runInInjectionContext(() => (testUnit = new IntlCurrencyPipe()));
 
@@ -94,19 +81,11 @@ describe('IntlCurrencyPipe', () => {
     });
 
     it('should give the user options a higher priority', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'en-US',
-          },
-          {
-            provide: INTL_CURRENCY_PIPE_DEFAULT_OPTIONS,
-            useValue: {
-              signDisplay: 'exceptZero',
-            },
-          },
-        ],
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
+      TestBed.overrideProvider(INTL_CURRENCY_PIPE_DEFAULT_OPTIONS, {
+        useValue: {
+          signDisplay: 'exceptZero',
+        },
       });
       TestBed.runInInjectionContext(() => (testUnit = new IntlCurrencyPipe()));
 
@@ -117,14 +96,7 @@ describe('IntlCurrencyPipe', () => {
   });
 
   it('should respect locale option', () => {
-    TestBed.configureTestingModule({
-      providers: [
-        {
-          provide: INTL_LOCALES,
-          useValue: 'en-US',
-        },
-      ],
-    });
+    TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
     TestBed.runInInjectionContext(() => (testUnit = new IntlCurrencyPipe()));
 
     expect(testUnit.transform(1024, 'USD', { locale: 'de-DE' })).toEqual(
@@ -133,19 +105,11 @@ describe('IntlCurrencyPipe', () => {
   });
 
   it('should not override the style option', () => {
-    TestBed.configureTestingModule({
-      providers: [
-        {
-          provide: INTL_LOCALES,
-          useValue: 'en-US',
-        },
-        {
-          provide: INTL_CURRENCY_PIPE_DEFAULT_OPTIONS,
-          useValue: {
-            style: 'percent',
-          },
-        },
-      ],
+    TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
+    TestBed.overrideProvider(INTL_CURRENCY_PIPE_DEFAULT_OPTIONS, {
+      useValue: {
+        style: 'percent',
+      },
     });
     TestBed.runInInjectionContext(() => (testUnit = new IntlCurrencyPipe()));
 

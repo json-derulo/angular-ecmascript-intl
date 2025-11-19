@@ -26,10 +26,8 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "buildTarget": "::development",
             "runner": "vitest",
             "providersFile": "src/providers.ts",
-            "tsConfig": "tsconfig.spec.json",
             "coverage": true,
             "browsers": ["chromiumHeadless"]
           }

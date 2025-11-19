@@ -7,6 +7,8 @@ import { IntlUnitPipe } from './intl-unit.pipe';
 describe('IntlUnitPipe', () => {
   let testUnit: IntlUnitPipe;
 
+  beforeEach(() => TestBed.resetTestingModule());
+
   describe('parsing', () => {
     beforeEach(() => {
       TestBed.runInInjectionContext(() => {
@@ -58,14 +60,7 @@ describe('IntlUnitPipe', () => {
 
   describe('internationalization', () => {
     it('should respect the set locale', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'de-DE',
-          },
-        ],
-      });
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'de-DE' });
       TestBed.runInInjectionContext(() => (testUnit = new IntlUnitPipe()));
 
       expect(testUnit.transform(1, 'hour')).toEqual('1 Std.');
@@ -74,19 +69,11 @@ describe('IntlUnitPipe', () => {
 
   describe('options', () => {
     it('should respect the setting from default config', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'en-US',
-          },
-          {
-            provide: INTL_UNIT_PIPE_DEFAULT_OPTIONS,
-            useValue: {
-              unitDisplay: 'narrow',
-            },
-          },
-        ],
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
+      TestBed.overrideProvider(INTL_UNIT_PIPE_DEFAULT_OPTIONS, {
+        useValue: {
+          unitDisplay: 'narrow',
+        },
       });
       TestBed.runInInjectionContext(() => (testUnit = new IntlUnitPipe()));
 
@@ -94,19 +81,11 @@ describe('IntlUnitPipe', () => {
     });
 
     it('should give the user options a higher priority', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'en-US',
-          },
-          {
-            provide: INTL_UNIT_PIPE_DEFAULT_OPTIONS,
-            useValue: {
-              unitDisplay: 'short',
-            },
-          },
-        ],
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
+      TestBed.overrideProvider(INTL_UNIT_PIPE_DEFAULT_OPTIONS, {
+        useValue: {
+          unitDisplay: 'short',
+        },
       });
       TestBed.runInInjectionContext(() => (testUnit = new IntlUnitPipe()));
 
@@ -117,14 +96,7 @@ describe('IntlUnitPipe', () => {
   });
 
   it('should respect locale option', () => {
-    TestBed.configureTestingModule({
-      providers: [
-        {
-          provide: INTL_LOCALES,
-          useValue: 'en-US',
-        },
-      ],
-    });
+    TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
     TestBed.runInInjectionContext(() => (testUnit = new IntlUnitPipe()));
 
     expect(testUnit.transform(1, 'hour', { locale: 'de-DE' })).toEqual(
@@ -133,19 +105,11 @@ describe('IntlUnitPipe', () => {
   });
 
   it('should not override the style option', () => {
-    TestBed.configureTestingModule({
-      providers: [
-        {
-          provide: INTL_LOCALES,
-          useValue: 'en-US',
-        },
-        {
-          provide: INTL_UNIT_PIPE_DEFAULT_OPTIONS,
-          useValue: {
-            style: 'decimal',
-          },
-        },
-      ],
+    TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
+    TestBed.overrideProvider(INTL_UNIT_PIPE_DEFAULT_OPTIONS, {
+      useValue: {
+        style: 'decimal',
+      },
     });
     TestBed.runInInjectionContext(() => (testUnit = new IntlUnitPipe()));
 

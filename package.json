@@ -16,16 +16,16 @@
     "rxjs": "~7.8.2"
   },
   "devDependencies": {
-    "@angular/core": "21.0.0-rc.2",
-    "@eslint/js": "^9.26.0",
-    "@types/node": "^24.0.0",
-    "angular-eslint": "^20.0.0",
-    "eslint": "^9.26.0",
-    "globals": "^16.1.0",
-    "prettier": "~3.6.0",
-    "prettier-plugin-organize-imports": "^4.1.0",
-    "typescript": "~5.9.0",
-    "typescript-eslint": "^8.32.1"
+    "@angular/core": "^21.0.1",
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.1",
+    "angular-eslint": "^20.7.0",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "prettier": "~3.6.2",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.48.0"
   },
   "engines": {
     "npm": "Please use pnpm instead of npm to install dependencies",

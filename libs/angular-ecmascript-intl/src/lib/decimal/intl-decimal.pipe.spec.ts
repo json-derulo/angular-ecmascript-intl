@@ -7,6 +7,8 @@ import { IntlDecimalPipe } from './intl-decimal.pipe';
 describe('IntlDecimalPipe', () => {
   let testUnit: IntlDecimalPipe;
 
+  beforeEach(() => TestBed.resetTestingModule());
+
   describe('parsing', () => {
     beforeEach(() => {
       TestBed.runInInjectionContext(() => {
@@ -58,14 +60,7 @@ describe('IntlDecimalPipe', () => {
 
   describe('internationalization', () => {
     it('should respect the set locale', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'de-DE',
-          },
-        ],
-      });
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'de-DE' });
       TestBed.runInInjectionContext(() => (testUnit = new IntlDecimalPipe()));
 
       expect(testUnit.transform(1024.2249)).toEqual('1.024,225');
@@ -74,19 +69,11 @@ describe('IntlDecimalPipe', () => {
 
   describe('options', () => {
     it('should respect the setting from default config', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'en-US',
-          },
-          {
-            provide: INTL_DECIMAL_PIPE_DEFAULT_OPTIONS,
-            useValue: {
-              signDisplay: 'always',
-            },
-          },
-        ],
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
+      TestBed.overrideProvider(INTL_DECIMAL_PIPE_DEFAULT_OPTIONS, {
+        useValue: {
+          signDisplay: 'always',
+        },
       });
       TestBed.runInInjectionContext(() => (testUnit = new IntlDecimalPipe()));
 
@@ -94,19 +81,11 @@ describe('IntlDecimalPipe', () => {
     });
 
     it('should give the user options a higher priority', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'en-US',
-          },
-          {
-            provide: INTL_DECIMAL_PIPE_DEFAULT_OPTIONS,
-            useValue: {
-              signDisplay: 'exceptZero',
-            },
-          },
-        ],
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
+      TestBed.overrideProvider(INTL_DECIMAL_PIPE_DEFAULT_OPTIONS, {
+        useValue: {
+          signDisplay: 'exceptZero',
+        },
       });
       TestBed.runInInjectionContext(() => (testUnit = new IntlDecimalPipe()));
 
@@ -115,33 +94,18 @@ describe('IntlDecimalPipe', () => {
   });
 
   it('should respect locale option', () => {
-    TestBed.configureTestingModule({
-      providers: [
-        {
-          provide: INTL_LOCALES,
-          useValue: 'en-US',
-        },
-      ],
-    });
+    TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
     TestBed.runInInjectionContext(() => (testUnit = new IntlDecimalPipe()));
 
     expect(testUnit.transform(1024, { locale: 'de-DE' })).toEqual('1.024');
   });
 
   it('should not override the style option', () => {
-    TestBed.configureTestingModule({
-      providers: [
-        {
-          provide: INTL_LOCALES,
-          useValue: 'de-DE',
-        },
-        {
-          provide: INTL_DECIMAL_PIPE_DEFAULT_OPTIONS,
-          useValue: {
-            style: 'percent',
-          },
-        },
-      ],
+    TestBed.overrideProvider(INTL_LOCALES, { useValue: 'de-DE' });
+    TestBed.overrideProvider(INTL_DECIMAL_PIPE_DEFAULT_OPTIONS, {
+      useValue: {
+        style: 'percent',
+      },
     });
     TestBed.runInInjectionContext(() => (testUnit = new IntlDecimalPipe()));
 

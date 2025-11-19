@@ -7,6 +7,8 @@ import { IntlPercentPipe } from './intl-percent.pipe';
 describe('IntlPercentPipe', () => {
   let testUnit: IntlPercentPipe;
 
+  beforeEach(() => TestBed.resetTestingModule());
+
   describe('parsing', () => {
     beforeEach(() => {
       TestBed.runInInjectionContext(() => {
@@ -58,14 +60,7 @@ describe('IntlPercentPipe', () => {
 
   describe('internationalization', () => {
     it('should respect the set locale', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'de-DE',
-          },
-        ],
-      });
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'de-DE' });
       TestBed.runInInjectionContext(() => (testUnit = new IntlPercentPipe()));
 
       expect(testUnit.transform(1)).toEqual('100\xa0%');
@@ -74,19 +69,11 @@ describe('IntlPercentPipe', () => {
 
   describe('options', () => {
     it('should respect the setting from default config', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'en-US',
-          },
-          {
-            provide: INTL_PERCENT_PIPE_DEFAULT_OPTIONS,
-            useValue: {
-              signDisplay: 'always',
-            },
-          },
-        ],
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
+      TestBed.overrideProvider(INTL_PERCENT_PIPE_DEFAULT_OPTIONS, {
+        useValue: {
+          signDisplay: 'always',
+        },
       });
       TestBed.runInInjectionContext(() => (testUnit = new IntlPercentPipe()));
 
@@ -94,19 +81,11 @@ describe('IntlPercentPipe', () => {
     });
 
     it('should give the user options a higher priority', () => {
-      TestBed.configureTestingModule({
-        providers: [
-          {
-            provide: INTL_LOCALES,
-            useValue: 'en-US',
-          },
-          {
-            provide: INTL_PERCENT_PIPE_DEFAULT_OPTIONS,
-            useValue: {
-              signDisplay: 'exceptZero',
-            },
-          },
-        ],
+      TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
+      TestBed.overrideProvider(INTL_PERCENT_PIPE_DEFAULT_OPTIONS, {
+        useValue: {
+          signDisplay: 'exceptZero',
+        },
       });
       TestBed.runInInjectionContext(() => (testUnit = new IntlPercentPipe()));
 
@@ -115,33 +94,18 @@ describe('IntlPercentPipe', () => {
   });
 
   it('should respect locale option', () => {
-    TestBed.configureTestingModule({
-      providers: [
-        {
-          provide: INTL_LOCALES,
-          useValue: 'en-US',
-        },
-      ],
-    });
+    TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
     TestBed.runInInjectionContext(() => (testUnit = new IntlPercentPipe()));
 
     expect(testUnit.transform(1, { locale: 'de-DE' })).toEqual('100\xa0%');
   });
 
   it('should not override the style option', () => {
-    TestBed.configureTestingModule({
-      providers: [
-        {
-          provide: INTL_LOCALES,
-          useValue: 'en-US',
-        },
-        {
-          provide: INTL_PERCENT_PIPE_DEFAULT_OPTIONS,
-          useValue: {
-            style: 'decimal',
-          },
-        },
-      ],
+    TestBed.overrideProvider(INTL_LOCALES, { useValue: 'en-US' });
+    TestBed.overrideProvider(INTL_PERCENT_PIPE_DEFAULT_OPTIONS, {
+      useValue: {
+        style: 'decimal',
+      },
     });
     TestBed.runInInjectionContext(() => (testUnit = new IntlPercentPipe()));
 
