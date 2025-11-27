@@ -79,8 +79,8 @@ importers:
         specifier: ^17.0.0
         version: 17.0.0
       ngx-markdown:
-        specifier: ^20.0.0
-        version: 20.1.0(@angular/common@21.0.1(@angular/core@21.0.1(@angular/compiler@21.0.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.1(@angular/compiler@21.0.1)(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@21.0.1(@angular/common@21.0.1(@angular/core@21.0.1(@angular/compiler@21.0.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.1(@angular/compiler@21.0.1)(rxjs@7.8.2)(zone.js@0.15.1)))(marked@17.0.0)(rxjs@7.8.2)(zone.js@0.15.1)
+        specifier: ^21.0.0
+        version: 21.0.0(@angular/common@21.0.1(@angular/core@21.0.1(@angular/compiler@21.0.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.1(@angular/compiler@21.0.1)(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@21.0.1(@angular/common@21.0.1(@angular/core@21.0.1(@angular/compiler@21.0.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.1(@angular/compiler@21.0.1)(rxjs@7.8.2)(zone.js@0.15.1)))(marked@17.0.0)(rxjs@7.8.2)(zone.js@0.15.1)
       prismjs:
         specifier: ^1.30.0
         version: 1.30.0
@@ -3401,13 +3401,13 @@ packages:
       tailwindcss:
         optional: true
 
-  ngx-markdown@20.1.0:
-    resolution: {integrity: sha512-BLn6CTMO27cU0zeaJYoC1g5c1hAkrpE5oqVSQFGW0J5gq+gEuvTt4vrtNLc8Z+HYXtuuWmuhUWiXL/bYoiDJ+A==}
+  ngx-markdown@21.0.0:
+    resolution: {integrity: sha512-BxYl0bC771aFrIIbOqoCs/8o55PyZyXerqL1fPJx/Lpv22ylyIVz2N3HfKpx58oywoin9RFQuSWlykD+j7NvmQ==}
     peerDependencies:
-      '@angular/common': ^20.0.0
-      '@angular/core': ^20.0.0
-      '@angular/platform-browser': ^20.0.0
-      marked: ^15.0.0 || ^16.0.0
+      '@angular/common': ^21.0.0
+      '@angular/core': ^21.0.0
+      '@angular/platform-browser': ^21.0.0
+      marked: ^17.0.0
       rxjs: ^6.5.3 || ^7.4.0
       zone.js: ~0.15.0
 
@@ -7858,7 +7858,7 @@ snapshots:
     optionalDependencies:
       rollup: 4.53.2
 
-  ngx-markdown@20.1.0(@angular/common@21.0.1(@angular/core@21.0.1(@angular/compiler@21.0.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.1(@angular/compiler@21.0.1)(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@21.0.1(@angular/common@21.0.1(@angular/core@21.0.1(@angular/compiler@21.0.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.1(@angular/compiler@21.0.1)(rxjs@7.8.2)(zone.js@0.15.1)))(marked@17.0.0)(rxjs@7.8.2)(zone.js@0.15.1):
+  ngx-markdown@21.0.0(@angular/common@21.0.1(@angular/core@21.0.1(@angular/compiler@21.0.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.1(@angular/compiler@21.0.1)(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@21.0.1(@angular/common@21.0.1(@angular/core@21.0.1(@angular/compiler@21.0.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.1(@angular/compiler@21.0.1)(rxjs@7.8.2)(zone.js@0.15.1)))(marked@17.0.0)(rxjs@7.8.2)(zone.js@0.15.1):
     dependencies:
       '@angular/common': 21.0.1(@angular/core@21.0.1(@angular/compiler@21.0.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
       '@angular/core': 21.0.1(@angular/compiler@21.0.1)(rxjs@7.8.2)(zone.js@0.15.1)
