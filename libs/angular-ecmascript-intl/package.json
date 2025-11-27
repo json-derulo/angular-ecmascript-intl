@@ -35,10 +35,10 @@
     "@angular/platform-browser": "^21.0.1",
     "@vitest/browser-playwright": "4.0.8",
     "@vitest/coverage-v8": "4.0.8",
-    "cpy-cli": "^6.0.0",
-    "dayjs": "^1.11.13",
+    "cpy-cli": "6.0.0",
+    "dayjs": "1.11.19",
     "ng-packagr": "^21.0.0",
-    "playwright": "^1.56.1",
+    "playwright": "1.56.1",
     "vitest": "4.0.8"
   },
   "sideEffects": false,
