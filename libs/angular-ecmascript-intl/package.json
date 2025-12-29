@@ -28,7 +28,7 @@
     "test": "ng test"
   },
   "devDependencies": {
-    "@angular/build": "^21.0.1",
+    "@angular/build": "catalog:",
     "@angular/cli": "^21.0.1",
     "@angular/common": "^21.0.1",
     "@angular/core": "^21.0.1",

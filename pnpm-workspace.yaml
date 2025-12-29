@@ -6,6 +6,12 @@ ignoredBuiltDependencies:
   - esbuild
   - lmdb
   - rollup
+  - less
+  - "@parcel/watcher"
+  - msgpackr-extract
+
+catalog:
+  "@angular/build": 21.0.4
 
 minimumReleaseAge: 4320
 minimumReleaseAgeExclude:
