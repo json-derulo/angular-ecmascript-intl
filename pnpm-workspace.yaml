@@ -3,13 +3,11 @@ packages:
   - demo
 
 ignoredBuiltDependencies:
+  - "@parcel/watcher"
   - esbuild
+  - less
   - lmdb
+  - msgpackr-extract
   - rollup
 
 minimumReleaseAge: 4320
-minimumReleaseAgeExclude:
-  - "@angular/*"
-  - "@angular-devkit/*"
-  - "@schematics/angular"
-  - ng-packagr
