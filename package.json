@@ -25,7 +25,7 @@
     "prettier": "3.6.2",
     "prettier-plugin-organize-imports": "4.3.0",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.48.0"
+    "typescript-eslint": "8.53.0"
   },
   "engines": {
     "npm": "Please use pnpm instead of npm to install dependencies",
