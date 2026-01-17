@@ -39,6 +39,7 @@
     "dayjs": "1.11.19",
     "ng-packagr": "21.1.0",
     "playwright": "1.57.0",
+    "rxjs": "7.8.2",
     "vitest": "4.0.17"
   },
   "sideEffects": false,
