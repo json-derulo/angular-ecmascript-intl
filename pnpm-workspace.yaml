@@ -11,3 +11,6 @@ ignoredBuiltDependencies:
   - rollup
 
 minimumReleaseAge: 4320
+
+overrides:
+  undici@>=7.0.0 <7.18.2: ">=7.18.2"
