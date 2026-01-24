@@ -28,11 +28,11 @@
     "test": "ng test"
   },
   "devDependencies": {
-    "@angular/build": "21.1.0",
-    "@angular/cli": "21.1.0",
-    "@angular/common": "21.1.0",
-    "@angular/core": "21.1.0",
-    "@angular/platform-browser": "21.1.0",
+    "@angular/build": "21.1.1",
+    "@angular/cli": "21.1.1",
+    "@angular/common": "21.1.1",
+    "@angular/core": "21.1.1",
+    "@angular/platform-browser": "21.1.1",
     "@vitest/browser-playwright": "4.0.17",
     "@vitest/coverage-v8": "4.0.17",
     "cpy-cli": "6.0.0",
