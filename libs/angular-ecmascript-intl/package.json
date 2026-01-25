@@ -33,14 +33,14 @@
     "@angular/common": "21.1.1",
     "@angular/core": "21.1.1",
     "@angular/platform-browser": "21.1.1",
-    "@vitest/browser-playwright": "4.0.17",
-    "@vitest/coverage-v8": "4.0.17",
+    "@vitest/browser-playwright": "4.0.18",
+    "@vitest/coverage-v8": "4.0.18",
     "cpy-cli": "6.0.0",
     "dayjs": "1.11.19",
     "ng-packagr": "21.1.0",
     "playwright": "1.57.0",
     "rxjs": "7.8.2",
-    "vitest": "4.0.17"
+    "vitest": "4.0.18"
   },
   "sideEffects": false,
   "author": {
