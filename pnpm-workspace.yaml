@@ -14,3 +14,4 @@ minimumReleaseAge: 4320
 
 overrides:
   undici@>=7.0.0 <7.18.2: ">=7.18.2"
+  sass: ^1.97.3 # without this, timeouts may occur in the tests
