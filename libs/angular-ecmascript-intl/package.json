@@ -28,8 +28,8 @@
     "test": "ng test"
   },
   "devDependencies": {
-    "@angular/build": "21.1.4",
-    "@angular/cli": "21.1.4",
+    "@angular/build": "21.1.5",
+    "@angular/cli": "21.1.5",
     "@angular/common": "21.1.5",
     "@angular/core": "21.1.5",
     "@angular/platform-browser": "21.1.5",
