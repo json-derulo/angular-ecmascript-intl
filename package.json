@@ -13,7 +13,7 @@
   },
   "private": true,
   "devDependencies": {
-    "@angular/core": "21.1.5",
+    "@angular/core": "21.2.0",
     "@eslint/js": "9.39.3",
     "@types/node": "24.10.13",
     "angular-eslint": "21.2.0",
