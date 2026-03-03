@@ -1,6 +1,7 @@
 {
   "name": "angular-ecmascript-intl-monorepo",
   "version": "0.0.0",
+  "private": true,
   "scripts": {
     "build-libs": "pnpm --filter ./libs/* build",
     "build": "pnpm build-libs && pnpm --filter demo build",
@@ -9,17 +10,16 @@
     "prelint": "pnpm build-libs",
     "lint": "oxlint . && eslint . --ext .html",
     "release": "release-it",
-    "prettier": "prettier . --write"
+    "format": "oxfmt",
+    "format-check": "oxfmt --check"
   },
-  "private": true,
   "devDependencies": {
     "@angular/core": "21.2.0",
     "@types/node": "24.10.15",
     "angular-eslint": "21.2.0",
     "eslint": "9.39.3",
+    "oxfmt": "0.35.0",
     "oxlint": "1.50.0",
-    "prettier": "3.8.1",
-    "prettier-plugin-organize-imports": "4.3.0",
     "rxjs": "7.8.2",
     "typescript": "5.9.3",
     "typescript-eslint": "8.56.1"

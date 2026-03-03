@@ -1,17 +1,16 @@
+allowBuilds:
+  '@parcel/watcher': false
+  esbuild: false
+  less: false
+  lmdb: false
+  msgpackr-extract: false
+  rollup: false
+
 packages:
   - libs/*
   - demo
 
-ignoredBuiltDependencies:
-  - "@parcel/watcher"
-  - esbuild
-  - less
-  - lmdb
-  - msgpackr-extract
-  - rollup
-
 minimumReleaseAge: 4320
 
 overrides:
-  undici@>=7.0.0 <7.18.2: ">=7.18.2"
   sass: ^1.97.3 # without this, timeouts may occur in the tests

@@ -23,14 +23,14 @@ By default, all pipes will use the browser default locale.
 If you want to override it, you can provide the `INTL_LOCALES` injection token:
 
 ```typescript
-import { NgModule } from "@angular/core";
-import { INTL_LOCALES } from "angular-ecmascript-intl";
+import { NgModule } from '@angular/core';
+import { INTL_LOCALES } from 'angular-ecmascript-intl';
 
 @NgModule({
   providers: [
     {
       provide: INTL_LOCALES,
-      useValue: "de-DE",
+      useValue: 'de-DE',
     },
   ],
 })
