@@ -137,5 +137,5 @@ jobs:
       - name: install
         run: pnpm install --frozen-lockfile
 
-      - name: prettier
-        run: pnpm exec prettier . --check
+      - name: Check formatting
+        run: pnpm format-check

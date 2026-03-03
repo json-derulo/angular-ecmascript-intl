@@ -4,28 +4,37 @@
   "description": "Contains Angular pipes to transform internationalization data using Intl.* browser APIs",
   "keywords": [
     "angular",
-    "pipe",
-    "i18n",
-    "intl",
+    "country",
+    "currency",
     "date",
     "decimal",
-    "percent",
-    "currency",
+    "duration",
+    "i18n",
+    "intl",
     "language",
-    "country",
-    "timeago",
-    "duration"
+    "percent",
+    "pipe",
+    "timeago"
   ],
-  "peerDependencies": {
-    "@angular/common": ">=20",
-    "@angular/core": ">=20"
+  "homepage": "https://json-derulo.github.io/angular-ecmascript-intl/",
+  "bugs": "https://github.com/json-derulo/angular-ecmascript-intl/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Daniel Kimmich",
+    "email": "json-derulo@outlook.com",
+    "url": "https://github.com/json-derulo"
   },
-  "dependencies": {
-    "tslib": "^2.3.0"
+  "repository": {
+    "url": "https://github.com/json-derulo/angular-ecmascript-intl"
   },
+  "funding": "https://github.com/sponsors/json-derulo",
+  "sideEffects": false,
   "scripts": {
     "build": "cpy ../../README.md . && ng build",
     "test": "ng test"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@angular/build": "21.2.0",
@@ -42,17 +51,8 @@
     "rxjs": "7.8.2",
     "vitest": "4.0.18"
   },
-  "sideEffects": false,
-  "author": {
-    "name": "Daniel Kimmich",
-    "email": "json-derulo@outlook.com",
-    "url": "https://github.com/json-derulo"
-  },
-  "repository": {
-    "url": "https://github.com/json-derulo/angular-ecmascript-intl"
-  },
-  "license": "MIT",
-  "homepage": "https://json-derulo.github.io/angular-ecmascript-intl/",
-  "bugs": "https://github.com/json-derulo/angular-ecmascript-intl/issues",
-  "funding": "https://github.com/sponsors/json-derulo"
+  "peerDependencies": {
+    "@angular/common": ">=20",
+    "@angular/core": ">=20"
+  }
 }

@@ -7,17 +7,10 @@
   "env": {
     "builtin": true
   },
-  "ignorePatterns": [
-    "**/dist/",
-    "**/.angular/",
-    "**/*.js",
-    "**/coverage/"
-  ],
+  "ignorePatterns": ["**/dist/", "**/.angular/", "**/*.js", "**/coverage/"],
   "overrides": [
     {
-      "files": [
-        "**/*.ts"
-      ],
+      "files": ["**/*.ts"],
       "rules": {
         "constructor-super": "off",
         "for-direction": "error",
@@ -212,20 +205,14 @@
         "@angular-eslint/use-pipe-transform-interface": "error",
         "@angular-eslint/use-lifecycle-interface": "warn"
       },
-      "plugins": [
-        "typescript"
-      ],
-      "jsPlugins": [
-        "@angular-eslint/eslint-plugin"
-      ],
+      "plugins": ["typescript"],
+      "jsPlugins": ["@angular-eslint/eslint-plugin"],
       "env": {
         "browser": true
       }
     },
     {
-      "files": [
-        "**/*.spec.ts"
-      ],
+      "files": ["**/*.spec.ts"],
       "env": {
         "jasmine": true
       }
