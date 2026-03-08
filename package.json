@@ -14,7 +14,7 @@
     "format-check": "oxfmt --check"
   },
   "devDependencies": {
-    "@angular/core": "21.2.0",
+    "@angular/core": "21.2.1",
     "@types/node": "24.11.0",
     "angular-eslint": "21.2.0",
     "eslint": "9.39.3",
