@@ -22,7 +22,7 @@
     "oxlint": "1.51.0",
     "rxjs": "7.8.2",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.56.1"
+    "typescript-eslint": "8.57.0"
   },
   "packageManager": "pnpm@10.31.0"
 }
