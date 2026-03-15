@@ -37,6 +37,7 @@ describe('IntlListPipe', () => {
     });
 
     it('should handle missing Intl.DisplayNames browser API', () => {
+      // @ts-expect-error - we want to test the behavior when Intl.DisplayNames is not available
       vi.spyOn(Intl, 'ListFormat').mockReturnValue(undefined);
       const consoleError = vi
         .spyOn(console, 'error')
