@@ -46,6 +46,7 @@ describe('IntlUnitPipe', () => {
     });
 
     it('should handle missing Intl.NumberFormat browser API', () => {
+      // @ts-expect-error - we want to test the behavior when Intl.DisplayNames is not available
       vi.spyOn(Intl, 'NumberFormat').mockReturnValue(undefined);
       const consoleError = vi
         .spyOn(console, 'error')

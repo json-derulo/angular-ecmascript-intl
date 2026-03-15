@@ -62,6 +62,7 @@ describe('DatePipe', () => {
     });
 
     it('should handle missing Intl.DateTimeFormat browser API', () => {
+      // @ts-expect-error - we want to test the behavior when Intl.DisplayNames is not available
       vi.spyOn(Intl, 'DateTimeFormat').mockReturnValue(undefined);
       const consoleError = vi
         .spyOn(console, 'error')
