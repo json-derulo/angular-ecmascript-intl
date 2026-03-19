@@ -18,8 +18,8 @@
     "@types/node": "24.12.0",
     "angular-eslint": "21.3.0",
     "eslint": "10.0.3",
-    "oxfmt": "0.40.0",
-    "oxlint": "1.55.0",
+    "oxfmt": "0.41.0",
+    "oxlint": "1.56.0",
     "rxjs": "7.8.2",
     "typescript": "5.9.3",
     "typescript-eslint": "8.57.0"
