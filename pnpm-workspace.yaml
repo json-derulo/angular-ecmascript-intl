@@ -14,3 +14,6 @@ minimumReleaseAge: 4320
 
 overrides:
   sass: ^1.97.3 # without this, timeouts may occur in the tests
+minimumReleaseAgeExclude:
+  # Renovate security update: @angular/compiler@21.2.4
+  - "@angular/compiler@21.2.4"
