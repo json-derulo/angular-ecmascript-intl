@@ -99,7 +99,8 @@ describe('RelativeTimePipe', () => {
 
     describe('weeks', () => {
       it('should transform a date 1 week in future', () => {
-        const date = dayjs().add(1, 'week').add(1, 'second').toDate();
+        // We need to account for clock changes here
+        const date = dayjs().add(1, 'week').add(2, 'hour').toDate();
 
         expect(testUnit.transform(date)).toEqual('in 1 week');
       });
