@@ -11,6 +11,3 @@ packages:
   - demo
 
 minimumReleaseAge: 4320
-
-overrides:
-  sass: ^1.97.3 # without this, timeouts may occur in the tests
