@@ -37,6 +37,8 @@ yarn-error.log
 testem.log
 /typings
 /.nx
+__screenshots__
+.vitest-attachments
 
 # System files
 .DS_Store
