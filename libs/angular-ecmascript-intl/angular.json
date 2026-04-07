@@ -27,7 +27,6 @@
           "builder": "@angular/build:unit-test",
           "options": {
             "runner": "vitest",
-            "providersFile": "src/providers.ts",
             "coverage": true,
             "browsers": ["chromiumHeadless"]
           }
