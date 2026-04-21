@@ -27,7 +27,7 @@ catalog:
   angular-eslint: '21.3.1'
   cpy-cli: '7.0.0'
   dayjs: '1.11.20'
-  eslint: '10.2.0'
+  eslint: '10.2.1'
   marked: '18.0.0'
   ng-packagr: '21.2.2'
   ngx-markdown: '21.1.0'
