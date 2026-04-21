@@ -28,7 +28,7 @@ catalog:
   cpy-cli: '7.0.0'
   dayjs: '1.11.20'
   eslint: '10.2.1'
-  marked: '18.0.0'
+  marked: '18.0.2'
   ng-packagr: '21.2.2'
   ngx-markdown: '21.2.0'
   oxfmt: '0.45.0'
