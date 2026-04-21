@@ -41,4 +41,6 @@ catalog:
   typescript-eslint: '8.58.2'
   vitest: '4.1.4'
 
+dedupePeers: true
+
 minimumReleaseAge: 4320
