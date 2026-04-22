@@ -37,7 +37,7 @@
     "tslib": "catalog:"
   },
   "devDependencies": {
-    "@angular/build": "21.2.1",
+    "@angular/build": "21.2.7",
     "@angular/cli": "catalog:",
     "@angular/common": "catalog:",
     "@angular/core": "catalog:",
