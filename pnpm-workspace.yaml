@@ -45,8 +45,6 @@ catalog:
 dedupePeers: true
 
 minimumReleaseAge: 4320
-minimumReleaseAgeExclude:
-  - '@angular/*'
 
 overrides:
   sass: ^1.99.0 # without this, timeouts may occur in the tests

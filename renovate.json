@@ -12,6 +12,10 @@
   "minimumReleaseAge": "3 days",
   "packageRules": [
     {
+      "matchDatasources": ["npm"],
+      "registryUrls": ["https://registry.npmjs.org"]
+    },
+    {
       "matchPackageNames": [
         "ng-packagr",
         "@angular/{/,}**",
