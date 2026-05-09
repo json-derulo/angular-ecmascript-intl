@@ -3,11 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build-libs": "pnpm --filter ./libs/* build",
-    "build": "pnpm build-libs && pnpm --filter demo build",
-    "start": "pnpm build-libs && pnpm --filter demo start",
+    "build": "pnpm --filter demo build",
+    "start": "pnpm --filter demo start",
     "test": "pnpm -r test",
-    "prelint": "pnpm build-libs",
     "lint": "oxlint . && eslint . --ext .html",
     "release": "release-it",
     "format": "oxfmt",

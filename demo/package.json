@@ -14,7 +14,6 @@
     "@angular/material": "catalog:",
     "@angular/platform-browser": "catalog:",
     "@angular/router": "catalog:",
-    "angular-ecmascript-intl": "link:../dist/angular-ecmascript-intl",
     "marked": "catalog:",
     "ngx-markdown": "catalog:",
     "prismjs": "catalog:",
