@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "paths": {
+      "angular-ecmascript-intl": [
+        "./libs/angular-ecmascript-intl/src/public-api.ts"
+      ]
+    }
+  }
+}
