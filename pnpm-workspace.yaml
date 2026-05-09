@@ -1,6 +1,7 @@
 packages:
   - libs/*
   - demo
+
 allowBuilds:
   '@parcel/watcher': false
   esbuild: false
@@ -44,6 +45,7 @@ catalog:
 dedupePeers: true
 
 minimumReleaseAge: 4320
+minimumReleaseAgeIgnoreMissingTime: true
 
 overrides:
   sass: ^1.99.0 # without this, timeouts may occur in the tests
