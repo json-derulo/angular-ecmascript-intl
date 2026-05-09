@@ -45,7 +45,7 @@ catalog:
 dedupePeers: true
 
 minimumReleaseAge: 4320
-minimumReleaseAgeIgnoreMissingTime: true
+resolutionMode: highest
 
 overrides:
   sass: ^1.99.0 # without this, timeouts may occur in the tests
