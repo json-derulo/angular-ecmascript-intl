@@ -10,7 +10,7 @@
     "enabled": true
   },
   "minimumReleaseAge": "3 days",
-  "npmrc": "resolution-mode=highest",
+  "npmrc": "resolution-mode=highest\nminimumReleaseAgeIgnoreMissingTime=true",
   "packageRules": [
     {
       "matchPackageNames": [
