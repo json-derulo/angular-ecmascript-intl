@@ -13,7 +13,7 @@
   "packageRules": [
     {
       "matchDatasources": ["npm"],
-      "registryUrls": ["https://registry.npmjs.org"]
+      "npmrc": "resolution-mode=highest"
     },
     {
       "matchPackageNames": [
