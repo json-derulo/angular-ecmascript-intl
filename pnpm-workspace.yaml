@@ -31,7 +31,7 @@ catalog:
   eslint: '10.3.0'
   marked: '18.0.3'
   ng-packagr: '21.2.3'
-  ngx-markdown: '21.2.0'
+  ngx-markdown: '21.3.0'
   oxfmt: '0.48.0'
   oxlint: '1.62.0'
   playwright: '1.59.1'

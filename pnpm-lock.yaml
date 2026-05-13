@@ -68,8 +68,8 @@ catalogs:
       specifier: 21.2.3
       version: 21.2.3
     ngx-markdown:
-      specifier: 21.2.0
-      version: 21.2.0
+      specifier: 21.3.0
+      version: 21.3.0
     oxfmt:
       specifier: 0.48.0
       version: 0.48.0
@@ -164,7 +164,7 @@ importers:
         version: 18.0.3
       ngx-markdown:
         specifier: 'catalog:'
-        version: 21.2.0(@angular/common@21.2.12)(@angular/core@21.2.12)(@angular/platform-browser@21.2.12)(marked@18.0.3)(prismjs@1.30.0)(rxjs@7.8.2)(zone.js@0.16.1)
+        version: 21.3.0(@angular/common@21.2.12)(@angular/core@21.2.12)(@angular/platform-browser@21.2.12)(marked@18.0.3)(prismjs@1.30.0)(rxjs@7.8.2)(zone.js@0.16.1)
       prismjs:
         specifier: 'catalog:'
         version: 1.30.0
@@ -3173,8 +3173,8 @@ packages:
       tailwindcss:
         optional: true
 
-  ngx-markdown@21.2.0:
-    resolution: {integrity: sha512-N2YbawO3lz90b7nVcIhEdwcsCR3Z8bDell3RPvEj+5GcKVxSKb28jekOpg3D7mHtGrDV7vJ7RdpCq/JTGD1LbQ==}
+  ngx-markdown@21.3.0:
+    resolution: {integrity: sha512-HYh31RnDqu9YnMffi5CiHUqzVrucIbURJjx4/YWpuQoQkuR8Otz0CN8M0Bx6rfxDVZ7j3LmNqqlJ/YxvMKizXg==}
     peerDependencies:
       '@angular/common': ^21.0.0
       '@angular/core': ^21.0.0
@@ -3182,7 +3182,7 @@ packages:
       clipboard: ^2.0.11
       emoji-toolkit: '>= 8.0.0 < 11.0.0'
       katex: ^0.16.0
-      marked: ^17.0.0
+      marked: ^17.0.0 || ^18.0.0
       mermaid: '>= 10.6.0 < 12.0.0'
       prismjs: ^1.30.0
       rxjs: ^6.5.3 || ^7.4.0
@@ -6764,7 +6764,7 @@ snapshots:
     optionalDependencies:
       rollup: 4.60.2
 
-  ngx-markdown@21.2.0(@angular/common@21.2.12)(@angular/core@21.2.12)(@angular/platform-browser@21.2.12)(marked@18.0.3)(prismjs@1.30.0)(rxjs@7.8.2)(zone.js@0.16.1):
+  ngx-markdown@21.3.0(@angular/common@21.2.12)(@angular/core@21.2.12)(@angular/platform-browser@21.2.12)(marked@18.0.3)(prismjs@1.30.0)(rxjs@7.8.2)(zone.js@0.16.1):
     dependencies:
       '@angular/common': 21.2.12(@angular/core@21.2.12)(rxjs@7.8.2)
       '@angular/core': 21.2.12(@angular/compiler@21.2.12)(rxjs@7.8.2)(zone.js@0.16.1)
