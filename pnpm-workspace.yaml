@@ -45,9 +45,7 @@ catalog:
 dedupePeers: true
 
 minimumReleaseAge: 4320
-
-resolutionMode: highest
-nminimumReleaseAgeIgnoreMissingTime: true
+minimumReleaseAgeStrict: false # https://github.com/pnpm/pnpm/issues/11238
 
 overrides:
   sass: ^1.99.0 # without this, timeouts may occur in the tests
