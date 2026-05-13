@@ -24,7 +24,7 @@ jobs:
           run_install: false
 
       - name: install
-        run: pnpm install --frozen-lockfile
+        run: pnpm ci
 
       - name: build
         run: pnpm build
@@ -44,14 +44,14 @@ jobs:
           run_install: false
 
       - name: install
-        run: pnpm install --frozen-lockfile
+        run: pnpm ci
 
       - name: lint
         run: pnpm lint
 
   test-chrome:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
@@ -65,7 +65,7 @@ jobs:
           run_install: false
 
       - name: install
-        run: pnpm install --frozen-lockfile
+        run: pnpm ci
 
       - name: Install Playwright Browsers
         run: pnpm --filter ./libs/* exec playwright install chromium
@@ -80,7 +80,7 @@ jobs:
 
   test-firefox:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
@@ -94,7 +94,7 @@ jobs:
           run_install: false
 
       - name: install
-        run: pnpm install --frozen-lockfile
+        run: pnpm ci
 
       - name: Install Playwright Browsers
         run: pnpm --filter ./libs/* exec playwright install firefox
@@ -104,7 +104,7 @@ jobs:
 
   test-safari:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
@@ -118,7 +118,7 @@ jobs:
           run_install: false
 
       - name: install
-        run: pnpm install --frozen-lockfile
+        run: pnpm ci
 
       - name: Install Playwright Browsers
         run: pnpm --filter ./libs/* exec playwright install webkit --with-deps
@@ -126,7 +126,7 @@ jobs:
       - name: test
         run: pnpm test --browsers=webkitHeadless --no-coverage
 
-  prettier:
+  format-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -141,7 +141,7 @@ jobs:
           run_install: false
 
       - name: install
-        run: pnpm install --frozen-lockfile
+        run: pnpm ci
 
       - name: Check formatting
         run: pnpm format-check

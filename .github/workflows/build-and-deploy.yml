@@ -26,7 +26,7 @@ jobs:
           run_install: false
 
       - name: install
-        run: pnpm install --frozen-lockfile
+        run: pnpm ci
 
       - name: Build 🔧
         run: pnpm build
@@ -53,7 +53,7 @@ jobs:
           run_install: false
 
       - name: install
-        run: pnpm install --frozen-lockfile
+        run: pnpm ci
 
       - name: Install Playwright Browsers
         run: pnpm --filter ./libs/* exec playwright install chromium
