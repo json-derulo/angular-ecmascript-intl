@@ -22,7 +22,7 @@ catalog:
   '@angular/material': '21.2.10'
   '@angular/platform-browser': '21.2.12'
   '@angular/router': '21.2.12'
-  '@types/node': '24.12.3'
+  '@types/node': '24.12.4'
   '@vitest/browser-playwright': '4.1.6'
   '@vitest/coverage-v8': '4.1.6'
   angular-eslint: '21.3.1'
