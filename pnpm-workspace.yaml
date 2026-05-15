@@ -34,7 +34,7 @@ catalog:
   ngx-markdown: '21.3.0'
   oxfmt: '0.48.0'
   oxlint: '1.63.0'
-  playwright: '1.59.1'
+  playwright: '1.60.0'
   prismjs: '1.30.0'
   rxjs: '7.8.2'
   tslib: '2.8.1'
