@@ -49,10 +49,11 @@
     "ng-packagr": "catalog:",
     "playwright": "catalog:",
     "rxjs": "catalog:",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "zone.js": "catalog:"
   },
   "peerDependencies": {
-    "@angular/common": ">=20",
-    "@angular/core": ">=20"
+    "@angular/common": ">=22",
+    "@angular/core": ">=22"
   }
 }
