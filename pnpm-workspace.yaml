@@ -25,7 +25,7 @@ catalog:
   '@types/node': '24.12.4'
   '@vitest/browser-playwright': '4.1.6'
   '@vitest/coverage-v8': '4.1.6'
-  angular-eslint: '21.3.1'
+  angular-eslint: '21.4.0'
   cpy-cli: '7.0.0'
   dayjs: '1.11.20'
   eslint: '10.3.0'
