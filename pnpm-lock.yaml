@@ -56,8 +56,8 @@ catalogs:
       specifier: 7.0.0
       version: 7.0.0
     dayjs:
-      specifier: 1.11.20
-      version: 1.11.20
+      specifier: 1.11.21
+      version: 1.11.21
     eslint:
       specifier: 10.4.0
       version: 10.4.0
@@ -227,7 +227,7 @@ importers:
         version: 7.0.0
       dayjs:
         specifier: 'catalog:'
-        version: 1.11.20
+        version: 1.11.21
       ng-packagr:
         specifier: 'catalog:'
         version: 21.2.3(tslib@2.8.1)(typescript@6.0.3)
@@ -2483,8 +2483,8 @@ packages:
     resolution: {integrity: sha512-wD5oz5xibMOPHzy13CyGmogB3phdvcDaB5t0W/Nr5Z2O/agcB8YwOz6e2Lsp10pNDzBoDO9nVa3RGs/2BttpHQ==}
     engines: {node: '>= 6'}
 
-  dayjs@1.11.20:
-    resolution: {integrity: sha512-YbwwqR/uYpeoP4pu043q+LTDLFBLApUP6VxRihdfNTqu4ubqMlGDLd6ErXhEgsyvY0K6nCs7nggYumAN+9uEuQ==}
+  dayjs@1.11.21:
+    resolution: {integrity: sha512-98IT+HOahAisibz/yjKbzuOBwYcjJ7BCLPzARyHiyEBmRz4fatF+KPJszEHXsGYjUG234aH/cOjW1wwTbKUZlA==}
 
   debug@4.4.3:
     resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
@@ -6134,7 +6134,7 @@ snapshots:
 
   css-what@7.0.0: {}
 
-  dayjs@1.11.20: {}
+  dayjs@1.11.21: {}
 
   debug@4.4.3:
     dependencies:
