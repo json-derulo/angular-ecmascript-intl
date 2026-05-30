@@ -45,7 +45,6 @@
     "@vitest/browser-playwright": "catalog:",
     "@vitest/coverage-v8": "catalog:",
     "cpy-cli": "catalog:",
-    "dayjs": "catalog:",
     "ng-packagr": "catalog:",
     "playwright": "catalog:",
     "rxjs": "catalog:",

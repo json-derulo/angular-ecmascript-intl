@@ -27,7 +27,6 @@ catalog:
   '@vitest/coverage-v8': '4.1.7'
   angular-eslint: '21.4.0'
   cpy-cli: '7.0.0'
-  dayjs: '1.11.21'
   eslint: '10.4.0'
   marked: '18.0.4'
   ng-packagr: '21.2.3'
