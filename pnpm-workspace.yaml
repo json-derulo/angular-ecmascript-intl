@@ -11,9 +11,9 @@ allowBuilds:
   rollup: false
 
 catalog:
-  '@angular/build': '22.0.0-rc.0'
+  '@angular/build': '22.0.0-rc.1'
   '@angular/cdk': '22.0.0-rc.1'
-  '@angular/cli': '22.0.0-rc.0'
+  '@angular/cli': '22.0.0-rc.1'
   '@angular/common': '22.0.0-rc.1'
   '@angular/compiler': '22.0.0-rc.1'
   '@angular/compiler-cli': '22.0.0-rc.1'
@@ -30,7 +30,7 @@ catalog:
   dayjs: '1.11.21'
   eslint: '10.4.0'
   marked: '18.0.4'
-  ng-packagr: '21.2.3'
+  ng-packagr: '22.0.0-rc.0'
   ngx-markdown: '21.3.0'
   oxfmt: '0.52.0'
   oxlint: '1.67.0'

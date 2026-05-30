@@ -24,7 +24,7 @@
             "assets": [
               {
                 "glob": "README.md",
-                "input": "../",
+                "input": "./",
                 "output": "/"
               },
               "src/favicon.ico",
