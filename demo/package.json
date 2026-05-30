@@ -2,7 +2,7 @@
   "name": "demo",
   "private": true,
   "scripts": {
-    "build": "ng build",
+    "build": "cpy ../README.md . && ng build",
     "start": "ng serve"
   },
   "dependencies": {
@@ -24,6 +24,7 @@
     "@angular/build": "catalog:",
     "@angular/cli": "catalog:",
     "@angular/compiler-cli": "catalog:",
+    "cpy-cli": "catalog:",
     "typescript": "catalog:"
   }
 }
