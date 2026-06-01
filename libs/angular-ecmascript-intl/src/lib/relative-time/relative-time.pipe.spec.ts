@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-import dayjs from 'dayjs';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { INTL_LOCALES } from '../locale';
 import { INTL_RELATIVE_TIME_PIPE_DEFAULT_OPTIONS } from './relative-time-pipe-default-options';
@@ -38,13 +37,13 @@ describe('RelativeTimePipe', () => {
     });
 
     it('should throw an error when an invalid string is passed', () => {
-      expect(() => testUnit.transform('someInvalidDate')).toThrowError(
+      expect(() => testUnit.transform('someInvalidDate')).toThrow(
         'someInvalidDate is not a valid date',
       );
     });
 
     it('should throw an error when an invalid date is passed', () => {
-      expect(() => testUnit.transform(new Date('invalid'))).toThrowError(
+      expect(() => testUnit.transform(new Date('invalid'))).toThrow(
         'Invalid Date is not a valid date',
       );
     });
@@ -65,16 +64,23 @@ describe('RelativeTimePipe', () => {
 
     describe('years', () => {
       it('should transform a date one year in past', () => {
-        const date = dayjs().subtract(1, 'year').subtract(1, 'second').toDate();
+        const date = new Date(
+          Temporal.Now.instant()
+            .toZonedDateTimeISO('UTC')
+            .subtract({ years: 1 })
+            .subtract({ seconds: 1 }).epochMilliseconds,
+        );
 
         expect(testUnit.transform(date)).toEqual('1 year ago');
       });
 
       it('should transform a date almost 3 years in future', () => {
-        const date = dayjs()
-          .add(365 * 3, 'days')
-          .subtract(1, 'second')
-          .toDate();
+        const date = new Date(
+          Temporal.Now.instant()
+            .toZonedDateTimeISO('UTC')
+            .add({ days: 365 * 3 })
+            .subtract({ seconds: 1 }).epochMilliseconds,
+        );
 
         expect(testUnit.transform(date)).toEqual('in 2 years');
       });
@@ -82,16 +88,23 @@ describe('RelativeTimePipe', () => {
 
     describe('months', () => {
       it('should transform a date 1 month in future', () => {
-        const date = dayjs().add(31, 'days').add(1, 'second').toDate();
+        const date = new Date(
+          Temporal.Now.instant()
+            .toZonedDateTimeISO('UTC')
+            .add({ days: 31 })
+            .add({ seconds: 1 }).epochMilliseconds,
+        );
 
         expect(testUnit.transform(date)).toEqual('in 1 month');
       });
 
       it('should transform a date almost 12 months in past', () => {
-        const date = dayjs()
-          .subtract(30 * 12, 'days')
-          .add(1, 'second')
-          .toDate();
+        const date = new Date(
+          Temporal.Now.instant()
+            .toZonedDateTimeISO('UTC')
+            .subtract({ days: 30 * 12 })
+            .add({ seconds: 1 }).epochMilliseconds,
+        );
 
         expect(testUnit.transform(date)).toEqual('11 months ago');
       });
@@ -100,13 +113,23 @@ describe('RelativeTimePipe', () => {
     describe('weeks', () => {
       it('should transform a date 1 week in future', () => {
         // We need to account for clock changes here
-        const date = dayjs().add(1, 'week').add(2, 'hour').toDate();
+        const date = new Date(
+          Temporal.Now.instant()
+            .toZonedDateTimeISO('UTC')
+            .add({ weeks: 1 })
+            .add({ hours: 2 }).epochMilliseconds,
+        );
 
         expect(testUnit.transform(date)).toEqual('in 1 week');
       });
 
       it('should transform a date almost 4 weeks in past', () => {
-        const date = dayjs().subtract(4, 'weeks').add(1, 'day').toDate();
+        const date = new Date(
+          Temporal.Now.instant()
+            .toZonedDateTimeISO('UTC')
+            .subtract({ weeks: 4 })
+            .add({ days: 1 }).epochMilliseconds,
+        );
 
         expect(testUnit.transform(date)).toEqual('3 weeks ago');
       });
@@ -114,13 +137,23 @@ describe('RelativeTimePipe', () => {
 
     describe('days', () => {
       it('should transform a date 1 day in future', () => {
-        const date = dayjs().add(1, 'day').add(1, 'second').toDate();
+        const date = new Date(
+          Temporal.Now.instant()
+            .toZonedDateTimeISO('UTC')
+            .add({ days: 1 })
+            .add({ seconds: 1 }).epochMilliseconds,
+        );
 
         expect(testUnit.transform(date)).toEqual('in 1 day');
       });
 
       it('should transform a date almost 7 days in past', () => {
-        const date = dayjs().subtract(7, 'days').add(1, 'second').toDate();
+        const date = new Date(
+          Temporal.Now.instant()
+            .toZonedDateTimeISO('UTC')
+            .subtract({ days: 7 })
+            .add({ seconds: 1 }).epochMilliseconds,
+        );
 
         expect(testUnit.transform(date)).toEqual('6 days ago');
       });
@@ -128,13 +161,19 @@ describe('RelativeTimePipe', () => {
 
     describe('hours', () => {
       it('should transform a date 1 hour in future', () => {
-        const date = dayjs().add(1, 'hour').add(1, 'second').toDate();
+        const date = new Date(
+          Temporal.Now.instant().add({ hours: 1 }).add({ seconds: 1 })
+            .epochMilliseconds,
+        );
 
         expect(testUnit.transform(date)).toEqual('in 1 hour');
       });
 
       it('should transform a date almost 24 hours in past', () => {
-        const date = dayjs().subtract(24, 'hours').add(1, 'second').toDate();
+        const date = new Date(
+          Temporal.Now.instant().subtract({ hours: 24 }).add({ seconds: 1 })
+            .epochMilliseconds,
+        );
 
         expect(testUnit.transform(date)).toEqual('23 hours ago');
       });
@@ -142,20 +181,29 @@ describe('RelativeTimePipe', () => {
 
     describe('minutes', () => {
       it('should transform a date 1 minute in future', () => {
-        const date = dayjs().add(1, 'minute').add(1, 'second').toDate();
+        const date = new Date(
+          Temporal.Now.instant().add({ minutes: 1 }).add({ seconds: 1 })
+            .epochMilliseconds,
+        );
 
         expect(testUnit.transform(date)).toEqual('in 1 minute');
       });
 
       it('should transform a date almost 59 minutes in past', () => {
-        const date = dayjs().subtract(60, 'minutes').add(1, 'second').toDate();
+        const date = new Date(
+          Temporal.Now.instant().subtract({ minutes: 60 }).add({ seconds: 1 })
+            .epochMilliseconds,
+        );
 
         expect(testUnit.transform(date)).toEqual('59 minutes ago');
       });
     });
 
     it('should transform a date almost than 1 minute in past', () => {
-      const date = dayjs().subtract(1, 'minute').add(1, 'second').toDate();
+      const date = new Date(
+        Temporal.Now.instant().subtract({ minutes: 1 }).add({ seconds: 1 })
+          .epochMilliseconds,
+      );
 
       expect(testUnit.transform(date)).toEqual('in 0 minutes');
     });
