@@ -39,7 +39,7 @@ catalog:
   marked: '18.0.4'
   ng-packagr: '22.0.0'
   ngx-markdown: '21.3.0'
-  oxfmt: '0.52.0'
+  oxfmt: '0.53.0'
   oxlint: '1.67.0'
   playwright: '1.60.0'
   prismjs: '1.30.0'
