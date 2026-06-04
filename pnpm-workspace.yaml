@@ -10,18 +10,25 @@ allowBuilds:
   msgpackr-extract: false
   rollup: false
 
+minimumReleaseAge: 4320
+minimumReleaseAgeExclude:
+  - '@angular/*'
+  - '@angular-devkit/*'
+  - '@schematics/angular'
+  - ng-packagr
+
 catalog:
-  '@angular/build': '22.0.0-rc.2'
-  '@angular/cdk': '22.0.0-rc.2'
-  '@angular/cli': '22.0.0-rc.2'
-  '@angular/common': '22.0.0-rc.2'
-  '@angular/compiler': '22.0.0-rc.2'
-  '@angular/compiler-cli': '22.0.0-rc.2'
-  '@angular/core': '22.0.0-rc.2'
-  '@angular/forms': '22.0.0-rc.2'
-  '@angular/material': '22.0.0-rc.2'
-  '@angular/platform-browser': '22.0.0-rc.2'
-  '@angular/router': '22.0.0-rc.2'
+  '@angular/build': '22.0.0'
+  '@angular/cdk': '22.0.0'
+  '@angular/cli': '22.0.0'
+  '@angular/common': '22.0.0'
+  '@angular/compiler': '22.0.0'
+  '@angular/compiler-cli': '22.0.0'
+  '@angular/core': '22.0.0'
+  '@angular/forms': '22.0.0'
+  '@angular/material': '22.0.0'
+  '@angular/platform-browser': '22.0.0'
+  '@angular/router': '22.0.0'
   '@types/node': '24.12.4'
   '@vitest/browser-playwright': '4.1.7'
   '@vitest/coverage-v8': '4.1.7'
@@ -30,7 +37,7 @@ catalog:
   dayjs: '1.11.21'
   eslint: '10.4.1'
   marked: '18.0.4'
-  ng-packagr: '22.0.0-rc.0'
+  ng-packagr: '22.0.0'
   ngx-markdown: '21.3.0'
   oxfmt: '0.52.0'
   oxlint: '1.67.0'
