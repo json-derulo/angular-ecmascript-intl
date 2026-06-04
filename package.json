@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "pnpm --filter demo build",
+    "build": "pnpm -r build",
     "start": "pnpm --filter demo start",
     "test": "pnpm -r test",
     "lint": "oxlint . && eslint . --ext .html",
