@@ -29,7 +29,7 @@ catalog:
   '@angular/material': '22.0.0'
   '@angular/platform-browser': '22.0.0'
   '@angular/router': '22.0.0'
-  '@types/node': '24.13.0'
+  '@types/node': '24.13.1'
   '@vitest/browser-playwright': '4.1.8'
   '@vitest/coverage-v8': '4.1.8'
   angular-eslint: '21.4.0'
