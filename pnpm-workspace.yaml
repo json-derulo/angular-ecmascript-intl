@@ -40,7 +40,7 @@ catalog:
   ng-packagr: '22.0.0'
   ngx-markdown: '22.0.0'
   oxfmt: '0.56.0'
-  oxlint: '1.70.0'
+  oxlint: '1.71.0'
   playwright: '1.61.0'
   prismjs: '1.30.0'
   rxjs: '7.8.2'
