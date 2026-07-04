@@ -18,9 +18,9 @@ minimumReleaseAgeExclude:
   - ng-packagr
 
 catalog:
-  '@angular/build': '22.0.4'
+  '@angular/build': '22.0.5'
   '@angular/cdk': '22.0.2'
-  '@angular/cli': '22.0.4'
+  '@angular/cli': '22.0.5'
   '@angular/common': '22.0.4'
   '@angular/compiler': '22.0.4'
   '@angular/compiler-cli': '22.0.4'
@@ -37,7 +37,7 @@ catalog:
   dayjs: '1.11.21'
   eslint: '10.6.0'
   marked: '18.0.5'
-  ng-packagr: '22.0.0'
+  ng-packagr: '22.0.1'
   ngx-markdown: '22.0.0'
   oxfmt: '0.57.0'
   oxlint: '1.72.0'
