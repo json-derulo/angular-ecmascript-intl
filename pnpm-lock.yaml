@@ -62,8 +62,8 @@ catalogs:
       specifier: 10.6.0
       version: 10.6.0
     marked:
-      specifier: 18.0.5
-      version: 18.0.5
+      specifier: 18.0.6
+      version: 18.0.6
     ng-packagr:
       specifier: 22.0.1
       version: 22.0.1
@@ -168,10 +168,10 @@ importers:
         version: 22.0.5(@angular/common@22.0.5)(@angular/core@22.0.5)(@angular/platform-browser@22.0.5)(rxjs@7.8.2)
       marked:
         specifier: 'catalog:'
-        version: 18.0.5
+        version: 18.0.6
       ngx-markdown:
         specifier: 'catalog:'
-        version: 22.0.0(@angular/common@22.0.5)(@angular/core@22.0.5)(@angular/platform-browser@22.0.5)(marked@18.0.5)(prismjs@1.30.0)(rxjs@7.8.2)(zone.js@0.16.2)
+        version: 22.0.0(@angular/common@22.0.5)(@angular/core@22.0.5)(@angular/platform-browser@22.0.5)(marked@18.0.6)(prismjs@1.30.0)(rxjs@7.8.2)(zone.js@0.16.2)
       prismjs:
         specifier: 'catalog:'
         version: 1.30.0
@@ -3056,8 +3056,8 @@ packages:
     resolution: {integrity: sha512-Je0fLJ0F5atA7F+eIlLzk+Wkcl57JDf4kf+EW8xiP5E31xOQxkIxTbgf1Oi1Lw9tRI9UEMRdI5Vz2xTzoNU1Jw==}
     engines: {node: ^20.17.0 || >=22.9.0}
 
-  marked@18.0.5:
-    resolution: {integrity: sha512-S6GcvALHg6K4ohtu4E7x0a1AqhAjp6cV8KhLSyN9qVapnzJkusVBxZRcIU9AeYsbe6P1hKDusSbEOzGyyuce6w==}
+  marked@18.0.6:
+    resolution: {integrity: sha512-MrV5puXBfuiy6wl6DLaq3BtIJQAJToAd5zt/ZKhRfGRAuFPALE7/4Y7jnxRQoEgK/pBgurGqLyAuRgZ2xOjr6w==}
     engines: {node: '>= 20'}
     hasBin: true
 
@@ -6730,7 +6730,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  marked@18.0.5: {}
+  marked@18.0.6: {}
 
   math-intrinsics@1.1.0: {}
 
@@ -6859,12 +6859,12 @@ snapshots:
     optionalDependencies:
       rollup: 4.62.2
 
-  ngx-markdown@22.0.0(@angular/common@22.0.5)(@angular/core@22.0.5)(@angular/platform-browser@22.0.5)(marked@18.0.5)(prismjs@1.30.0)(rxjs@7.8.2)(zone.js@0.16.2):
+  ngx-markdown@22.0.0(@angular/common@22.0.5)(@angular/core@22.0.5)(@angular/platform-browser@22.0.5)(marked@18.0.6)(prismjs@1.30.0)(rxjs@7.8.2)(zone.js@0.16.2):
     dependencies:
       '@angular/common': 22.0.5(@angular/core@22.0.5)(rxjs@7.8.2)
       '@angular/core': 22.0.5(@angular/compiler@22.0.5)(rxjs@7.8.2)(zone.js@0.16.2)
       '@angular/platform-browser': 22.0.5(@angular/common@22.0.5)(@angular/core@22.0.5)
-      marked: 18.0.5
+      marked: 18.0.6
       rxjs: 7.8.2
       tslib: 2.8.1
       zone.js: 0.16.2
