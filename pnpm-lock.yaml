@@ -11,8 +11,8 @@ catalogs:
       specifier: 22.0.7
       version: 22.0.7
     '@angular/cdk':
-      specifier: 22.0.5
-      version: 22.0.5
+      specifier: 22.0.6
+      version: 22.0.6
     '@angular/cli':
       specifier: 22.0.7
       version: 22.0.7
@@ -32,8 +32,8 @@ catalogs:
       specifier: 22.0.8
       version: 22.0.8
     '@angular/material':
-      specifier: 22.0.5
-      version: 22.0.5
+      specifier: 22.0.6
+      version: 22.0.6
     '@angular/platform-browser':
       specifier: 22.0.8
       version: 22.0.8
@@ -144,7 +144,7 @@ importers:
     dependencies:
       '@angular/cdk':
         specifier: 'catalog:'
-        version: 22.0.5(@angular/common@22.0.8)(@angular/core@22.0.8)(@angular/platform-browser@22.0.8)(rxjs@7.8.2)
+        version: 22.0.6(@angular/common@22.0.8)(@angular/core@22.0.8)(@angular/platform-browser@22.0.8)(rxjs@7.8.2)
       '@angular/common':
         specifier: 'catalog:'
         version: 22.0.8(@angular/core@22.0.8)(rxjs@7.8.2)
@@ -159,7 +159,7 @@ importers:
         version: 22.0.8(@angular/common@22.0.8)(@angular/core@22.0.8)(@angular/platform-browser@22.0.8)(rxjs@7.8.2)
       '@angular/material':
         specifier: 'catalog:'
-        version: 22.0.5(@angular/cdk@22.0.5)(@angular/common@22.0.8)(@angular/core@22.0.8)(@angular/forms@22.0.8)(@angular/platform-browser@22.0.8)(rxjs@7.8.2)
+        version: 22.0.6(@angular/cdk@22.0.6)(@angular/common@22.0.8)(@angular/core@22.0.8)(@angular/forms@22.0.8)(@angular/platform-browser@22.0.8)(rxjs@7.8.2)
       '@angular/platform-browser':
         specifier: 'catalog:'
         version: 22.0.8(@angular/common@22.0.8)(@angular/core@22.0.8)
@@ -438,8 +438,8 @@ packages:
       vitest:
         optional: true
 
-  '@angular/cdk@22.0.5':
-    resolution: {integrity: sha512-qy1scYkkhedGxrU2GjOUoh76xjsxCDOODWdVfg4aXLXG7RBIH6hOuKdcNpR/sWhfSdY02a11QYRN2CqoqWDvZQ==}
+  '@angular/cdk@22.0.6':
+    resolution: {integrity: sha512-b36f4b+7yQpuulG9Ai2O38SV2tsqyNeYTYCH9TehMir18XlTx+NtLELwA8Sfi24tHByJHEDADQZtHPWWUj71/w==}
     peerDependencies:
       '@angular/common': ^22.0.0 || ^23.0.0
       '@angular/core': ^22.0.0 || ^23.0.0
@@ -495,10 +495,10 @@ packages:
       '@angular/platform-browser': 22.0.8
       rxjs: ^6.5.3 || ^7.4.0
 
-  '@angular/material@22.0.5':
-    resolution: {integrity: sha512-A0SnDMvWQBxv3dB2w33GXwuo1/puKtFe8ZMQmIiurS5bbTQpV7UHAM0pWzg7L4DG2cvaH4WZGRPfNG3f8fh+yA==}
+  '@angular/material@22.0.6':
+    resolution: {integrity: sha512-EVKhP3689o+7J4TD7KMzmypxKGAUdvU3UsIhXYEoJ2IyxF/jAfuWSVKBmR8Ig6w74wSayBglfOTVoI3RuDL9NA==}
     peerDependencies:
-      '@angular/cdk': 22.0.5
+      '@angular/cdk': 22.0.6
       '@angular/common': ^22.0.0 || ^23.0.0
       '@angular/core': ^22.0.0 || ^23.0.0
       '@angular/forms': ^22.0.0 || ^23.0.0
@@ -4375,7 +4375,7 @@ snapshots:
       - tsx
       - yaml
 
-  '@angular/cdk@22.0.5(@angular/common@22.0.8)(@angular/core@22.0.8)(@angular/platform-browser@22.0.8)(rxjs@7.8.2)':
+  '@angular/cdk@22.0.6(@angular/common@22.0.8)(@angular/core@22.0.8)(@angular/platform-browser@22.0.8)(rxjs@7.8.2)':
     dependencies:
       '@angular/common': 22.0.8(@angular/core@22.0.8)(rxjs@7.8.2)
       '@angular/core': 22.0.8(@angular/compiler@22.0.8)(rxjs@7.8.2)(zone.js@0.16.2)
@@ -4454,9 +4454,9 @@ snapshots:
       tslib: 2.8.1
       zod: 4.4.3
 
-  '@angular/material@22.0.5(@angular/cdk@22.0.5)(@angular/common@22.0.8)(@angular/core@22.0.8)(@angular/forms@22.0.8)(@angular/platform-browser@22.0.8)(rxjs@7.8.2)':
+  '@angular/material@22.0.6(@angular/cdk@22.0.6)(@angular/common@22.0.8)(@angular/core@22.0.8)(@angular/forms@22.0.8)(@angular/platform-browser@22.0.8)(rxjs@7.8.2)':
     dependencies:
-      '@angular/cdk': 22.0.5(@angular/common@22.0.8)(@angular/core@22.0.8)(@angular/platform-browser@22.0.8)(rxjs@7.8.2)
+      '@angular/cdk': 22.0.6(@angular/common@22.0.8)(@angular/core@22.0.8)(@angular/platform-browser@22.0.8)(rxjs@7.8.2)
       '@angular/common': 22.0.8(@angular/core@22.0.8)(rxjs@7.8.2)
       '@angular/core': 22.0.8(@angular/compiler@22.0.8)(rxjs@7.8.2)(zone.js@0.16.2)
       '@angular/forms': 22.0.8(@angular/common@22.0.8)(@angular/core@22.0.8)(@angular/platform-browser@22.0.8)(rxjs@7.8.2)
