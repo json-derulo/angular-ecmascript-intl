@@ -65,8 +65,8 @@ catalogs:
       specifier: 18.0.7
       version: 18.0.7
     ng-packagr:
-      specifier: 22.0.1
-      version: 22.0.1
+      specifier: 22.0.2
+      version: 22.0.2
     ngx-markdown:
       specifier: 22.0.0
       version: 22.0.0
@@ -184,7 +184,7 @@ importers:
     devDependencies:
       '@angular/build':
         specifier: 'catalog:'
-        version: 22.0.8(@angular/compiler-cli@22.0.8)(@angular/compiler@22.0.8)(@angular/core@22.0.8)(@angular/platform-browser@22.0.8)(@types/node@24.13.3)(chokidar@5.0.0)(less@4.8.0)(ng-packagr@22.0.1)(postcss@8.5.22)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)(vitest@4.1.10)
+        version: 22.0.8(@angular/compiler-cli@22.0.8)(@angular/compiler@22.0.8)(@angular/core@22.0.8)(@angular/platform-browser@22.0.8)(@types/node@24.13.3)(chokidar@5.0.0)(less@4.8.0)(ng-packagr@22.0.2)(postcss@8.5.22)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)(vitest@4.1.10)
       '@angular/cli':
         specifier: 'catalog:'
         version: 22.0.8(@types/node@24.13.3)(chokidar@5.0.0)(supports-color@7.2.0)
@@ -206,7 +206,7 @@ importers:
     devDependencies:
       '@angular/build':
         specifier: 'catalog:'
-        version: 22.0.8(@angular/compiler-cli@22.0.8)(@angular/compiler@22.0.8)(@angular/core@22.0.8)(@angular/platform-browser@22.0.8)(@types/node@24.13.3)(chokidar@5.0.0)(less@4.8.0)(ng-packagr@22.0.1)(postcss@8.5.22)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)(vitest@4.1.10)
+        version: 22.0.8(@angular/compiler-cli@22.0.8)(@angular/compiler@22.0.8)(@angular/core@22.0.8)(@angular/platform-browser@22.0.8)(@types/node@24.13.3)(chokidar@5.0.0)(less@4.8.0)(ng-packagr@22.0.2)(postcss@8.5.22)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)(vitest@4.1.10)
       '@angular/cli':
         specifier: 'catalog:'
         version: 22.0.8(@types/node@24.13.3)(chokidar@5.0.0)(supports-color@7.2.0)
@@ -233,7 +233,7 @@ importers:
         version: 1.11.21
       ng-packagr:
         specifier: 'catalog:'
-        version: 22.0.1(@angular/compiler-cli@22.0.8)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)
+        version: 22.0.2(@angular/compiler-cli@22.0.8)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)
       playwright:
         specifier: 'catalog:'
         version: 1.61.1
@@ -2995,8 +2995,8 @@ packages:
     resolution: {integrity: sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg==}
     engines: {node: '>= 0.6'}
 
-  ng-packagr@22.0.1:
-    resolution: {integrity: sha512-gL03L/OBNWz4nqTo8l5u6f3hySYzAVwx3aVZs6X7UGQv+cT+HUozr2XquAvvl/beray0AgCAfydGELDAJAFyKg==}
+  ng-packagr@22.0.2:
+    resolution: {integrity: sha512-8qQ+RWm0W3gK8Sch1kmo3EzIUiCTXIOP2gS7b+vtqCMBf4KBjBP0wFBikW5qRau9lGOzRTML0GPFGoARPR4+fw==}
     engines: {node: ^22.22.3 || ^24.15.0 || >=26.0.0}
     hasBin: true
     peerDependencies:
@@ -4116,7 +4116,7 @@ snapshots:
       eslint: 10.7.0(supports-color@7.2.0)
       typescript: 6.0.3
 
-  '@angular/build@22.0.8(@angular/compiler-cli@22.0.8)(@angular/compiler@22.0.8)(@angular/core@22.0.8)(@angular/platform-browser@22.0.8)(@types/node@24.13.3)(chokidar@5.0.0)(less@4.8.0)(ng-packagr@22.0.1)(postcss@8.5.22)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)(vitest@4.1.10)':
+  '@angular/build@22.0.8(@angular/compiler-cli@22.0.8)(@angular/compiler@22.0.8)(@angular/core@22.0.8)(@angular/platform-browser@22.0.8)(@types/node@24.13.3)(chokidar@5.0.0)(less@4.8.0)(ng-packagr@22.0.2)(postcss@8.5.22)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)(vitest@4.1.10)':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@angular-devkit/architect': 0.2200.8(chokidar@5.0.0)
@@ -4152,7 +4152,7 @@ snapshots:
       '@angular/platform-browser': 22.0.8(@angular/common@22.0.8)(@angular/core@22.0.8)
       less: 4.8.0(supports-color@7.2.0)
       lmdb: 3.5.4
-      ng-packagr: 22.0.1(@angular/compiler-cli@22.0.8)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)
+      ng-packagr: 22.0.2(@angular/compiler-cli@22.0.8)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)
       postcss: 8.5.22
       vitest: 4.1.10(@types/node@24.13.3)(@vitest/browser-playwright@4.1.10)(@vitest/coverage-v8@4.1.10)(vite@7.3.6)
     transitivePeerDependencies:
@@ -4830,7 +4830,7 @@ snapshots:
 
   '@npmcli/fs@5.0.0':
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.5
 
   '@npmcli/git@7.0.2':
     dependencies:
@@ -4840,7 +4840,7 @@ snapshots:
       lru-cache: 11.5.2
       npm-pick-manifest: 11.0.3
       proc-log: 6.1.0
-      semver: 7.7.4
+      semver: 7.8.5
       which: 6.0.1
 
   '@npmcli/installed-package-contents@4.0.0':
@@ -4857,7 +4857,7 @@ snapshots:
       hosted-git-info: 9.0.3
       json-parse-even-better-errors: 5.0.0
       proc-log: 6.1.0
-      semver: 7.7.4
+      semver: 7.8.5
       spdx-expression-parse: 4.0.0
 
   '@npmcli/promise-spawn@9.0.1':
@@ -6511,7 +6511,7 @@ snapshots:
 
   negotiator@1.0.0: {}
 
-  ng-packagr@22.0.1(@angular/compiler-cli@22.0.8)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3):
+  ng-packagr@22.0.2(@angular/compiler-cli@22.0.8)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3):
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@angular/compiler-cli': 22.0.8(@angular/compiler@22.0.8)(supports-color@7.2.0)(typescript@6.0.3)
@@ -6571,7 +6571,7 @@ snapshots:
       graceful-fs: 4.2.11
       nopt: 9.0.0
       proc-log: 6.1.0
-      semver: 7.7.4
+      semver: 7.8.5
       tar: 7.5.21
       tinyglobby: 0.2.17
       undici: 6.27.0
@@ -6591,7 +6591,7 @@ snapshots:
 
   npm-install-checks@8.0.0:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.5
 
   npm-normalize-package-bin@5.0.0: {}
 
@@ -6599,7 +6599,7 @@ snapshots:
     dependencies:
       hosted-git-info: 9.0.3
       proc-log: 6.1.0
-      semver: 7.7.4
+      semver: 7.8.5
       validate-npm-package-name: 7.0.2
 
   npm-packlist@10.0.4:
@@ -6612,7 +6612,7 @@ snapshots:
       npm-install-checks: 8.0.0
       npm-normalize-package-bin: 5.0.0
       npm-package-arg: 13.0.2
-      semver: 7.7.4
+      semver: 7.8.5
 
   npm-registry-fetch@19.1.1(supports-color@7.2.0):
     dependencies:
