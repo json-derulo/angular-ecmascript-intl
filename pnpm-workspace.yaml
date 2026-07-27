@@ -37,7 +37,7 @@ catalog:
   dayjs: '1.11.21'
   eslint: '10.7.0'
   marked: '18.0.7'
-  ng-packagr: '22.0.1'
+  ng-packagr: '22.0.2'
   ngx-markdown: '22.0.0'
   oxfmt: '0.60.0'
   oxlint: '1.75.0'
