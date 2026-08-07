@@ -65,8 +65,8 @@ catalogs:
       specifier: 18.0.9
       version: 18.0.9
     ng-packagr:
-      specifier: 22.1.0
-      version: 22.1.0
+      specifier: 22.1.1
+      version: 22.1.1
     ngx-markdown:
       specifier: 22.0.0
       version: 22.0.0
@@ -184,7 +184,7 @@ importers:
     devDependencies:
       '@angular/build':
         specifier: 'catalog:'
-        version: 22.1.2(@angular/compiler-cli@22.1.0)(@angular/compiler@22.1.0)(@angular/core@22.1.0)(@angular/platform-browser@22.1.0)(@types/node@24.13.3)(chokidar@5.0.0)(less@4.8.1)(ng-packagr@22.1.0)(postcss@8.5.25)(rollup@4.62.3)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)(vitest@4.1.10)
+        version: 22.1.2(@angular/compiler-cli@22.1.0)(@angular/compiler@22.1.0)(@angular/core@22.1.0)(@angular/platform-browser@22.1.0)(@types/node@24.13.3)(chokidar@5.0.0)(less@4.8.1)(ng-packagr@22.1.1)(postcss@8.5.25)(rollup@4.62.3)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)(vitest@4.1.10)
       '@angular/cli':
         specifier: 'catalog:'
         version: 22.1.2(@types/node@24.13.3)(chokidar@5.0.0)(supports-color@7.2.0)
@@ -206,7 +206,7 @@ importers:
     devDependencies:
       '@angular/build':
         specifier: 'catalog:'
-        version: 22.1.2(@angular/compiler-cli@22.1.0)(@angular/compiler@22.1.0)(@angular/core@22.1.0)(@angular/platform-browser@22.1.0)(@types/node@24.13.3)(chokidar@5.0.0)(less@4.8.1)(ng-packagr@22.1.0)(postcss@8.5.25)(rollup@4.62.3)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)(vitest@4.1.10)
+        version: 22.1.2(@angular/compiler-cli@22.1.0)(@angular/compiler@22.1.0)(@angular/core@22.1.0)(@angular/platform-browser@22.1.0)(@types/node@24.13.3)(chokidar@5.0.0)(less@4.8.1)(ng-packagr@22.1.1)(postcss@8.5.25)(rollup@4.62.3)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)(vitest@4.1.10)
       '@angular/cli':
         specifier: 'catalog:'
         version: 22.1.2(@types/node@24.13.3)(chokidar@5.0.0)(supports-color@7.2.0)
@@ -233,7 +233,7 @@ importers:
         version: 1.11.21
       ng-packagr:
         specifier: 'catalog:'
-        version: 22.1.0(@angular/compiler-cli@22.1.0)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)
+        version: 22.1.1(@angular/compiler-cli@22.1.0)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)
       playwright:
         specifier: 'catalog:'
         version: 1.62.1
@@ -3096,8 +3096,8 @@ packages:
     resolution: {integrity: sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg==}
     engines: {node: '>= 0.6'}
 
-  ng-packagr@22.1.0:
-    resolution: {integrity: sha512-Vd4M/N0dDMYk3QTcKx8DAEiE7qOmM7WE04GICW7Kcr25XQYq0rQJGVSCsgpI/jmPV5V/UOANWMJARUiMlktyYg==}
+  ng-packagr@22.1.1:
+    resolution: {integrity: sha512-jZzpQckw2SFvuYI3aWfYMefSVKKG/04E+vrX2KD6coMx7ciLBotVWuLc0331Fjb6XNmAVcsmgQ5NY/Lf+9Himw==}
     engines: {node: ^22.22.3 || ^24.15.0 || >=26.0.0}
     hasBin: true
     peerDependencies:
@@ -4035,7 +4035,7 @@ snapshots:
       eslint: 10.8.0(supports-color@7.2.0)
       typescript: 6.0.3
 
-  '@angular/build@22.1.2(@angular/compiler-cli@22.1.0)(@angular/compiler@22.1.0)(@angular/core@22.1.0)(@angular/platform-browser@22.1.0)(@types/node@24.13.3)(chokidar@5.0.0)(less@4.8.1)(ng-packagr@22.1.0)(postcss@8.5.25)(rollup@4.62.3)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)(vitest@4.1.10)':
+  '@angular/build@22.1.2(@angular/compiler-cli@22.1.0)(@angular/compiler@22.1.0)(@angular/core@22.1.0)(@angular/platform-browser@22.1.0)(@types/node@24.13.3)(chokidar@5.0.0)(less@4.8.1)(ng-packagr@22.1.1)(postcss@8.5.25)(rollup@4.62.3)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)(vitest@4.1.10)':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@angular-devkit/architect': 0.2201.2(chokidar@5.0.0)
@@ -4072,7 +4072,7 @@ snapshots:
       '@angular/platform-browser': 22.1.0(@angular/common@22.1.0)(@angular/core@22.1.0)
       less: 4.8.1(supports-color@7.2.0)
       lmdb: 3.5.6
-      ng-packagr: 22.1.0(@angular/compiler-cli@22.1.0)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)
+      ng-packagr: 22.1.1(@angular/compiler-cli@22.1.0)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3)
       postcss: 8.5.25
       rollup: 4.62.3
       vitest: 4.1.10(@types/node@24.13.3)(@vitest/browser-playwright@4.1.10)(@vitest/coverage-v8@4.1.10)(vite@8.1.5)
@@ -6432,7 +6432,7 @@ snapshots:
 
   negotiator@1.0.0: {}
 
-  ng-packagr@22.1.0(@angular/compiler-cli@22.1.0)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3):
+  ng-packagr@22.1.1(@angular/compiler-cli@22.1.0)(supports-color@7.2.0)(tslib@2.8.1)(typescript@6.0.3):
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@angular/compiler-cli': 22.1.0(@angular/compiler@22.1.0)(typescript@6.0.3)
