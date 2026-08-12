@@ -11,11 +11,6 @@ allowBuilds:
   rollup: false
 
 minimumReleaseAge: 4320
-minimumReleaseAgeExclude:
-  - '@angular/*'
-  - '@angular-devkit/*'
-  - '@schematics/angular'
-  - ng-packagr
 
 catalog:
   '@angular/build': '22.1.3'
