@@ -1,0 +1,9 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: ['config:best-practices', 'group:allNonMajor'],
+  schedule: ['before 4am on sunday', 'before 4am on monday'],
+  lockFileMaintenance: {
+    enabled: true,
+  },
+  minimumReleaseAge: '3 days',
+}
