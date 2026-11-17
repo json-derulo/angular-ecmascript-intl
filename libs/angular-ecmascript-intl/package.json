@@ -40,6 +40,7 @@
     "@angular/build": "catalog:",
     "@angular/cli": "catalog:",
     "@angular/common": "catalog:",
+    "@angular/compiler": "catalog:",
     "@angular/core": "catalog:",
     "@angular/platform-browser": "catalog:",
     "@vitest/browser-playwright": "catalog:",
