@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform, inject } from '@angular/core';
-import { IntlPipeOptions } from '../intl-pipe-options';
+import { IntlFormatOptions, IntlPipeOptions } from '../intl-pipe-options';
 import { INTL_LOCALES } from '../locale';
 import { getNumericValue } from '../utils/number-utils';
 import { INTL_DECIMAL_PIPE_DEFAULT_OPTIONS } from './intl-decimal-pipe-default-options';
@@ -18,7 +18,6 @@ export type IntlDecimalPipeOptions = Omit<
 
 @Pipe({
   name: 'intlDecimal',
-  standalone: true,
 })
 export class IntlDecimalPipe implements PipeTransform {
   private readonly locale? = inject(INTL_LOCALES, { optional: true });
@@ -31,23 +30,40 @@ export class IntlDecimalPipe implements PipeTransform {
     value: number | string | null | undefined,
     options?: IntlDecimalPipeOptions,
   ): string | null {
-    if (typeof value !== 'number' && !value) {
-      return null;
-    }
+    return intlFormatDecimal(value, {
+      ...this.defaultOptions,
+      ...options,
+      locale: options?.locale ?? this.locale ?? undefined,
+    });
+  }
+}
 
-    const numericValue = getNumericValue(value);
+/**
+ * Formats a localized decimal number.
+ *
+ * @param value A number or numeric string.
+ * @param options Formatting options. The locale defaults to the runtime locale.
+ * @returns The formatted value, or `null` if the input is absent or cannot be formatted.
+ */
+export function intlFormatDecimal(
+  value: number | string | null | undefined,
+  options?: IntlFormatOptions<IntlDecimalPipeOptions>,
+): string | null {
+  if (typeof value !== 'number' && !value) {
+    return null;
+  }
 
-    const { locale, ...intlOptions } = options ?? {};
+  const numericValue = getNumericValue(value);
 
-    try {
-      return new Intl.NumberFormat(locale ?? this.locale ?? undefined, {
-        ...this.defaultOptions,
-        ...intlOptions,
-        style: 'decimal',
-      }).format(numericValue);
-    } catch (e) {
-      console.error('Error while transforming the decimal number', e);
-      return null;
-    }
+  const { locale, ...intlOptions } = options ?? {};
+
+  try {
+    return new Intl.NumberFormat(locale, {
+      ...intlOptions,
+      style: 'decimal',
+    }).format(numericValue);
+  } catch (e) {
+    console.error('Error while transforming the decimal number', e);
+    return null;
   }
 }

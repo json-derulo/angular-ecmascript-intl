@@ -1,5 +1,5 @@
 import { inject, Pipe, PipeTransform } from '@angular/core';
-import { IntlPipeOptions } from '../intl-pipe-options';
+import { IntlFormatOptions, IntlPipeOptions } from '../intl-pipe-options';
 import { INTL_LOCALES } from '../locale';
 import { INTL_DURATION_PIPE_DEFAULT_OPTIONS } from './intl-duration-pipe-default-options';
 
@@ -59,7 +59,6 @@ export type IntlDurationPipeOptions = Partial<Intl.DurationFormatOptions> &
 
 @Pipe({
   name: 'intlDuration',
-  standalone: true,
 })
 export class IntlDurationPipe implements PipeTransform {
   readonly locale = inject(INTL_LOCALES, { optional: true });
@@ -71,20 +70,35 @@ export class IntlDurationPipe implements PipeTransform {
     value: Intl.Duration | null | undefined,
     options?: IntlDurationPipeOptions,
   ): string | null {
-    if (!value) {
-      return null;
-    }
+    return intlFormatDuration(value, {
+      ...this.defaultOptions,
+      ...options,
+      locale: options?.locale ?? this.locale ?? undefined,
+    });
+  }
+}
 
-    const { locale, ...intlOptions } = options ?? {};
+/**
+ * Formats a duration using localized unit names or a digital style.
+ *
+ * @param value A duration with fields such as hours, minutes, and seconds.
+ * @param options Formatting options. The locale defaults to the runtime locale.
+ * @returns The formatted value, or `null` if the input is absent or cannot be formatted.
+ */
+export function intlFormatDuration(
+  value: Intl.Duration | null | undefined,
+  options?: IntlFormatOptions<IntlDurationPipeOptions>,
+): string | null {
+  if (!value) {
+    return null;
+  }
 
-    try {
-      return new Intl.DurationFormat(locale ?? this.locale ?? undefined, {
-        ...this.defaultOptions,
-        ...intlOptions,
-      }).format(value);
-    } catch (e) {
-      console.error('Error while transforming the duration value', e);
-      return null;
-    }
+  const { locale, ...intlOptions } = options ?? {};
+
+  try {
+    return new Intl.DurationFormat(locale, intlOptions).format(value);
+  } catch (e) {
+    console.error('Error while transforming the duration value', e);
+    return null;
   }
 }
